@@ -27,5 +27,3 @@ This system has the following stack:
 
 - Run the application: `php artisan serve`
 - Open the application using `localhost` or `http://127.0.0.1:8000`
-
-Mced was here
