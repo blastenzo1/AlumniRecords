@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
       
 .font-family-karla { font-family: karla; }
-.bg-sidebar { background: #3d68ff; }
-.cta-btn { color: #3d68ff; }
-.upgrade-btn { background: #1947ee; }
-.upgrade-btn:hover { background: #0038fd; }
-.active-nav-link { background: #1947ee; }
-.nav-item:hover { background: #1947ee; }
-.account-link:hover { background: #3d68ff; }
-
+.bg-sidebar { background: #900000; }
+.cta-btn { color: #900000; }
+.userWel { 
+    color: #750000;
+    background: white; }
+.userWel:hover { 
+    color: #fff;
+    background: #750000; }
+.active-nav-link { background: #900000; }
+.nav-item:hover { background: #750000; }
+.account-link {
+    color: #900000; }
+.account-link:hover { 
+    color: white;
+    background: #750000; 
+    font-style: bold ;  }
+.DeskHeader{
+    background: #900000;
+}
 
 
 
@@ -17,7 +28,7 @@
 
 .demo{ font-family: 'Noto Sans', sans-serif; }
 .panel{
-    background: linear-gradient(to right, #2980b9, #2c3e50);
+    background: gray;
     padding: 0;
     border-radius: 10px;
     border: none;
@@ -29,7 +40,7 @@
     margin: 0;
 }
 .panel .panel-heading .title{
-    color: #fff;
+    color: black;
     font-size: 28px;
     font-weight: 500;
     text-transform: capitalize;
@@ -37,7 +48,7 @@
     margin: 0;
 }
 .panel .panel-heading .btn{
-    color: rgba(255,255,255,0.5);
+    color: black;
     background: transparent;
     font-size: 16px;
     text-transform: capitalize;
@@ -46,7 +57,7 @@
     transition: all 0.3s ease 0s;
 }
 .panel .panel-heading .btn:hover{
-    color: #fff;
+    color: #900000;
     text-shadow: 3px 3px rgba(255,255,255,0.2);
 }
 .panel .panel-heading .form-control{
@@ -71,7 +82,7 @@
 }
 .panel .panel-body{ padding: 0; }
 .panel .panel-body .table thead tr th{
-    color: #fff;
+    color: black;
     background-color: rgba(255, 255, 255, 0.2);
     font-size: 16px;
     font-weight: 500;
@@ -80,7 +91,7 @@
     border: none;
 }
 .panel .panel-body .table tbody tr td{
-    color: #fff;
+    color: black;
     font-size: 15px;
     padding: 10px 12px;
     vertical-align: middle;
