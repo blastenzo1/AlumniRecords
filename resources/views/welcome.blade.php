@@ -25,13 +25,15 @@
                             <div class="card-body">
                                 <h4 class="card-title">Silliman Login</h4>
                                 <form method="POST" class="my-login-validation" novalidate="">
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="email">E-Mail Address</label>
                                         <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
                                         <div class="invalid-feedback">
                                             Email is invalid
                                         </div>
-                                    </div>
+                                    </div> --}}
+
+                                    
 
                                     <div class="form-group">
                                         <label for="password">Password
