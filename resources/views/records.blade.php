@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
+  
+  <title>Records</title>
 
     <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     {{-- -- --}}
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> --}}
     <link rel="stylesheet" href='{{ asset('app.css') }}'>
 
 </head>
@@ -20,30 +22,28 @@
 
   <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
     <div class="p-6">
-        <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
+        <a href="{{ route('dashboard') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
           <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="h-auto w-auto">
         </a>
-        {{-- <button class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
-            <i class="fas fa-plus mr-3"></i> New Report
-        </button> --}}
     </div>
+    
     <nav class="text-white text-base font-semibold pt-3">
-        <a href="index.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-            <i class="fas fa-tachometer-alt mr-3"></i>
-            Dashboard
+        <a href="{{ route('dashboard') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+          <i class="fas fa-tachometer-alt mr-3"></i>
+          Dashboard
         </a>
-        <a href="blank.html" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+        <a href="{{ route('records') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
             <i class="fas fa-sticky-note mr-3"></i>
             Records
         </a>
-        <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+        <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
             <i class="fas fa-table mr-3"></i>
             Reports
         </a> 
-    </nav>
-    <a href="#" class="absolute w-full userWel bottom-0 flex items-center justify-center py-4">
-        username, Welcome!
-    </a>      
+        </nav>
+        <a href="#" class="absolute w-full userWel bottom-0 flex items-center justify-center py-4">
+            username, Welcome!
+        </a>      
   </aside>
 
   <div class="w-full flex flex-col h-screen overflow-y-hidden">
@@ -57,7 +57,7 @@
                 <button x-show="isOpen" @click="is Open = false" class="h-full w-full fixed inset-0 cursor-default"></button>
                 <div x-show="isOpen" class="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16">
                     <a href="#" class="block px-4 py-2 account-link">Account</a>
-                    <a href="#" class="block px-4 py-2 account-link">Sign Out</a>
+                    <a href="{{ route('welcome') }}" class="block px-4 py-2 account-link">Sign Out</a>
                 </div>
             </div>
         </header>
@@ -74,15 +74,15 @@
 
                     <!-- Dropdown Nav -->
                     <nav :class="isOpen ? 'flex': 'hidden'" class="flex flex-col pt-4">
-                        <a href="index.html" class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
+                        <a href="{{ route('dashboard') }}" class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
                             <i class="fas fa-tachometer-alt mr-3"></i>
                             Dashboard
                         </a>
-                        <a href="blank.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                        <a href="{{ route('records') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                             <i class="fas fa-sticky-note mr-3"></i>
                             Records
                         </a>
-                        <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                        <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                             <i class="fas fa-table mr-3"></i>
                             Reports
                         </a>
@@ -90,7 +90,7 @@
                             <i class="fas fa-user mr-3"></i>
                             Account
                         </a>
-                        <a href="#" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                        <a href="{{ route('welcome') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                             <i class="fas fa-sign-out-alt mr-3"></i>
                             Sign Out
                         </a>
@@ -167,7 +167,7 @@
         </main>
 
         <footer class="w-full bg-white text-right p-4">
-          Built by <a target="_blank" href="https://davidgrzyb.com" class="underline">David Grzyb</a>.
+          Silliman University Alumni Records.
         </footer>
       </div>
 
