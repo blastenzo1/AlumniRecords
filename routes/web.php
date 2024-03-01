@@ -31,3 +31,8 @@ Route::get('/records', function () {
 Route::get('/reports', function () {
     return view('reports');
 })->name('reports');
+
+Route::get('/fillupform', function () {
+    return view('fillupform');
+})->name('fillupform');
+
