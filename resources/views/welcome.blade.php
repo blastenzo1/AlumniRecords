@@ -19,6 +19,10 @@
     
     <body>
         <section class="vh-100 gradient-custom">
+        <!-- Add logo column -->
+        <div class="col-12 col-md-4 col-lg-6 col-xl-7 d-flex justify-content-end align-items-start">
+          <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4" style="width: 50%; height: auto; position: absolute; top: 15%; left: 10%;">
+        </div>
             <div class="container py-5 h-100">
               <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -27,6 +31,10 @@
           
                       <div class="mb-md-5 mt-md-4 pb-5">
           
+                        {{-- <!-- Logo -->
+                        <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="h-auto w-auto"> --}}
+
+
                         <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                         <p class="text-black-50 mb-5">Please enter your login and password!</p>
           
