@@ -12,6 +12,8 @@
     <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> --}}
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/> --}}
+
     <link rel="stylesheet" href='{{ asset('app.css') }}'>
 </head>
     
@@ -25,7 +27,8 @@
                 <h1 class="w-full text-3xl text-black pb-6">Forms</h1>
 
                 <div class="flex flex-wrap">
-                    <div class="w-full lg:w-1/2 my-6 pr-0 lg:pr-2">
+                {{-- <div class="flex flex-wrap"> --}}
+                    {{-- <div class="w-full lg:w-1/2 my-6 pr-0 lg:pr-2">
                         <p class="text-xl pb-6 flex items-center">
                             <i class="fas fa-list mr-3"></i> Contact Form
                         </p>
@@ -48,19 +51,63 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="w-full lg:w-1/2 mt-6 pl-0 lg:pl-2">
                         <p class="text-xl pb-6 flex items-center">
-                            <i class="fas fa-list mr-3"></i> Checkout Form
+                            <i class="fas fa-list mr-3"></i> SU Alumni Update & Clearance Form  
                         </p>
                         <div class="leading-loose">
                             <form class="p-10 bg-white rounded shadow-xl">
-                                <p class="text-lg text-gray-800 font-medium pb-4">Customer information</p>
-                                <div class="">
-                                    <label class="block text-sm text-gray-600" for="cus_name">Name</label>
-                                    <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Your Name" aria-label="Name">
+                                <p class="text-lg text-gray-800 font-medium pb-4">Personal Information</p>
+                                
+                                {{-- A --}}
+                                <div class="inline-block mt-2 w-1/3 pr-1">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Last Name</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Last Name" aria-label="Name">
                                 </div>
+                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/3">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">First Name</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="First Name" aria-label="Name">
+                                </div>
+                                <div class="inline-block mt-2 -mx-1 pl-3 w-1/3">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Middle Name</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Middle Name" aria-label="Name">
+                                </div>
+
+                                {{-- B --}}
+                                <div class="inline-block mt-2 w-1/3 pr-1">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Birthdate</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_birth" name="cus_birth" type="text" required="" placeholder="Date of Birth" aria-label="Birth">
+                                </div>
+                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/3">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Sex</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_sex" name="cus_sex" type="text" required="" placeholder="Sex" aria-label="Sex">
+                                </div>
+                                <div class="inline-block mt-2 -mx-1 pl-3 w-1/3">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Nationality</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_nat" name="cus_nat" type="text" required="" placeholder="Nationality" aria-label="Nationality">
+                                </div>
+
+                                {{-- C --}}
+                                <div class="inline-block mt-2 w-1/3 pr-1">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Civil Status</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_birth" name="cus_birth" type="text" required="" placeholder="Date of Birth" aria-label="Birth">
+                                </div>
+                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/3">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Spouse Name</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_sex" name="cus_sex" type="text" required="" placeholder="Sex" aria-label="Sex">
+                                </div>
+                                <div class="inline-block mt-2 -mx-1 pl-3 w-1/3">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Nationality</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_nat" name="cus_nat" type="text" required="" placeholder="Nationality" aria-label="Nationality">
+                                </div>
+
+
+                                
+
+  
+
                                 <div class="mt-2">
                                     <label class="block text-sm text-gray-600" for="cus_email">Email</label>
                                     <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Your Email" aria-label="Email">
@@ -70,15 +117,15 @@
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Street" aria-label="Email">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="hidden text-sm block text-gray-600" for="cus_email">City</label>
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">City</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="City" aria-label="Email">
                                 </div>
                                 <div class="inline-block mt-2 w-1/2 pr-1">
-                                    <label class="hidden block text-sm text-gray-600" for="cus_email">Country</label>
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Country</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Country" aria-label="Email">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                                    <label class="hidden block text-sm text-gray-600" for="cus_email">Zip</label>
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Zip</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="Email">
                                 </div>
                                 <p class="text-lg text-gray-800 font-medium py-4">Payment information</p>
@@ -143,14 +190,15 @@
         </div>
         </section>
 
-
-
-                                                                             
+                                                             
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="js/my-login.js"></script>
+
+        
+        
     </body>
 
 
