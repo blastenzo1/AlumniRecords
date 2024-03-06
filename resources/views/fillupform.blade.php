@@ -63,93 +63,60 @@
                                 
                                 {{-- A --}}
                                 <div class="inline-block mt-2 w-1/3 pr-1">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Last Name</label>
+                                    <label class=" text-sm text-gray-600" for="cus_name">Last Name</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Last Name" aria-label="Name">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/3">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">First Name</label>
+                                    <label class=" text-sm text-gray-600" for="cus_name">First Name</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="First Name" aria-label="Name">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-3 w-1/3">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Middle Name</label>
+                                    <label class=" text-sm text-gray-600" for="cus_name">Middle Name</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Middle Name" aria-label="Name">
                                 </div>
 
                                 {{-- B --}}
                                 <div class="inline-block mt-2 w-1/3 pr-1">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Birthdate</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_birth" name="cus_birth" type="text" required="" placeholder="Date of Birth" aria-label="Birth">
+                                    <label class=" text-sm text-gray-600" for="birth">Birthdate</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="birth" name="birth" type="text" required="" placeholder="Date of Birth" aria-label="Birth">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/3">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Sex</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_sex" name="cus_sex" type="text" required="" placeholder="Sex" aria-label="Sex">
+                                    <label class=" text-sm text-gray-600" for="sex">Sex</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="sex" name="sex" type="text" required="" placeholder="Sex" aria-label="Sex">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-3 w-1/3">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Nationality</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_nat" name="cus_nat" type="text" required="" placeholder="Nationality" aria-label="Nationality">
+                                    <label class=" text-sm text-gray-600" for="natio">Nationality</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="natio" name="natio" type="text" required="" placeholder="Nationality" aria-label="Nationality">
                                 </div>
 
                                 {{-- C --}}
                                 <div class="inline-block mt-2 w-1/3 pr-1">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Civil Status</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_birth" name="cus_birth" type="text" required="" placeholder="Date of Birth" aria-label="Birth">
+                                    <label class=" text-sm text-gray-600" for="status">Civil Status</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="status" name="status" type="text" required="" placeholder="Civil Status" aria-label="Status">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/3">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Spouse Name</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_sex" name="cus_sex" type="text" required="" placeholder="Sex" aria-label="Sex">
+                                    <label class=" text-sm text-gray-600" for="spouse">Spouse Name</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="spouse" name="spouse" type="text" required="" placeholder="Spouse Name" aria-label="Spouse">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-3 w-1/3">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Nationality</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_nat" name="cus_nat" type="text" required="" placeholder="Nationality" aria-label="Nationality">
+                                    <label class=" text-sm text-gray-600" for="number">Mobile/Contact Number</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="number" name="number" type="text" required="" placeholder="Contact Number" aria-label="Number">
+                                </div>
+                                <div class="inline-block mt-2 w-1/3 pr-1">
+                                    <label class=" text-sm text-gray-600" for="email">Active Email Address</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" required="" placeholder="Email" aria-label="Email">
                                 </div>
 
-
-                                
-
-  
-
-                                <div class="mt-2">
-                                    <label class="block text-sm text-gray-600" for="cus_email">Email</label>
-                                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Your Email" aria-label="Email">
-                                </div>
-                                <div class="mt-2">
-                                    <label class=" block text-sm text-gray-600" for="cus_email">Address</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Street" aria-label="Email">
-                                </div>
-                                <div class="mt-2">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">City</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="City" aria-label="Email">
-                                </div>
-                                <div class="inline-block mt-2 w-1/2 pr-1">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Country</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Country" aria-label="Email">
-                                </div>
-                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Zip</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="Email">
-                                </div>
-                                <p class="text-lg text-gray-800 font-medium py-4">Payment information</p>
-                                <div class="">
-                                    <label class="block text-sm text-gray-600" for="cus_name">Card</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Card Number MM/YY CVC" aria-label="Name">
-                                </div>
-                                <div class="mt-6">
-                                    <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">$3.00</button>
-                                </div>
                             </form>
                         </div>
                     <br>
+                        
                         <div class="leading-loose">
                             <form class="p-10 bg-white rounded shadow-xl">
-                                <p class="text-lg text-gray-800 font-medium pb-4">Customer information</p>
-                                <div class="">
-                                    <label class="block text-sm text-gray-600" for="cus_name">Name</label>
-                                    <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Your Name" aria-label="Name">
-                                </div>
-                                <div class="mt-2">
-                                    <label class="block text-sm text-gray-600" for="cus_email">Email</label>
-                                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Your Email" aria-label="Email">
-                                </div>
+                                
+                            <p class="text-lg text-gray-800 font-medium pb-4">Address Information</p>                               
+                            <p class="text-lg text-gray-800 font-light pb-4">Current Address</p>
+
                                 <div class="mt-2">
                                     <label class=" block text-sm text-gray-600" for="cus_email">Address</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Street" aria-label="Email">
@@ -166,14 +133,26 @@
                                     <label class="hidden text-sm text-gray-600" for="cus_email">Zip</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="Email">
                                 </div>
-                                <p class="text-lg text-gray-800 font-medium py-4">Payment information</p>
-                                <div class="">
-                                    <label class="block text-sm text-gray-600" for="cus_name">Card</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Card Number MM/YY CVC" aria-label="Name">
+
+                            <p class="text-lg text-gray-800 font-light pb-4">Home Address</p>
+
+                                <div class="mt-2">
+                                    <label class=" block text-sm text-gray-600" for="cus_email">Address</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Street" aria-label="Email">
                                 </div>
-                                <div class="mt-6">
-                                    <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">$3.00</button>
+                                <div class="mt-2">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">City</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="City" aria-label="Email">
                                 </div>
+                                <div class="inline-block mt-2 w-1/2 pr-1">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Country</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Country" aria-label="Email">
+                                </div>
+                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
+                                    <label class="hidden text-sm text-gray-600" for="cus_email">Zip</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="Email">
+                                </div>
+                                
                             </form>
                         </div>
 
@@ -190,7 +169,12 @@
         </div>
         </section>
 
-                                                             
+        <script>
+            // Initialization for ES Users
+            import { Input, Ripple, initMDB } from "mdb-ui-kit";
+
+            initMDB({ Input, Ripple });    
+        </script>                                                     
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
