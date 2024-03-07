@@ -35,6 +35,14 @@
 
 
 
+    .container {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+    }
+
+
+
 
 
 .demo{ font-family: 'Noto Sans', sans-serif; }
