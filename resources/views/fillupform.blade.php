@@ -24,9 +24,9 @@
         <section class="vh-100 gradient-custom flex justify-center items-center">
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
-                <h1 class="w-full text-3xl text-black pb-6">Forms</h1>
+                <h1 class="w-full text-3xl text-white pb-6">Forms</h1>
 
-                <div class="container flex flex-wrap">
+                <div class="container ">
 
                     <div class="w-full lg:w-1/2 mt-6 pl-0 lg:pl-2">
                         <p class="text-xl pb-6 flex items-center">
