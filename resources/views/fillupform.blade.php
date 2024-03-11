@@ -26,58 +26,72 @@
             <main class="w-full flex-grow p-6">
                 <h1 class="w-full text-3xl text-white pb-6">Forms</h1>
 
-                <div class="container ">
-
-                    <div class="w-full lg:w-1/2 mt-6 pl-0 lg:pl-2">
-                        <p class="text-xl pb-6 flex items-center">
+                <div class="container">
+                {{-- <div class="container mx-auto max-w-screen-lg"> --}}
+                    <div class="w-full lg:w-1/2 mt-6 lg:pl-2">
+                        <p class="text-xl pb-6 items-center">
                             <i class="fas fa-list mr-3"></i> SU Alumni Update & Clearance Form  
                         </p>
                         <div class="leading-loose">
                             <form class="p-10 bg-white rounded shadow-xl">
                                 <p class="text-lg text-gray-800 font-medium pb-4">Personal Information</p>
                                 
-                                {{-- A --}}
-                                <div class="inline-block mt-2 w-1/3 pr-1">
+                                {{-- R1 --}}
+                                <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class=" text-sm text-gray-600" for="cus_name">Last Name</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Last Name" aria-label="Name">
                                 </div>
-                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/3">
+                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                                     <label class=" text-sm text-gray-600" for="cus_name">First Name</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="First Name" aria-label="Name">
                                 </div>
-                                <div class="inline-block mt-2 -mx-1 pl-3 w-1/3">
+
+                                {{-- R2 --}}
+                                <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class=" text-sm text-gray-600" for="cus_name">Middle Name</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Middle Name" aria-label="Name">
                                 </div>
-
-                                {{-- B --}}
-                                <div class="inline-block mt-2 w-1/3 pr-1">
+                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                                     <label class=" text-sm text-gray-600" for="birth">Birthdate</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="birth" name="birth" type="text" required="" placeholder="Date of Birth" aria-label="Birth">
                                 </div>
-                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/3">
+
+                                {{-- R3  --}}
+                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                                     <label class=" text-sm text-gray-600" for="sex">Sex</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="sex" name="sex" type="text" required="" placeholder="Sex" aria-label="Sex">
                                 </div>
-                                <div class="inline-block mt-2 -mx-1 pl-3 w-1/3">
+                                <div class="inline-block mt-2 -mx-1 pl-3 w-1/2">
                                     <label class=" text-sm text-gray-600" for="natio">Nationality</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="natio" name="natio" type="text" required="" placeholder="Nationality" aria-label="Nationality">
                                 </div>
 
-                                {{-- C --}}
-                                <div class="inline-block mt-2 w-1/3 pr-1">
+                                {{-- R4  --}}
+                                <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class=" text-sm text-gray-600" for="status">Civil Status</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="status" name="status" type="text" required="" placeholder="Civil Status" aria-label="Status">
                                 </div>
-                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/3">
+                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                                     <label class=" text-sm text-gray-600" for="spouse">Spouse Name</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="spouse" name="spouse" type="text" required="" placeholder="Spouse Name" aria-label="Spouse">
                                 </div>
-                                <div class="inline-block mt-2 -mx-1 pl-3 w-1/3">
+
+                                {{-- R5  --}}
+                                <div class="inline-block mt-2 w-1/2 pr-1">
+                                    <label class=" text-sm text-gray-600" for="status">Civil Status</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="status" name="status" type="text" required="" placeholder="Civil Status" aria-label="Status">
+                                </div>
+                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
+                                    <label class=" text-sm text-gray-600" for="spouse">Spouse Name</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="spouse" name="spouse" type="text" required="" placeholder="Spouse Name" aria-label="Spouse">
+                                </div>
+
+                                {{-- R5  --}}
+                                <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class=" text-sm text-gray-600" for="number">Mobile/Contact Number</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="number" name="number" type="text" required="" placeholder="Contact Number" aria-label="Number">
                                 </div>
-                                <div class="inline-block mt-2 w-1/3 pr-1">
+                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                                     <label class=" text-sm text-gray-600" for="email">Active Email Address</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" required="" placeholder="Email" aria-label="Email">
                                 </div>

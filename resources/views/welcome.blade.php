@@ -24,7 +24,7 @@
           <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4" style="width: 50%; height: auto; position: absolute; top: 15%; left: 10%;">
         </div>
             <div class=" py-5 h-100">
-              <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="row lg:w-1/2 mt-6 lg:pl-2 d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                   <div class="card bg-light text-black" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
