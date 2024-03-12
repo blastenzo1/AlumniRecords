@@ -20,18 +20,25 @@
     {{-- <body class="my-login-page d-flex align-items-center justify-content-center" style="min-height:100vh;min-width:100vw;"> --}}
     
     <body>
-       
+        
         <section class="vh-100 gradient-custom flex justify-center items-center">
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
-            <main class="w-full flex-grow p-6">
-                <h1 class="w-full text-3xl text-white pb-6">Forms</h1>
-
-                <div class="container">
-                {{-- <div class="container mx-auto max-w-screen-lg"> --}}
+            <main class="w-full p-6">
+                {{-- <h1 class="w-full text-3xl text-white pb-6">Forms</h1> --}}
+                <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4" style="width: 20%; height: auto; position: absolute; top: 5%; left: 2%;">
+                {{-- <div class="container"> --}}
+                <div class="container mx-auto max-w-screen-xxl pt-40">
                     <div class="w-full lg:w-1/2 mt-6 lg:pl-2">
-                        <p class="text-xl pb-6 items-center">
-                            <i class="fas fa-list mr-3"></i> SU Alumni Update & Clearance Form  
+                        <p class="text-xl pb-6 items-center font-bold text-white">
+                            SU ALUMNI UPDATE & CLEARANCE FORM <br> 
                         </p>
+
+                        <p class="text-xl pb-6 items-center text-white">
+                            By filling out this form authorizes the SU Alumni & External Affairs Office to use the information for alumni related purposes only. In compliance with R.A. 10173 (Data Privacy Act).
+                            <br> <br> <br>
+                            2020 SU-ALUMNI FORM 72-A
+                        </p>
+
                         <div class="leading-loose">
                             <form class="p-10 bg-white rounded shadow-xl">
                                 <p class="text-lg text-gray-800 font-medium pb-4">Personal Information</p>
@@ -57,26 +64,16 @@
                                 </div>
 
                                 {{-- R3  --}}
-                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
+                                <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class=" text-sm text-gray-600" for="sex">Sex</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="sex" name="sex" type="text" required="" placeholder="Sex" aria-label="Sex">
                                 </div>
-                                <div class="inline-block mt-2 -mx-1 pl-3 w-1/2">
+                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                                     <label class=" text-sm text-gray-600" for="natio">Nationality</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="natio" name="natio" type="text" required="" placeholder="Nationality" aria-label="Nationality">
                                 </div>
 
                                 {{-- R4  --}}
-                                <div class="inline-block mt-2 w-1/2 pr-1">
-                                    <label class=" text-sm text-gray-600" for="status">Civil Status</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="status" name="status" type="text" required="" placeholder="Civil Status" aria-label="Status">
-                                </div>
-                                <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                                    <label class=" text-sm text-gray-600" for="spouse">Spouse Name</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="spouse" name="spouse" type="text" required="" placeholder="Spouse Name" aria-label="Spouse">
-                                </div>
-
-                                {{-- R5  --}}
                                 <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class=" text-sm text-gray-600" for="status">Civil Status</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="status" name="status" type="text" required="" placeholder="Civil Status" aria-label="Status">
@@ -122,7 +119,9 @@
                                     <label class="hidden text-sm text-gray-600" for="cus_email">Zip</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="Email">
                                 </div>
-
+                                <br>
+                                <br>
+                            
                             <p class="text-lg text-gray-800 font-light pb-4">Home Address</p>
 
                                 <div class="mt-2">
