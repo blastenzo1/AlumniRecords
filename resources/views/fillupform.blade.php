@@ -13,7 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> --}}
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/> --}}
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href='{{ asset('app.css') }}'>
 </head>
     
@@ -21,19 +21,30 @@
     
     <body>
         
+        {{-- <header> --}}
+            {{-- <h1 class="w-full text-3xl text-white pb-6">Forms</h1> --}}
+            {{-- <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4" style="width: 25rem; height: auto; position: absolute; top: 5%; left: 2%;">      --}}
+        {{-- </header> --}}
+
+
+
+
         <section class="vh-100 gradient-custom flex justify-center items-center">
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full p-6">
-                {{-- <h1 class="w-full text-3xl text-white pb-6">Forms</h1> --}}
-                <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4 mx-auto md:mx-0 md:absolute md:top-5 md:left-2" style="max-width: 50%; height: auto;">
+            
+            <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4" style="width: 25rem; height: auto; position: relative; top: 3%; left: 2%;">     
+
+            <button style="font-size:24px;background:white;color:#750000;border:none;width:10rem;">Login <i class="fa fa-sign-in"></i></button>   
+
                 {{-- <div class="container"> --}}
-                <div class="container mx-auto max-w-screen-xxl pt-40">
+                <div class="container mx-auto max-w-screen-xxl pt-20">
                     <div class="w-full lg:w-1/2 mt-6 lg:pl-2">
                         <p class="text-xl pb-6 items-center font-bold text-white">
                             SU ALUMNI UPDATE & CLEARANCE FORM <br> 
                         </p>
 
-                        <p class="text-xl pb-6 items-center text-white">
+                        <p class="text-lg pb-6 items-center text-white">
                             By filling out this form authorizes the SU Alumni & External Affairs Office to use the information for alumni related purposes only. In compliance with R.A. 10173 (Data Privacy Act).
                             <br> <br> <br>
                             2020 SU-ALUMNI FORM 72-A

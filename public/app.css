@@ -35,11 +35,24 @@
 
 
 
-    .container {
-        /* width: full; */
-        display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
+.container {
+    /* width: full; */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    }
+
+
+
+@media (max-width: 768px) {
+    header img {
+        width: 100%; /* Adjust this value as needed */
+        max-width: 200px; /* Limit maximum width to prevent it from becoming too small */
+        height: auto; /* Maintain aspect ratio */
+        position: absolute; /* Adjust positioning as needed */
+        top: 5%; /* Adjust top positioning as needed */
+        left: 2%; /* Adjust left positioning as needed */
+    }
     }
 
 
