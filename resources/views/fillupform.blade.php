@@ -25,7 +25,7 @@
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full p-6">
                 {{-- <h1 class="w-full text-3xl text-white pb-6">Forms</h1> --}}
-                <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4" style="width: 20%; height: auto; position: absolute; top: 5%; left: 2%;">
+                <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4 mx-auto md:mx-0 md:absolute md:top-5 md:left-2" style="max-width: 50%; height: auto;">
                 {{-- <div class="container"> --}}
                 <div class="container mx-auto max-w-screen-xxl pt-40">
                     <div class="w-full lg:w-1/2 mt-6 lg:pl-2">
