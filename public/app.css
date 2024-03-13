@@ -46,7 +46,7 @@
 
 @media (max-width: 768px) {
     header img {
-        width: 100%; /* Adjust this value as needed */
+        width: 50%; /* Adjust this value as needed */
         max-width: 200px; /* Limit maximum width to prevent it from becoming too small */
         height: auto; /* Maintain aspect ratio */
         position: absolute; /* Adjust positioning as needed */
