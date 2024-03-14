@@ -109,7 +109,7 @@
       <br><br>
       <div class="w-full overflow-x-hidden border-t flex flex-col">
         <main class="w-full flex-grow p-6">
-          <div class="container">
+          <div class="cont">
             <div class="row">
                 <div class="col-md-offset-1 col-md-10">
                     <div class="panel">

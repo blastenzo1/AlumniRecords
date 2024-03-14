@@ -20,25 +20,20 @@
     {{-- <body class="my-login-page d-flex align-items-center justify-content-center" style="min-height:100vh;min-width:100vw;"> --}}
     
     <body>
-        
-        {{-- <header> --}}
-            {{-- <h1 class="w-full text-3xl text-white pb-6">Forms</h1> --}}
-            {{-- <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4" style="width: 25rem; height: auto; position: absolute; top: 5%; left: 2%;">      --}}
-        {{-- </header> --}}
-
-
-
 
         <section class="vh-100 gradient-custom flex justify-center items-center">
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full p-6">
             
-            <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4" style="width: 25rem; height: auto; position: relative; top: 3%; left: 2%;">     
-
-            <button style="font-size:24px;background:white;color:#750000;border:none;width:10rem;">Login <i class="fa fa-sign-in"></i></button>   
+                <div class="flex justify-between items-start">
+                    <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4" style="width: 20rem; height: auto; position: relative; top: 1%; left: 2%;">
+                    <a href="{{ route('welcome') }}">
+                        <button style="font-size:18px;background:white;color:#750000;border:none;width:6rem;border-radius: 10px;">Login <i class="fa fa-sign-in"></i></button>
+                    </a>
+                </div>
 
                 {{-- <div class="container"> --}}
-                <div class="container mx-auto max-w-screen-xxl pt-20">
+                <div class="container mx-auto max-w-screen-xxl pt-10">
                     <div class="w-full lg:w-1/2 mt-6 lg:pl-2">
                         <p class="text-xl pb-6 items-center font-bold text-white">
                             SU ALUMNI UPDATE & CLEARANCE FORM <br> 
@@ -71,7 +66,7 @@
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                                     <label class=" text-sm text-gray-600" for="birth">Birthdate</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="birth" name="birth" type="text" required="" placeholder="Date of Birth" aria-label="Birth">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="birth" name="birth" type="text" required="" placeholder="MM / DD / YYYY" aria-label="Birth">
                                 </div>
 
                                 {{-- R3  --}}
@@ -107,7 +102,7 @@
                             </form>
                         </div>
                     <br>
-                        
+                        {{-- Address Information --}}
                         <div class="leading-loose">
                             <form class="p-10 bg-white rounded shadow-xl">
                                 
@@ -116,19 +111,19 @@
 
                                 <div class="mt-2">
                                     <label class=" block text-sm text-gray-600" for="cus_email">Address</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Street" aria-label="Email">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Street" aria-label="cStreet">
                                 </div>
                                 <div class="mt-2">
                                     <label class="hidden text-sm text-gray-600" for="cus_email">City</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="City" aria-label="Email">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="City" aria-label="cCity">
                                 </div>
                                 <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class="hidden text-sm text-gray-600" for="cus_email">Country</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Country" aria-label="Email">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Country" aria-label="cCountry">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                                     <label class="hidden text-sm text-gray-600" for="cus_email">Zip</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="Email">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="cZip">
                                 </div>
                                 <br>
                                 <br>
@@ -137,33 +132,67 @@
 
                                 <div class="mt-2">
                                     <label class=" block text-sm text-gray-600" for="cus_email">Address</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Street" aria-label="Email">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Street" aria-label="hStreet">
                                 </div>
                                 <div class="mt-2">
                                     <label class="hidden text-sm text-gray-600" for="cus_email">City</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="City" aria-label="Email">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="City" aria-label="hCity">
                                 </div>
                                 <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class="hidden text-sm text-gray-600" for="cus_email">Country</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Country" aria-label="Email">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Country" aria-label="cCountry">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                                     <label class="hidden text-sm text-gray-600" for="cus_email">Zip</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="Email">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="hZip">
+                                </div>
+                                
+                            </form>
+                        </div>
+                    <br>
+                        {{-- Educational Attainment --}}
+                        <div class="leading-loose">
+                            <form class="p-10 bg-white rounded shadow-xl">
+                                
+                            <p class="text-lg text-gray-800 font-medium pb-4">Educational Attainment</p>                               
+                            <p class="text-sm text-gray-800 font-light pb-4">If you did not finish a whole course at Silliman University please indicate inclusive years attended</p>
+
+                                <div class="mt-2">
+                                    <label class=" block text-sm text-gray-600" for="cus_email">Course/Degree</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="course" name="course" type="text" required="" placeholder="Bachelor of ..." aria-label="Course">
+                                </div>
+                                <div class="mt-2">
+                                    <label class="text-sm text-gray-600" for="cus_email">Year Attended/Graduated</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="attendGrad" name="attendGrad" type="text" required="" placeholder="SY" aria-label="attendedGraduated">
+                                </div>
+                                
+                                <br>
+                                <br>
+                            
+                                <div class="mt-2">
+                                    <label class=" block text-sm text-gray-600" for="cus_email">Course/Degree</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="course" name="course" type="text" required="" placeholder="Bachelor of ..." aria-label="Course">
+                                </div>
+                                <div class="mt-2">
+                                    <label class="text-sm text-gray-600" for="cus_email">Year Attended/Graduated</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="attendGrad" name="attendGrad" type="text" required="" placeholder="SY" aria-label="attendedGraduated">
                                 </div>
                                 
                             </form>
                         </div>
 
-                        <p class="pt-6 text-gray-600">
-                            Source: <a class="underline" href="https://tailwindcomponents.com/component/checkout-form">https://tailwindcomponents.com/component/checkout-form</a>
-                        </p>
+                        <br><br>
+                        <div class="flex justify-center">
+                            <button style="font-size:18px;background:#750000;color:white;border:white;width:6rem;border-radius: 10px; border: 2px solid white; font-weight: bold;">SUBMIT</button>
+                        </div>
+
                     </div>
+
                 </div>
             </main>
     
             <footer class="w-full bg-white text-right p-4">
-                Built by <a target="_blank" href="https://davidgrzyb.com" class="underline">David Grzyb</a>.
+                Silliman University Alumni Records.
             </footer>
         </div>
         </section>
