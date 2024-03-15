@@ -14,9 +14,9 @@
         {{-- Bootstrap --}}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
-    
+
     {{-- <body class="my-login-page d-flex align-items-center justify-content-center" style="min-height:100vh;min-width:100vw;"> --}}
-    
+
     <body>
         <section class="vh-100 gradient-custom">
         <!-- Add logo column -->
@@ -28,37 +28,40 @@
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                   <div class="card bg-light text-black" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
-          
+
                       <div class="mb-md-5 mt-md-4 pb-5">
-          
+
                         {{-- <!-- Logo -->
                         <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="h-auto w-auto"> --}}
 
 
                         <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                         <p class="text-black-50 mb-5">Please enter your login and password!</p>
-          
-                        <div class="form-outline form-white mb-4">
-                          <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                          <label class="form-label" for="typeEmailX">Username</label>
-                        </div>
-          
-                        <div class="form-outline form-white mb-4">
-                          <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                          <label class="form-label" for="typePasswordX">Password</label>
-                        </div>
-          
-                        <button class="btn btn-outline-dark btn-lg px-5" type="submit">Login</button>
-          
+
+                        <form action="{{ route('login') }}" method="POST">
+                            @csrf
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" name="email" id="typeEmailX" class="form-control form-control-lg" />
+                                <label class="form-label" for="typeEmailX">Username</label>
+                            </div>
+
+                            <div class="form-outline form-white mb-4">
+                                <input type="password" name="password" id="typePasswordX" class="form-control form-control-lg" />
+                                <label class="form-label" for="typePasswordX">Password</label>
+                            </div>
+
+                            <button class="btn btn-outline-dark btn-lg px-5" type="submit">Login</button>
+                        </form>
+
                       </div>
-          
+
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-                                                                             
+
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
