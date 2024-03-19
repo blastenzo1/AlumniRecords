@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AlumniController;
+use App\Models\Alumni;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,7 +13,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('alumni', function (Blueprint $table) {
+        Schema::create('alumnis', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
             $table->string('middle_name')->nullable();
@@ -28,6 +30,22 @@ return new class extends Migration
             $table->string('awards')->nullable();
             $table->timestamps();
         });
+
+        Alumni::create([
+            'first_name' => 'John',
+            'middle_name' => 'David',
+            'last_name' => 'Doe',
+            'sex' => 'Male',
+            'status' => 'Alumni',
+            'nationality' => 'American',
+            'occupation' => 'Software Engineer',
+            'email' => 'john.doe@example.com',
+            'living_status' => 'Alive',
+            'birthdate' => '1990-01-01',
+            'address' => '123 Main Street, City, Country',
+            'education' => 'Bachelor of Science in Computer Science',
+            'awards' => 'Best Student Award, 2010',
+        ]);
     }
 
     /**

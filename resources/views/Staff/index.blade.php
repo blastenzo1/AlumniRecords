@@ -25,7 +25,7 @@
                 <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="h-auto w-auto">
             </a>
         </div>
-        
+
         <nav class="text-white text-base font-semibold pt-3">
             <a href="{{ route('dashboard') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-tachometer-alt mr-3"></i>
@@ -38,11 +38,11 @@
             <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
                 Reports
-            </a> 
+            </a>
         </nav>
         <a href="#" class="absolute w-full userWel bottom-0 flex items-center justify-center py-4">
             username, Welcome!
-        </a>      
+        </a>
     </aside>
 
     <div class="w-full flex flex-col h-screen overflow-y-hidden">
@@ -56,7 +56,7 @@
                 <button x-show="isOpen" @click="isOpen = false" class="h-full w-full fixed inset-0 cursor-default"></button>
                 <div x-show="isOpen" class="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16">
                     <a href="#" class="block px-4 py-2 account-link hover:text-white">Account</a>
-                    <a href="{{ route('welcome') }}" class="block px-4 py-2 account-link hover:text-white">Sign Out</a>
+                    <a href="{{ route('logout.perform') }}" class="block px-4 py-2 account-link hover:text-white">Sign Out</a>
                 </div>
             </div>
         </header>
@@ -89,7 +89,7 @@
                             <i class="fas fa-user mr-3"></i>
                             Account
                         </a>
-                        <a href="{{ route('welcome') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                        <a href="{{ route('logout.perform') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                             <i class="fas fa-sign-out-alt mr-3"></i>
                             Sign Out
                         </a>
@@ -102,34 +102,34 @@
                     </button> -->
                 </header>
         {{-- ^responsiveness --}}
-    
-        
+
+
         {{-- MAIN BODY --}}
         <div class="w-full overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
                 <h1 class="text-3xl text-black pb-6">Dashboard</h1>
-        
+
                 <div class="w-full mt-12 flex justify-center"> <!-- Added 'flex justify-center' to center the button -->
                     <button class="bg-white cta-btn font-semibold py-2 px-6 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center"> <!-- Modified button classes and added 'px-6 rounded-full' to make it square -->
                         <i class="fas fa-plus mr-3"></i> Add Record
                     </button>
                 </div>
-        
+
             </main>
-        
+
             <footer class="w-full bg-white text-right p-4">
                 Silliman University Alumni Records.
             </footer>
         </div>
         {{-- ========= --}}
-        
+
     </div>
 
     <!-- AlpineJS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-    
+
 
 
     <script>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
-  
+
   <title>Records</title>
 
     <!-- Tailwind -->
@@ -26,7 +26,7 @@
           <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="h-auto w-auto">
         </a>
     </div>
-    
+
     <nav class="text-white text-base font-semibold pt-3">
         <a href="{{ route('dashboard') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
           <i class="fas fa-tachometer-alt mr-3"></i>
@@ -39,11 +39,11 @@
         <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
             <i class="fas fa-table mr-3"></i>
             Reports
-        </a> 
+        </a>
         </nav>
         <a href="#" class="absolute w-full userWel bottom-0 flex items-center justify-center py-4">
             username, Welcome!
-        </a>      
+        </a>
   </aside>
 
   <div class="w-full flex flex-col h-screen overflow-y-hidden">
@@ -57,7 +57,7 @@
                 <button x-show="isOpen" @click="is Open = false" class="h-full w-full fixed inset-0 cursor-default"></button>
                 <div x-show="isOpen" class="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16">
                     <a href="#" class="block px-4 py-2 account-link">Account</a>
-                    <a href="{{ route('welcome') }}" class="block px-4 py-2 account-link">Sign Out</a>
+                    <a href="{{ route('logout.perform') }}" class="block px-4 py-2 account-link">Sign Out</a>
                 </div>
             </div>
         </header>
@@ -90,7 +90,7 @@
                             <i class="fas fa-user mr-3"></i>
                             Account
                         </a>
-                        <a href="{{ route('welcome') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                        <a href="{{ route('logout.perform') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                             <i class="fas fa-sign-out-alt mr-3"></i>
                             Sign Out
                         </a>
@@ -104,7 +104,7 @@
                 </header>
         {{-- ^responsiveness --}}
 
-        
+
         {{-- MAIN BODY --}}
       <br><br>
       <div class="w-full overflow-x-hidden border-t flex flex-col">
@@ -130,36 +130,31 @@
 
                       <div class="panel-body table-responsive">
                         <table id="table1" class="table">
-                          <thead>
-                          <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Verified</th>
-                          </tr>
-                          </thead>
-
-                          <tbody>
-                          {{-- @foreach ($users as $user) --}}
-                          {{-- <tr>
-                            <td>{{$user->id}}</td>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->email_verified_at}}</td>
-                          </tr> --}}
-
-                          <tr>
-                            <td>20-1-02475</td>
-                            <td>Gerome Jan L Dolorfino</td>
-                            <td>geromeldolorfino@su.edu.ph</td>
-                            <td>12/08/2000</td>
-                          </tr>
-
-
-                          {{-- @endforeach --}}
-                          </tbody>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Nationality</th>
+                                    <th>Awards</th>
+                                    <th>Education</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($alumnis as $alumnus)
+                                    <tr>
+                                        <td>{{ $alumnus->id }}</td>
+                                        <td>{{ $alumnus->first_name }} {{ $alumnus->last_name }}</td>
+                                        <td>{{ $alumnus->email }}</td>
+                                        <td>{{ $alumnus->nationality }}</td>
+                                        <td>{{ $alumnus->education }}</td>
+                                        <td>{{ $alumnus->awards }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                         </table>
-                      </div>
+                    </div>
+
                     </div>
                 </div>
             </div>
@@ -191,7 +186,7 @@
 
 
 </body>
- 
+
 
 
 </html>
