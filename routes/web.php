@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,8 @@ use App\Http\Controllers\DashboardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/form', [FormController::class, 'createForm'])->name('form.create');
+Route::post('/form', [FormController::class, 'storeForm'])->name('form.store');
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
     // Route::get('/', [UserController::class,'show']);

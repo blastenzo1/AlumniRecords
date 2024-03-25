@@ -13,3 +13,6 @@ class AlumniController extends Controller
         return view('staff.records', compact('alumnis'));
     }
 }
+
+
+
