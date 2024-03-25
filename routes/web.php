@@ -24,9 +24,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::group(['middleware' => ['guest']], function() {
         // Route::get('/register', 'RegisterController@show')->name('register.show');
         // Route::post('/register', 'RegisterController@register')->name('register.perform');
+        Route::get('/', function() {
+            return view('welcome');
+        })->name('welcome');
 
-        Route::get('/', 'LoginController@show')->name('login.show');
-        Route::post('/', 'LoginController@login')->name('login.perform');
+        Route::get('/login', 'LoginController@show')->name('login.show');
+        Route::post('/login', 'LoginController@login')->name('login.perform');
 
     });
 
@@ -38,10 +41,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         })->name('reports');
 
         Route::get('/records', [AlumniController::class, 'index'])->name('records');
-
-        Route::get('/fillupform', function () {
-            return view('staff.fillupform');
-        })->name('fillupform');
 
 
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');

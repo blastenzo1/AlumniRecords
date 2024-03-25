@@ -31,21 +31,21 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Alumni::create([
-            'first_name' => 'John',
-            'middle_name' => 'David',
-            'last_name' => 'Doe',
-            'sex' => 'Male',
-            'status' => 'Alumni',
-            'nationality' => 'American',
-            'occupation' => 'Software Engineer',
-            'email' => 'john.doe@example.com',
-            'living_status' => 'Alive',
-            'birthdate' => '1990-01-01',
-            'address' => '123 Main Street, City, Country',
-            'education' => 'Bachelor of Science in Computer Science',
-            'awards' => 'Best Student Award, 2010',
-        ]);
+        // Alumni::create([
+        //     'first_name' => 'John',
+        //     'middle_name' => 'David',
+        //     'last_name' => 'Doe',
+        //     'sex' => 'Male',
+        //     'status' => 'Alumni',
+        //     'nationality' => 'American',
+        //     'occupation' => 'Software Engineer',
+        //     'email' => 'john.doe@example.com',
+        //     'living_status' => 'Alive',
+        //     'birthdate' => '1990-01-01',
+        //     'address' => '123 Main Street, City, Country',
+        //     'education' => 'Bachelor of Science in Computer Science',
+        //     'awards' => 'Best Student Award, 2010',
+        // ]);
     }
 
     /**

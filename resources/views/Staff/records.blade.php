@@ -145,7 +145,6 @@
                                     <tr>
                                         <td>{{ $alumnus->id }}</td>
                                         <td>{{ $alumnus->first_name }} {{ $alumnus->last_name }}</td>
-                                        <td>{{ $alumnus->email }}</td>
                                         <td>{{ $alumnus->nationality }}</td>
                                         <td>{{ $alumnus->education }}</td>
                                         <td>{{ $alumnus->awards }}</td>
