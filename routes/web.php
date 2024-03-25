@@ -43,6 +43,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
             return view('staff.fillupform');
         })->name('fillupform');
 
+        Route::get('/alumnidetails', function () {
+            return view('staff.alumnidetails');
+        })->name('alumnidetails');
+
 
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
     });
