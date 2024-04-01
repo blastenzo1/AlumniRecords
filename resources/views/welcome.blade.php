@@ -94,15 +94,12 @@
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" required="email" placeholder="Email" aria-label="Email">
                                 </div>
                             </div>
-                            <div class="flex justify-center">
-                                <button type="submit" style="font-size:18px;background:#750000;color:white;border:white;width:6rem;border-radius: 10px; border: 2px solid white; font-weight: bold;">SUBMIT</button>
-                            </div>
-                        </form>
+                            
 
                         <br>
 
                         {{-- Address Information --}}
-                        <div class="leading-loose">
+                        
                             <div class="p-10 bg-white rounded shadow-xl">
                                 <p class="text-lg text-gray-800 font-medium pb-4">Address Information</p>
                                 <p class="text-lg text-gray-800 font-light pb-4">Current Address</p>
@@ -146,11 +143,11 @@
                                 </div>
 
                             </div>
-                        </div>
+                        
 
                         <br>
                         {{-- Educational Attainment --}}
-                        <div class="leading-loose">
+                        
                             <div class="p-10 bg-white rounded shadow-xl">
                                 <p class="text-lg text-gray-800 font-medium pb-4">Educational Attainment</p>
                                 <p class="text-sm text-gray-800 font-light pb-4">If you did not finish a whole course at Silliman University please indicate inclusive years attended</p>
@@ -176,7 +173,11 @@
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="attendGrad" name="attendGrad" type="text" required="" placeholder="SY" aria-label="attendedGraduated">
                                 </div>
                             </div>
-                        </div>
+                            
+                            <div class="flex justify-center">
+                                <button type="submit" style="font-size:18px;background:#750000;color:white;border:white;width:6rem;border-radius: 10px; border: 2px solid white; font-weight: bold;">SUBMIT</button>
+                            </div>
+                        </form>
 
                         <br><br>
 
