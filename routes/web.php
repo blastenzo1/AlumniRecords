@@ -30,6 +30,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
             return view('welcome');
         })->name('welcome');
 
+        Route::get('/form', [FormController::class, 'createForm'])->name('form.create');
+        Route::post('/form', [FormController::class, 'storeForm'])->name('form.store');
+
         Route::get('/login', 'LoginController@show')->name('login.show');
         Route::post('/login', 'LoginController@login')->name('login.perform');
 

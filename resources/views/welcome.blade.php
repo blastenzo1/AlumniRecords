@@ -15,10 +15,7 @@
     <link rel="stylesheet" href='{{ asset('app.css') }}'>
 </head>
 
-    {{-- <body class="my-login-page d-flex align-items-center justify-content-center" style="min-height:100vh;min-width:100vw;"> --}}
-
     <body>
-
         <section class="vh-100 gradient-custom flex justify-center items-center">
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full p-6">
@@ -43,124 +40,127 @@
                             2020 SU-ALUMNI FORM 72-A
                         </p>
 
-                        <div class="leading-loose">
-                            <form class="p-10 bg-white rounded shadow-xl">
+                        <form method="POST" action="{{ route('form.store') }}" class="leading-loose">
+                            <div class="p-10 bg-white rounded shadow-xl">
                                 <p class="text-lg text-gray-800 font-medium pb-4">Personal Information</p>
 
                                 {{-- R1 --}}
                                 <div class="inline-block mt-2 w-1/2 pr-1">
-                                    <label class=" text-sm text-gray-600" for="cus_name">Last Name</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Last Name" aria-label="Name">
+                                    <label class=" text-sm text-gray-600" for="last_name">Last Name</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="last_name" name="last_name" type="text" required="last_name" placeholder="Last Name" aria-label="Name">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                                    <label class=" text-sm text-gray-600" for="cus_name">First Name</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="First Name" aria-label="Name">
+                                    <label class=" text-sm text-gray-600" for="first_name">First Name</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="first_name" name="first_name" type="text" required="first_name" placeholder="First Name" aria-label="Name">
                                 </div>
 
                                 {{-- R2 --}}
                                 <div class="inline-block mt-2 w-1/2 pr-1">
-                                    <label class=" text-sm text-gray-600" for="cus_name">Middle Name</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Middle Name" aria-label="Name">
+                                    <label class=" text-sm text-gray-600" for="middle_name">Middle Name</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="middle_name" name="middle_name" type="text" required="middle_name" placeholder="Middle Name" aria-label="Name">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                                    <label class=" text-sm text-gray-600" for="birth">Birthdate</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="birth" name="birth" type="text" required="" placeholder="MM / DD / YYYY" aria-label="Birth">
+                                    <label class=" text-sm text-gray-600" for="birthdate">Birthdate</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="birthdate" name="birthdate" type="text" required="birthdate" placeholder="MM / DD / YYYY" aria-label="Birth">
                                 </div>
 
                                 {{-- R3  --}}
                                 <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class=" text-sm text-gray-600" for="sex">Sex</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="sex" name="sex" type="text" required="" placeholder="Sex" aria-label="Sex">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="sex" name="sex" type="text" required="sex" placeholder="Sex" aria-label="Sex">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                                    <label class=" text-sm text-gray-600" for="natio">Nationality</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="natio" name="natio" type="text" required="" placeholder="Nationality" aria-label="Nationality">
+                                    <label class=" text-sm text-gray-600" for="nationality">Nationality</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="nationality" name="nationality" type="text" required="nationality" placeholder="Nationality" aria-label="Nationality">
                                 </div>
 
                                 {{-- R4  --}}
                                 <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class=" text-sm text-gray-600" for="status">Civil Status</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="status" name="status" type="text" required="" placeholder="Civil Status" aria-label="Status">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="status" name="status" type="text" required="status" placeholder="Civil Status" aria-label="Status">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                                     <label class=" text-sm text-gray-600" for="spouse">Spouse Name</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="spouse" name="spouse" type="text" required="" placeholder="Spouse Name" aria-label="Spouse">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="spouse" name="spouse" type="text" required="spouse" placeholder="Spouse Name" aria-label="Spouse">
                                 </div>
 
                                 {{-- R5  --}}
                                 <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class=" text-sm text-gray-600" for="number">Mobile/Contact Number</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="number" name="number" type="text" required="" placeholder="Contact Number" aria-label="Number">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="number" name="number" type="text" required="number" placeholder="Contact Number" aria-label="Number">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
                                     <label class=" text-sm text-gray-600" for="email">Active Email Address</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" required="" placeholder="Email" aria-label="Email">
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" required="email" placeholder="Email" aria-label="Email">
                                 </div>
+                            </div>
+                            <div class="flex justify-center">
+                                <button type="submit" style="font-size:18px;background:#750000;color:white;border:white;width:6rem;border-radius: 10px; border: 2px solid white; font-weight: bold;">SUBMIT</button>
+                            </div>
+                        </form>
 
-                            </form>
-                        </div>
-                    <br>
+                        <br>
+
                         {{-- Address Information --}}
                         <div class="leading-loose">
-                            <form class="p-10 bg-white rounded shadow-xl">
-
-                            <p class="text-lg text-gray-800 font-medium pb-4">Address Information</p>
-                            <p class="text-lg text-gray-800 font-light pb-4">Current Address</p>
+                            <div class="p-10 bg-white rounded shadow-xl">
+                                <p class="text-lg text-gray-800 font-medium pb-4">Address Information</p>
+                                <p class="text-lg text-gray-800 font-light pb-4">Current Address</p>
 
                                 <div class="mt-2">
-                                    <label class=" block text-sm text-gray-600" for="cus_email">Address</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Street" aria-label="cStreet">
+                                    <label class=" block text-sm text-gray-600" for="address">Address</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="address" name="address" type="text" required="" placeholder="Street" aria-label="cStreet">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">City</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="City" aria-label="cCity">
+                                    <label class="hidden text-sm text-gray-600" for="city">City</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="city" name="city" type="text" required="" placeholder="City" aria-label="cCity">
                                 </div>
                                 <div class="inline-block mt-2 w-1/2 pr-1">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Country</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Country" aria-label="cCountry">
+                                    <label class="hidden text-sm text-gray-600" for="country">Country</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="country" name="country" type="text" required="" placeholder="Country" aria-label="cCountry">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Zip</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="cZip">
+                                    <label class="hidden text-sm text-gray-600" for="zipcode">Zip Code</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="zipcode"  name="zipcode" type="text" required="" placeholder="Zip Code" aria-label="cZip Code">
                                 </div>
                                 <br>
                                 <br>
 
-                            <p class="text-lg text-gray-800 font-light pb-4">Home Address</p>
+                                <p class="text-lg text-gray-800 font-light pb-4">Home Address</p>
 
                                 <div class="mt-2">
-                                    <label class=" block text-sm text-gray-600" for="cus_email">Address</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Street" aria-label="hStreet">
+                                    <label class=" block text-sm text-gray-600" for="address">Address</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="address" name="address" type="text" required="" placeholder="Street" aria-label="hStreet">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">City</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="City" aria-label="hCity">
+                                    <label class="hidden text-sm text-gray-600" for="city">City</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="city" name="city" type="text" required="" placeholder="City" aria-label="hCity">
                                 </div>
                                 <div class="inline-block mt-2 w-1/2 pr-1">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Country</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Country" aria-label="cCountry">
+                                    <label class="hidden text-sm text-gray-600" for="country">Country</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="country" name="country" type="text" required="" placeholder="Country" aria-label="cCountry">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                                    <label class="hidden text-sm text-gray-600" for="cus_email">Zip</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="hZip">
+                                    <label class="hidden text-sm text-gray-600" for="zipcode">Zip Code</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="zipcode"  name="zipcode" type="text" required="" placeholder="Zip Code" aria-label="hZip Code">
                                 </div>
 
-                            </form>
+                            </div>
                         </div>
-                    <br>
+
+                        <br>
                         {{-- Educational Attainment --}}
                         <div class="leading-loose">
-                            <form class="p-10 bg-white rounded shadow-xl">
-
-                            <p class="text-lg text-gray-800 font-medium pb-4">Educational Attainment</p>
-                            <p class="text-sm text-gray-800 font-light pb-4">If you did not finish a whole course at Silliman University please indicate inclusive years attended</p>
+                            <div class="p-10 bg-white rounded shadow-xl">
+                                <p class="text-lg text-gray-800 font-medium pb-4">Educational Attainment</p>
+                                <p class="text-sm text-gray-800 font-light pb-4">If you did not finish a whole course at Silliman University please indicate inclusive years attended</p>
 
                                 <div class="mt-2">
-                                    <label class=" block text-sm text-gray-600" for="cus_email">Course/Degree</label>
+                                    <label class=" block text-sm text-gray-600" for="course">Course/Degree</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="course" name="course" type="text" required="" placeholder="Bachelor of ..." aria-label="Course">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="text-sm text-gray-600" for="cus_email">Year Attended/Graduated</label>
+                                    <label class="text-sm text-gray-600" for="attendGrad">Year Attended/Graduated</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="attendGrad" name="attendGrad" type="text" required="" placeholder="SY" aria-label="attendedGraduated">
                                 </div>
 
@@ -168,21 +168,17 @@
                                 <br>
 
                                 <div class="mt-2">
-                                    <label class=" block text-sm text-gray-600" for="cus_email">Course/Degree</label>
+                                    <label class=" block text-sm text-gray-600" for="course">Course/Degree</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="course" name="course" type="text" required="" placeholder="Bachelor of ..." aria-label="Course">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="text-sm text-gray-600" for="cus_email">Year Attended/Graduated</label>
+                                    <label class="text-sm text-gray-600" for="attendGrad">Year Attended/Graduated</label>
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="attendGrad" name="attendGrad" type="text" required="" placeholder="SY" aria-label="attendedGraduated">
                                 </div>
-
-                            </form>
+                            </div>
                         </div>
 
                         <br><br>
-                        <div class="flex justify-center">
-                            <button style="font-size:18px;background:#750000;color:white;border:white;width:6rem;border-radius: 10px; border: 2px solid white; font-weight: bold;">SUBMIT</button>
-                        </div>
 
                     </div>
 
