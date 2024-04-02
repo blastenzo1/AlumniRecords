@@ -42,7 +42,7 @@
                             @csrf
                             <div class="form-outline form-white mb-4">
                                 <input type="text" name="email" id="email" class="form-control form-control-lg" />
-                                <label class="form-label" for="email">Email</label>
+                                <label class="form-label" for="email">Username</label>
                             </div>
 
                             <div class="form-outline form-white mb-4">
