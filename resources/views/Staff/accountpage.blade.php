@@ -144,7 +144,7 @@
                                             <label class="form-label" for="password">Password</label>
                                         </div>
             
-                                        <button class="btn btn-outline-dark btn-dark btn-lg px-5" type="submit">Login</button>
+                                        <button class="btn btn-outline-dark btn-dark btn-lg px-5" type="submit">Add new user</button>
                                     </form>
                                 </div>
                             
