@@ -55,6 +55,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
             return view('staff.alumnidetails');
         })->name('alumnidetails');
 
+        Route::get('/accountpage', function () {
+            return view('staff.accountpage');
+        })->name('accountpage');
+
 
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
     });
