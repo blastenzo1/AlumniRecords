@@ -17,7 +17,6 @@ class Alumni extends Model
         'email',
         'living_status',
         'birthdate',
-        'address',
         'education',
         'awards',
     ];

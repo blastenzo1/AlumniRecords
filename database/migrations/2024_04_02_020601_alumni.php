@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('alumnis', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // This already sets the 'id' column as the primary key
             $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name');
@@ -27,27 +27,12 @@ return new class extends Migration
             $table->string('email');
             $table->string('living_status');
             $table->date('birthdate');
-            $table->text('address');
             $table->string('education');
             $table->string('awards')->nullable();
             $table->timestamps();
         });
 
-        //Alumni::create([
-        //'first_name' => 'John',
-        //'middle_name' => 'David',
-       // 'last_name' => 'Doe',
-       // 'sex' => 'Male',
-       // 'status' => 'Alumni',
-       // 'nationality' => 'American',
-       // 'occupation' => 'Software Engineer',
-       // 'email' => 'john.doe@example.com',
-        //'living_status' => 'Alive',
-        //'birthdate' => '1990-01-01',
-        //'address' => '123 Main Street, City, Country',
-       // 'education' => 'Bachelor of Science in Computer Science',
-       // 'awards' => 'Best Student Award, 2010',
-        // ]);
+
     }
 
     /**
@@ -55,6 +40,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('alumni');
+        Schema::dropIfExists('alumnis');
     }
 };
