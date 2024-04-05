@@ -109,8 +109,8 @@
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="address" name="address" type="text" required="" placeholder="Street" aria-label="cStreet">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="hidden text-sm text-gray-600" for="city">City</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="city" name="city" type="text" required="" placeholder="City" aria-label="cCity">
+                                    <label class="hidden text-sm text-gray-600" for="city">City/Province</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="city" name="city" type="text" required="" placeholder="City/Province" aria-label="cCity">
                                 </div>
                                 <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class="hidden text-sm text-gray-600" for="country">Country</label>
@@ -130,8 +130,8 @@
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="address" name="address" type="text" required="" placeholder="Street" aria-label="hStreet">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="hidden text-sm text-gray-600" for="city">City</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="city" name="city" type="text" required="" placeholder="City" aria-label="hCity">
+                                    <label class="hidden text-sm text-gray-600" for="city">City/Province</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="city" name="city" type="text" required="" placeholder="City/Province" aria-label="hCity">
                                 </div>
                                 <div class="inline-block mt-2 w-1/2 pr-1">
                                     <label class="hidden text-sm text-gray-600" for="country">Country</label>
