@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DataFormRequest extends FormRequest
+class AddressFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,16 +22,14 @@ class DataFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'last_name' => 'required',
-            'first_name' => 'required',
-            'middle_name' => 'required',
-            'birthdate' => 'required',
-            'sex' => 'required',
-            'nationality' => 'required',
-            'status' => 'required',
-            'spouse' => 'required',
-            'number' => 'required',
-            'email' => 'required|email',
+            'current_street' => 'nullable',
+            'current_city' => 'nullable',
+            'current_country' => 'nullable',
+            'current_zip_code' => 'nullable',
+            'home_street' => 'nullable',
+            'home_city' => 'nullable',
+            'home_country' => 'nullable',
+            'home_zip_code' => 'nullable',
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\EducationAttainment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,9 +21,26 @@ class FormData extends Model
         'email',
         'living_status',
         'birthdate',
-        'address',
         'education',
         'awards'
         // Add other fields as needed
     ];
+    public function addresses()
+    {
+        return $this->hasMany(Address::class);
+    }
+
+    public function currentAddress()
+    {
+        return $this->hasOne(Address::class)->where('type', 'current');
+    }
+
+    public function homeAddress()
+    {
+        return $this->hasOne(Address::class)->where('type', 'home');
+    }
+    public function educationAttainments()
+    {
+        return $this->hasMany(EducationAttainment::class);
+    }
 }

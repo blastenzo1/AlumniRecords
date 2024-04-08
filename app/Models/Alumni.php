@@ -7,18 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Alumni extends Model
 {
     protected $fillable = [
+        'last_name',
         'first_name',
         'middle_name',
-        'last_name',
-        'sex',
-        'status',
-        'nationality',
-        'occupation',
-        'email',
-        'living_status',
         'birthdate',
-        'education',
-        'awards',
+        'sex',
+        'nationality',
+        'status',
+        'spouse',
+        'number',
+        'email'
     ];
 
     protected $casts = [

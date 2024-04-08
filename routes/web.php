@@ -17,21 +17,15 @@ use App\Http\Controllers\FormController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/form', [FormController::class, 'createForm'])->name('form.create');
-Route::post('/form', [FormController::class, 'storeForm'])->name('form.store');
+
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
-    // Route::get('/', [UserController::class,'show']);
-
     Route::group(['middleware' => ['guest']], function() {
         // Route::get('/register', 'RegisterController@show')->name('register.show');
         // Route::post('/register', 'RegisterController@register')->name('register.perform');
-        Route::get('/', function() {
-            return view('welcome');
-        })->name('welcome');
 
-        Route::get('/form', [FormController::class, 'createForm'])->name('form.create');
-        Route::post('/form', [FormController::class, 'storeForm'])->name('form.store');
+        Route::get('/', [FormController::class, 'index']);
+        Route::post('/', [FormController::class, 'store'])->name('form.store');
 
         Route::get('/login', 'LoginController@show')->name('login.show');
         Route::post('/login', 'LoginController@login')->name('login.perform');

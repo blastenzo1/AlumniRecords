@@ -29,18 +29,34 @@
 
                 {{-- <div class="container"> --}}
                 <div class="container mx-auto max-w-screen-xxl pt-10">
-                    <div class="w-full lg:w-1/2 mt-6 lg:pl-2">
-                        <p class="text-xl pb-6 items-center font-bold text-white">
+                    <div class="w-full lg:w-1/2 mt-6 lg:pl-2 space-y-4">
+                        <p class="text-xl items-center font-bold text-white">
                             SU ALUMNI UPDATE & CLEARANCE FORM <br>
                         </p>
 
-                        <p class="text-lg pb-6 items-center text-white">
+                        <p class="text-lg items-center text-white">
                             By filling out this form authorizes the SU Alumni & External Affairs Office to use the information for alumni related purposes only. In compliance with R.A. 10173 (Data Privacy Act).
                             <br> <br> <br>
                             2020 SU-ALUMNI FORM 72-A
                         </p>
+                        @if ($errors->any())
+                            <div class="border border-red-900 bg-red-500 px-4 py-6 rounded">
+                                <ul class="text-white">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
-                        <form method="POST" action="{{ route('form.store') }}" class="leading-loose">
+                        @if (session('success'))
+                            <div class="bg-green-500 px-4 py-6 rounded text-white">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
+                        <form method="post" action="{{ route('form.store') }}" class="leading-loose">
+                            @csrf
                             <div class="p-10 bg-white rounded shadow-xl">
                                 <p class="text-lg text-gray-800 font-medium pb-4">Personal Information</p>
 
@@ -94,31 +110,29 @@
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" required="email" placeholder="Email" aria-label="Email">
                                 </div>
                             </div>
-                            
-
                         <br>
 
                         {{-- Address Information --}}
-                        
+
                             <div class="p-10 bg-white rounded shadow-xl">
                                 <p class="text-lg text-gray-800 font-medium pb-4">Address Information</p>
                                 <p class="text-lg text-gray-800 font-light pb-4">Current Address</p>
 
                                 <div class="mt-2">
-                                    <label class=" block text-sm text-gray-600" for="address">Address</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="address" name="address" type="text" required="" placeholder="Street" aria-label="cStreet">
+                                    <label class=" block text-sm text-gray-600" for="current_street">Address</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="current_street" name="current_street" type="text" required="" placeholder="Street" aria-label="cStreet">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="hidden text-sm text-gray-600" for="city">City</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="city" name="city" type="text" required="" placeholder="City" aria-label="cCity">
+                                    <label class="hidden text-sm text-gray-600" for="current_city">City</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="current_city" name="current_city" type="text" required="" placeholder="City" aria-label="cCity">
                                 </div>
                                 <div class="inline-block mt-2 w-1/2 pr-1">
-                                    <label class="hidden text-sm text-gray-600" for="country">Country</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="country" name="country" type="text" required="" placeholder="Country" aria-label="cCountry">
+                                    <label class="hidden text-sm text-gray-600" for="current_country">Country</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="current_country" name="current_country" type="text" required="" placeholder="Country" aria-label="cCountry">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                                    <label class="hidden text-sm text-gray-600" for="zipcode">Zip Code</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="zipcode"  name="zipcode" type="text" required="" placeholder="Zip Code" aria-label="cZip Code">
+                                    <label class="hidden text-sm text-gray-600" for="current_zip_code">Zip Code</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="current_zip_code"  name="current_zip_code" type="text" required="" placeholder="Zip Code" aria-label="cZip Code">
                                 </div>
                                 <br>
                                 <br>
@@ -126,28 +140,25 @@
                                 <p class="text-lg text-gray-800 font-light pb-4">Home Address</p>
 
                                 <div class="mt-2">
-                                    <label class=" block text-sm text-gray-600" for="address">Address</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="address" name="address" type="text" required="" placeholder="Street" aria-label="hStreet">
+                                    <label class=" block text-sm text-gray-600" for="home_street">Address</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="home_street" name="home_street" type="text" required="" placeholder="Street" aria-label="hStreet">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="hidden text-sm text-gray-600" for="city">City</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="city" name="city" type="text" required="" placeholder="City" aria-label="hCity">
+                                    <label class="hidden text-sm text-gray-600" for="home_city">City</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="home_city" name="home_city" type="text" required="" placeholder="City" aria-label="hCity">
                                 </div>
                                 <div class="inline-block mt-2 w-1/2 pr-1">
-                                    <label class="hidden text-sm text-gray-600" for="country">Country</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="country" name="country" type="text" required="" placeholder="Country" aria-label="cCountry">
+                                    <label class="hidden text-sm text-gray-600" for="home_country">Country</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="home_country" name="home_country" type="text" required="" placeholder="Country" aria-label="cCountry">
                                 </div>
                                 <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-                                    <label class="hidden text-sm text-gray-600" for="zipcode">Zip Code</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="zipcode"  name="zipcode" type="text" required="" placeholder="Zip Code" aria-label="hZip Code">
+                                    <label class="hidden text-sm text-gray-600" for="home_zip_code">Zip Code</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="home_zip_code"  name="home_zip_code" type="text" required="" placeholder="Zip Code" aria-label="hZip Code">
                                 </div>
-
                             </div>
-                        
-
                         <br>
                         {{-- Educational Attainment --}}
-                        
+
                             <div class="p-10 bg-white rounded shadow-xl">
                                 <p class="text-lg text-gray-800 font-medium pb-4">Educational Attainment</p>
                                 <p class="text-sm text-gray-800 font-light pb-4">If you did not finish a whole course at Silliman University please indicate inclusive years attended</p>
@@ -157,28 +168,16 @@
                                     <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="course" name="course" type="text" required="" placeholder="Bachelor of ..." aria-label="Course">
                                 </div>
                                 <div class="mt-2">
-                                    <label class="text-sm text-gray-600" for="attendGrad">Year Attended/Graduated</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="attendGrad" name="attendGrad" type="text" required="" placeholder="SY" aria-label="attendedGraduated">
+                                    <label class="text-sm text-gray-600" for="year_attended">Year Attended/Graduated</label>
+                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="year_attended" name="year_attended" type="text" required="" placeholder="SY" aria-label="attendedGraduated">
                                 </div>
 
-                                <br>
-                                <br>
-
-                                <div class="mt-2">
-                                    <label class=" block text-sm text-gray-600" for="course">Course/Degree</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="course" name="course" type="text" required="" placeholder="Bachelor of ..." aria-label="Course">
-                                </div>
-                                <div class="mt-2">
-                                    <label class="text-sm text-gray-600" for="attendGrad">Year Attended/Graduated</label>
-                                    <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="attendGrad" name="attendGrad" type="text" required="" placeholder="SY" aria-label="attendedGraduated">
-                                </div>
                             </div>
-                            
                             <div class="flex justify-center">
                                 <button type="submit" style="font-size:18px;background:#750000;color:white;border:white;width:6rem;border-radius: 10px; border: 2px solid white; font-weight: bold;">SUBMIT</button>
                             </div>
-                        </form>
 
+                        </form>
                         <br><br>
 
                     </div>

@@ -2,9 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\DataFormRequest;
+use App\Http\Requests\AddressFormRequest;
 use Illuminate\Http\Request;
 use App\Models\FormData;
+use App\Models\Alumni;
+use App\Models\Address;
+use App\Models\EducationAttainment;
+use App\Http\Requests\DataFormRequest;
+use App\Http\Requests\EducationFormRequest;
+use Illuminate\Validation\ValidationException;
+
 
 class FormController extends Controller
 {
@@ -13,34 +20,55 @@ class FormController extends Controller
         return view('welcome');
     }
 
-    public function createForm()
+    public function store(DataFormRequest $data_request, AddressFormRequest $address_request, EducationFormRequest $education_request)
     {
-        return view('form.create');
+        try {
+            $validated_data = $data_request->validated();
+            $validated_address = $address_request->validated();
+            $validated_education = $education_request->validated();
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->validator->errors())->withInput();
+        }
+
+        Alumni::create($validated_data);
+        Address::create($validated_address);
+        EducationAttainment::create($validated_education);
+
+        return redirect()->back()->with('success', 'Form submitted successfully!');
     }
 
-    public function storeForm(DataFormRequest $request)
+    public function storeEducationForm(EducationFormRequest $request)
     {
+        // Create a new instance of the EducationAttainment model
+        // $educationAttainment = new EducationAttainment();
 
-        // Create a new instance of the model
-        $formData = new FormData();
+        // Assign education form data to the model's properties
+        // $educationAttainment->info_id = $request->input('info_id');
+        // $educationAttainment->course_degree = $request->input('course_degree');
+        // $educationAttainment->year_graduated_attended = $request->input('year_graduated_attended');
 
-        // Assign form data to the model's properties
-        $formData->first_name = $request->input('first_name');
-        $formData->middle_name = $request->input('middle_name');
-        $formData->last_name = $request->input('last_name');
-        $formData->birthdate = date("M-d-y", strtotime($request->input('birthdate')));
-        $formData->sex = $request->input('sex');
-        $formData->nationality = $request->input('nationality');
-        $formData->status = $request->input('status');
-        $formData->spouse = $request->input('spouse');
-        $formData->number = $request->input('number');
-        $formData->email = $request->input('email');
-        $formData->occupation = $request->input('occupation');
+        // // Save the education data to the database
+        // $educationAttainment->save();
 
-        // Save the data to the database
-        $formData->save();
+        // Create or update person details
+        $Alumni = Alumni::Create(
+            ['id' => $request->alumni_id],
+            $request->only(['first_name', 'middle_name', 'last_name', 'birthdate', 'sex', 'status', 'nationality', 'occupation', 'email'])
+        );
+
+        // Create or update current address
+        $Alumni->addresses()->Create(
+            ['type' => 'current'],
+            $request->only(['current_street', 'current_city_province', 'current_country', 'current_zipcode'])
+        );
+
+        // Create or update home address
+        $Alumni->addresses()->Create(
+            ['type' => 'home'],
+            $request->only(['home_street', 'home_city', 'home_country', 'home_zipcode'])
+        );
 
         // Redirect back or to a success page
-        return redirect()->route('welcome')->with('success', 'Form submitted successfully!');
+        return redirect()->route('welcome')->with('success', 'Education form submitted successfully!');
     }
 }

@@ -14,21 +14,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('alumnis', function (Blueprint $table) {
-            $table->id(); // This already sets the 'id' column as the primary key
+            $table->id();
+            $table->string('last_name');
             $table->string('first_name');
             $table->string('middle_name')->nullable();
-            $table->string('last_name');
+            $table->string('birthdate');
             $table->string('sex');
-            $table->string('status');
             $table->string('nationality');
+            $table->string('status');
             $table->string('spouse');
             $table->integer('number');
-            $table->string('occupation');
             $table->string('email');
-            $table->string('living_status');
-            $table->date('birthdate');
-            $table->string('education');
-            $table->string('awards')->nullable();
+            // $table->string('occupation');
+            // $table->string('living_status');
+            // $table->string('education');
+            // $table->string('awards')->nullable();
             $table->timestamps();
         });
 
