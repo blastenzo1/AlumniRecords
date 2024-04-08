@@ -131,7 +131,7 @@
                         <div id="" class="" x-show="openTab === 1">
 
                             
-                                <div class="card-body p-5 text-center" style="background-color: rgb(219, 219, 219);">
+                                <div class="card-body p-5 text-center rounded" style="background-color: rgb(219, 219, 219);">
                                     <form action="{{ route('login.perform') }}" method="POST">
                                         
                                         <div class="form-outline form-white mb-4">
