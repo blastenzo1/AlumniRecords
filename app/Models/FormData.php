@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\EducationAttainment;
+use App\Models\EducationAttainment as ModelsEducationAttainment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -41,6 +42,6 @@ class FormData extends Model
     }
     public function educationAttainments()
     {
-        return $this->hasMany(EducationAttainment::class);
+        return $this->hasMany(ModelsEducationAttainment::class);
     }
 }

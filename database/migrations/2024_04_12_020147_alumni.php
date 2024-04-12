@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('nationality');
             $table->string('status');
             $table->string('spouse');
-            $table->integer('number');
+            $table->string('number');
             $table->string('email');
             // $table->string('occupation');
             // $table->string('living_status');
