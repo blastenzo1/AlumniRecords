@@ -7,16 +7,13 @@
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
-  <title>Dashboard</title>
+    <title>Dashboard</title>
 
     <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> --}}
     <link rel="stylesheet" href='{{ asset('app.css') }}'>
 </head>
-
-
-
 <body class="bg-gray-100 font-family-karla flex">
 
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
@@ -45,10 +42,16 @@
         </a>
     </aside>
 
-    <div class="w-full flex flex-col h-screen overflow-y-hidden">
-        <!-- Desktop Header -->
-        <header class="DeskHeader w-full items-center bg-white py-2 px-6 hidden sm:flex">
-            <div class="w-1/2"></div>
+    <div class="w-full flex flex-col items-stretch justify-between h-screen overflow-y-hidden">
+        <div class="w-full flex justify-between items-center bg-white py-4 px-6">
+            <div class="flex items-center gap-4">
+                <button @click="isOpen = !isOpen" class="text-zinc-900 text-3xl focus:outline-none sm:hidden">
+                    <i x-show="!isOpen" class="fas fa-bars"></i>
+                    {{-- <i x-show="isOpen" class="fas fa-times"></i> --}}
+                </button>
+                <header class="text-xl">Dashboard</header>
+
+            </div>
             <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
                 <button @click="isOpen = !isOpen" class="realtive z-10 w-12 h-12 rounded-full overflow-hidden border-4 border-gray-400 hover:border-gray-300 focus:border-gray-300 focus:outline-none">
                     <img src="https://source.unsplash.com/uJ8LNVCBjFQ/400x400">
@@ -59,158 +62,94 @@
                     <a href="{{ route('logout.perform') }}" class="block px-4 py-2 account-link hover:text-white">Sign Out</a>
                 </div>
             </div>
-        </header>
+        </div>
 
-        <!-- Mobile Header & Nav -->
-                <header x-data="{ isOpen: false }" class="w-full bg-sidebar py-5 px-6 sm:hidden">
-                    <div class="flex items-center justify-between">
-                        <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
-                        <button @click="isOpen = !isOpen" class="text-white text-3xl focus:outline-none">
-                            <i x-show="!isOpen" class="fas fa-bars"></i>
-                            <i x-show="isOpen" class="fas fa-times"></i>
-                        </button>
+        <main class="flex-1 p-4 space-y-4 rounded-lg shadow">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <div class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
+                    <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
+                    <div class="">
+                        <span class="block text-red-500 text-3xl">20</span>
+                        <div class="block text-zinc-200 text-2xl">Chapters</div>
                     </div>
+                </div>
+                <div class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
+                    <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
+                    <div class="">
+                        <span class="block text-red-500 text-3xl">1900+</span>
+                        <div class="block text-zinc-200 text-2xl">Activity Log</div>
+                    </div>
+                </div>
+                <div class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
+                    <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
+                    <div class="">
+                        <span class="block text-red-500 text-3xl">50</span>
+                        <div class="block text-zinc-200 text-2xl">Courses</div>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- Dropdown Nav -->
-                    <nav :class="isOpen ? 'flex': 'hidden'" class="flex flex-col pt-4">
-                        <a href="{{ route('dashboard') }}" class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
-                            <i class="fas fa-tachometer-alt mr-3"></i>
-                            Dashboard
-                        </a>
-                        <a href="{{ route('records') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                            <i class="fas fa-sticky-note mr-3"></i>
-                            Records
-                        </a>
-                        <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                            <i class="fas fa-table mr-3"></i>
-                            Reports
-                        </a>
-                        <a href="#" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                            <i class="fas fa-user mr-3"></i>
-                            Account
-                        </a>
-                        <a href="{{ route('logout.perform') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                            <i class="fas fa-sign-out-alt mr-3"></i>
-                            Sign Out
-                        </a>
-                        <button class="w-full bg-white cta-btn font-semibold py-2 mt-3 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
-                             username, Welcome!
-                        </button>
-                    </nav>
-                    <!-- <button class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
-                        <i class="fas fa-plus mr-3"></i> New Report
-                    </button> -->
-                </header>
-        {{-- ^responsiveness --}}
-
-
-        {{-- MAIN BODY --}}
-        <div class="w-full overflow-x-hidden border-t flex flex-col">
-            <main class="w-full flex-grow p-6">
-                <h1 class="text-3xl text-black pb-6">Dashboard</h1>
-
-                <div class="w-full mt-12 flex justify-center"> <!-- Added 'flex justify-center' to center the button -->
-                    <button class="bg-white cta-btn font-semibold py-2 px-6 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center"> <!-- Modified button classes and added 'px-6 rounded-full' to make it square -->
-                        <i class="fas fa-plus mr-3"></i> Add Record
-                    </button>
+            <div class="w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+                <div class="flex justify-between pb-4 mb-4 border-b gap-4 border-gray-200 dark:border-gray-700">
+                    <div class="flex justify-between">
+                        <div class="space-y-4 flex-none w-4/5">
+                            <header class="text-lg font-semibold">
+                                Distribution of Graduates by Degree/Course
+                            </header>
+                            <p>This graph depicts the number of graduates from each college at Silliman University by academic year. The data is sourced from official alumni records or database. The vertical bars represent the total count of graduates per college, allowing for a visual comparison of the relative sizes of the graduating classes across different academic units.</p>
+                        </div>
+                        <div class="flex justify-end flex-1">
+                            <button
+                                id="dropdownDefaultButton"
+                                data-dropdown-toggle="lastDaysdropdown"
+                                data-dropdown-placement="bottom"
+                                class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white"
+                                type="button">
+                                Last 7 days
+                                <svg class="w-2.5 m-2.5 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                </svg>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div id="lastDaysdropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                                    <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Yesterday</a>
+                                    </li>
+                                    <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Today</a>
+                                    </li>
+                                    <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 7 days</a>
+                                    </li>
+                                    <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 30 days</a>
+                                    </li>
+                                    <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 90 days</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-            </main>
 
-            <footer class="w-full bg-white text-right p-4">
-                Silliman University Alumni Records.
-            </footer>
-        </div>
-        {{-- ========= --}}
+                <div id="column-chart"></div>
+            </div>
 
+        </main>
+
+        <footer class="w-full bg-white text-right p-4">
+            Silliman University Alumni Records.
+        </footer>
     </div>
 
     <!-- AlpineJS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-
-
-
-    <script>
-        var chartOne = document.getElementById('chartOne');
-        var myChart = new Chart(chartOne, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-
-        var chartTwo = document.getElementById('chartTwo');
-        var myLineChart = new Chart(chartTwo, {
-            type: 'line',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-    </script>
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="{{ asset('chart.js') }}"></script>
 </body>
 </html>

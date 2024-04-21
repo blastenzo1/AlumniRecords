@@ -16,7 +16,7 @@
     @livewireStyles
 </head>
 <body>
-    <section class="vh-100 bg-gradient-to-b from-red-900 to-bg-white flex flex-col justify-between items-center">
+    <section class="vh-100 bg-gradient-to-b from-red-900 from-70% to-bg-white to-30% flex flex-col justify-between items-stretch">
         <div class="w-full h-screen border-t flex flex-col">
             <main class="w-full py-6 space-y-8">
                 <div class="flex justify-between items-center px-6">

@@ -237,15 +237,15 @@
                                 @endif
 
                                 @if ($currentStep == 2 || $currentStep == 3)
-                                    <button type="button" class="text-lg bg-zinc-500 hover:bg-zinc-300 transition duration-300 ease-in text-white w-24 p-2 rounded-md" wire:click="decreaseStep()">Back</button>
+                                    <button type="button" class="bg-zinc-500 hover:bg-zinc-300 transition duration-300 ease-in text-white w-24 p-2 rounded-md" wire:click="decreaseStep()">Back</button>
                                 @endif
 
                                 @if ($currentStep == 1 || $currentStep == 2)
-                                    <button type="button" class="text-lg bg-red-500 hover:bg-red-300 transition duration-300 ease-in text-white w-24 p-2 rounded-md" wire:click="increaseStep()">Next Step</button>
+                                    <button type="button" class="bg-red-500 hover:bg-red-300 transition duration-300 ease-in text-white w-24 p-2 rounded-md" wire:click="increaseStep()">Next Step</button>
                                 @endif
 
                                 @if ($currentStep == 3)
-                                    <button class="text-lg bg-red-500 hover:bg-red-300 transition duration-300 ease-in text-white border w-24 p-2 rounded-md" type="submit">Submit</button>
+                                    <button class="bg-red-500 hover:bg-red-300 transition duration-300 ease-in text-white border w-24 p-2 rounded-md" type="submit">Submit</button>
                                 @endif
 
                             </div>

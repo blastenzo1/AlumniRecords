@@ -14,29 +14,31 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <section class="bg-gradient-to-b from-red-900 to-bg-white">
+    <section class="bg-gradient-to-b from-red-900 from-70% to-bg-white to-30%">
         <div class="min-h-screen flex flex-col justify-center items-center">
-            <main class="w-full py-6 space-y-8">
-                <div class="flex justify-between items-center px-6">
+            <main class="flex-1 flex flex-col w-full py-6 space-y-8">
+                <a href="/" class="flex-none flex justify-between items-center px-6 cursor-pointer">
                     <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4 w-96">
-                    <a class="bg-white hover:bg-zinc-300 flex justify-center items-center text-red-700 border-none px-4 py-2 rounded space-x-2" href="{{ route('login.show') }}">
-                        <span>Login</span>
-                        <i class="fa fa-sign-in"></i>
-                    </a>
-                </div>
+                </a>
 
-                <div class="flex justify-center items-center">
-                    <form action="{{ route('login.perform') }}" method="POST">
+                <div class="flex-1 grid grid-cols-1 place-content-center justify-center items-center space-y-6">
+                    <div class="text-center text-white space-y-6">
+                        <header class="font-bold text-4xl">LOGIN</header>
+                        <p>Welcome back! Please log in to access your account.</p>
+                    </div>
+                    <form action="{{ route('login.perform') }}" method="POST" class="space-y-6">
                         @csrf
-                        <div class="flex gap-4">
+                        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                             <div class="w-96">
-                                <input type="text" name="email" id="email" class="rounded-full py-6 px-8 w-full border border-zinc-700" />
+                                <input type="text" name="email" id="email" class="rounded-full py-3 px-8 w-full border border-zinc-700" placeholder="Enter Username"/>
                             </div>
                             <div class="w-96">
-                                <input type="password" name="password" id="password" class="rounded-full py-6 px-8 w-full border border-zinc-700" />
+                                <input type="password" name="password" id="password" class="rounded-full py-3 px-8 w-full border border-zinc-700" placeholder="Enter Password"/>
                             </div>
                         </div>
-                        <button class="" type="submit">Login</button>
+                        <div class="flex justify-center">
+                            <button class="w-96 rounded-full py-3 px-8 bg-red-900 text-white" type="submit">Login</button>
+                        </div>
                     </form>
                 </div>
             </main>
