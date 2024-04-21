@@ -12,7 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
     <link rel="stylesheet" href='{{ asset('app.css') }}'>
-
+    <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-100 font-family-karla flex">
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">

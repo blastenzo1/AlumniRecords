@@ -17,10 +17,11 @@ class Address extends Model
         'home_city',
         'home_country',
         'home_zip_code',
+        'info_id',
     ];
 
     public function person()
     {
-        return $this->belongsTo(Alumni::class);
+        return $this->belongsTo(Alumni::class, 'info_id', 'id');
     }
 }

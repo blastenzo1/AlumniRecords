@@ -40,6 +40,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         })->name('reports');
 
         Route::get('/records', [AlumniController::class, 'index'])->name('records');
+        Route::get('/view-record/{id}', [AlumniController::class, 'view']);
 
         Route::get('/chapter', [ChapterController::class, 'index'])->name('chapters');
 

@@ -116,8 +116,10 @@ class MultiStepForm extends Component
             "number"=>$this->number,
             "email"=>$this->email,
         );
+        $alumni_id = Alumni::insertGetId($alumni_values);
 
         $address_values = array(
+            "info_id" => $alumni_id,
             "current_street"=>$this->current_street,
             "current_city"=>$this->current_city,
             "current_country"=>$this->current_country,
@@ -129,12 +131,11 @@ class MultiStepForm extends Component
         );
 
         $education_values = array(
+            "info_id" => $alumni_id,
             "course"=>$this->course,
             "year_attended"=>$this->year_attended,
         );
 
-
-        Alumni::insert($alumni_values);
         Address::insert($address_values);
         EducationAttainment::insert($education_values);
 
