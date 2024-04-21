@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('education_attainments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('info_id')->nullable();
-            $table->foreign('info_id')->references('id')->on('alumnis')->onDelete('cascade');
+            // $table->foreign('info_id')->references('id')->on('alumnis')->onDelete('cascade');
             $table->string('course');
             $table->string('year_attended');
             $table->timestamps();

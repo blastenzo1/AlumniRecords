@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('info_id')->nullable();
-            $table->foreign('info_id')->references('id')->on('alumnis')->onDelete('cascade');
+            // $table->foreign('info_id')->references('id')->on('alumnis')->onDelete('cascade');
             $table->string('current_street');
             $table->string('current_city');
             $table->string('current_country');

@@ -25,10 +25,6 @@ return new class extends Migration
             $table->string('spouse');
             $table->string('number');
             $table->string('email');
-            // $table->string('occupation');
-            // $table->string('living_status');
-            // $table->string('education');
-            // $table->string('awards')->nullable();
             $table->timestamps();
         });
 
