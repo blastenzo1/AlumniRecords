@@ -11,6 +11,7 @@
 
     <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> --}}
     <link rel="stylesheet" href='{{ asset('app.css') }}'>
 </head>
@@ -32,9 +33,9 @@
                 <i class="fas fa-sticky-note mr-3"></i>
                 Records
             </a>
-            <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'reports') active @endif">
+            <a href="{{ route('chapters') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'chapters') active @endif">
                 <i class="fas fa-table mr-3"></i>
-                Reports
+                Chapters
             </a>
         </nav>
         <a href="#" class="absolute w-full userWel bottom-0 flex items-center justify-center py-4">
@@ -43,7 +44,7 @@
     </aside>
 
     <div class="w-full flex flex-col items-stretch justify-between h-screen overflow-y-hidden">
-        <div class="w-full flex justify-between items-center bg-white py-4 px-6">
+        <div class="w-full flex-none flex justify-between items-center bg-white py-4 px-6">
             <div class="flex items-center gap-4">
                 <button @click="isOpen = !isOpen" class="text-zinc-900 text-3xl focus:outline-none sm:hidden">
                     <i x-show="!isOpen" class="fas fa-bars"></i>
@@ -140,7 +141,7 @@
 
         </main>
 
-        <footer class="w-full bg-white text-right p-4">
+        <footer class="flex-none w-full bg-white text-right p-4">
             Silliman University Alumni Records.
         </footer>
     </div>

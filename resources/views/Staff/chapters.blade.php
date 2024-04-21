@@ -6,12 +6,11 @@
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
-    <title>Records</title>
+    <title>Chapters</title>
 
     <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href='{{ asset('app.css') }}'>
 
 </head>
@@ -32,9 +31,9 @@
                 <i class="fas fa-sticky-note mr-3"></i>
                 Records
             </a>
-            <a href="{{ route('chapters') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'chapters') active @endif">
+            <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'reports') active @endif">
                 <i class="fas fa-table mr-3"></i>
-                Chapters
+                Reports
             </a>
         </nav>
         <a href="#" class="absolute w-full userWel bottom-0 flex items-center justify-center py-4">
@@ -49,7 +48,7 @@
                     <i x-show="!isOpen" class="fas fa-bars"></i>
                     {{-- <i x-show="isOpen" class="fas fa-times"></i> --}}
                 </button>
-                <header class="text-xl">All Alumni Records</header>
+                <header class="text-xl">Chapters</header>
 
             </div>
             <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
@@ -77,47 +76,43 @@
                         <input type="text" id="table-search" class="block py-2 px-2 ps-10 pl-10 text-sm text-gray-900 border border-gray-300 rounded w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for items">
                     </div>
                 </div>
-                <button class="font-semibold text-white bg-red-500 text-sm p-2 rounded">Add Record</button>
+                {{-- <button class="font-semibold text-white bg-red-500 text-sm p-2 rounded">Add Record</button> --}}
             </div>
             <div class="flex-1 relative shadow-md rounded-md">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 p-4">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-300">
                         <tr class="">
                             <th scope="col" class="px-6 py-3">
-                                Full Name
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Representative
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Email
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Mobile/Contact Number
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Sex
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Nationality
+                                Status
                             </th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody class="">
-                        @foreach ($alumnis as $alumnus)
+                        @foreach ($chapters as $chapter)
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 space-y-4 p-12">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $alumnus->first_name }} {{ $alumnus->middle_name }} {{ $alumnus->last_name }}
+                                    {{ $chapter->name }}
                                 </th>
                                 <td class="px-6 py-4">
-                                    {{ $alumnus->email }}
+                                    {{ $chapter->representative }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $alumnus->number }}
+                                    {{ $chapter->email }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $alumnus->sex }}
-                                </td>
-                                <td class="px-6 py-4">
-                                    {{ $alumnus->nationality }}
+                                    <span class="border {{ $chapter->status === 'Active' ? 'border-green-500 bg-green-300 text-green-700' : 'border-gray-500 bg-gray-300 text-gray-700' }} px-4 py-2 rounded-md">
+                                        {{ $chapter->status }}
+                                    </span>
                                 </td>
                                 <td class="px-6 py-4">
                                     <button id="dropdownMenuIconHorizontalButton" data-dropdown-toggle="dropdownDotsHorizontal" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">

@@ -28,6 +28,18 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Alumni::create([
+            'last_name' => 'Dalisay',
+            'middle_name' => 'Agila',
+            'first_name' => 'Cardo',
+            'birthdate' => '01/12/1969',
+            'sex' => 'male',
+            'nationality' => 'Filipino',
+            'status' => 'Married',
+            'spouse' => 'Filipino',
+            'number' => '09123456789',
+            'email' => 'cardoadalisay@su.edu.ph',
+        ]);
 
     }
 

@@ -4,6 +4,7 @@ use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
 
@@ -39,6 +40,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         })->name('reports');
 
         Route::get('/records', [AlumniController::class, 'index'])->name('records');
+
+        Route::get('/chapter', [ChapterController::class, 'index'])->name('chapters');
 
         Route::get('/fillupform', function () {
             return view('staff.fillupform');
