@@ -38,6 +38,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('/reports', function () {
             return view('staff.reports');
         })->name('reports');
+        
+        // Route::get('/chapter', function () {
+        //     return view('staff.chapter');
+        // })->name('chapter');
 
         Route::get('/records', [AlumniController::class, 'index'])->name('records');
         Route::get('/view-record/{id}', [AlumniController::class, 'view']);

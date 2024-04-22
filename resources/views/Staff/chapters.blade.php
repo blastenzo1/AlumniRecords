@@ -33,7 +33,7 @@
             </a>
             <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'reports') active @endif">
                 <i class="fas fa-table mr-3"></i>
-                Reports
+                Chapters
             </a>
         </nav>
         <a href="#" class="absolute w-full userWel bottom-0 flex items-center justify-center py-4">
