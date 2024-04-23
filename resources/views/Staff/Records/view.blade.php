@@ -81,7 +81,7 @@
                             <div class="flex gap-4">
                                 <span class="text-zinc-500">Date of Birth:</span>
                                 <p class="text-zinc-900">
-                                    {{ $alumni->birthdate }}
+                                    {{ $alumni->birthdate->format('Y-m-d') }}
                                 </p>
                             </div>
                             <div class="flex gap-4">
