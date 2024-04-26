@@ -43,31 +43,21 @@
     </aside>
 
     <div class="w-full flex flex-col items-stretch justify-between">
-        <div class="w-full flex justify-between items-center bg-white py-4 px-6">
-            <div class="flex items-center gap-4">
-                <button @click="isOpen = !isOpen" class="text-zinc-900 text-3xl focus:outline-none sm:hidden">
-                    <i x-show="!isOpen" class="fas fa-bars"></i>
-                    {{-- <i x-show="isOpen" class="fas fa-times"></i> --}}
-                </button>
-                <header class="text-xl">All Alumni Records</header>
-
-            </div>
-            <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
-                <button @click="isOpen = !isOpen" class="realtive z-10 w-12 h-12 rounded-full overflow-hidden border-4 border-gray-400 hover:border-gray-300 focus:border-gray-300 focus:outline-none">
-                    <img src="https://source.unsplash.com/uJ8LNVCBjFQ/400x400">
-                </button>
-                <button x-show="isOpen" @click="isOpen = false" class="h-full w-full fixed inset-0 cursor-default"></button>
-                <div x-show="isOpen" class="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16">
-                    <a href="{{ route('accountpage') }}" class="block px-4 py-2 account-link hover:text-white">Account</a>
-                    <a href="{{ route('logout.perform') }}" class="block px-4 py-2 account-link hover:text-white">Sign Out</a>
-                </div>
-            </div>
+        <div class="w-full bg-white py-4 px-6">
+            @include('Layouts.staff-header')
         </div>
 
         <main class="h-fit flex-1 flex flex-col p-4 space-y-4 rounded-lg shadow">
             <div class="bg-white p-4 border border-zinc-300 shadow">
-                <header class="text-3xl font-medium">Alumni Information</header>
-
+                <div class="flex items-center justify-between">
+                    <header class="text-3xl font-medium">Alumni Information</header>
+                    <button class="p-2 bg-white border border-zinc-900 hover:bg-zinc-700">
+                        <div class="flex gap-4 items-center justify-center rounded">
+                            <i class="fa-solid fa-print"></i>
+                            <span class="text-zinc-900">Print</span>
+                        </div>
+                    </button>
+                </div>
                 <div class="space-y-4">
                     <div class="space-y-2">
                         <span class="text-lg font-semibold">Personal Information</span>

@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Alumni;
 use App\Models\Address;
 use App\Models\EducationAttainment;
+use App\Models\Country;
 
 class MultiStepForm extends Component
 {
@@ -37,13 +38,14 @@ class MultiStepForm extends Component
 
 
     public function mount(){
-        $this->currentStep = 1;
+        $this->currentStep = 2;
     }
 
 
     public function render()
     {
-        return view('livewire.multi-step-form');
+        $countries = Country::all();
+        return view('livewire.multi-step-form', compact('countries'));
     }
 
     public function increaseStep(){

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -22,10 +23,10 @@ use App\Http\Controllers\FormController;
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
     Route::group(['middleware' => ['guest']], function() {
-        Route::view('/', 'welcome')->name('welcome');
+        Route::get('/', [LoginController::class, 'landing'])->name('welcome');
 
-        Route::get('/login', 'LoginController@show')->name('login.show');
-        Route::post('/login', 'LoginController@login')->name('login.perform');
+        Route::get('/login', [LoginController::class, 'show'])->name('login.show');
+        Route::post('/login', [LoginController::class, 'login'])->name('login.perform');
     });
 
     Route::group(['middleware' => ['auth']], function() {
@@ -34,7 +35,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         # Records
         Route::get('/records', [AlumniController::class, 'index'])->name('records');
         Route::get('/add-record', [AlumniController::class, 'add'])->name('add');
-        // Route::view('/add-record', 'staff/records/add')->name('add');
         Route::get('/view-record/{id}', [AlumniController::class, 'view']);
 
         # Chapters

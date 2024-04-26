@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function landing()
+    {
+        return view('welcome');
+    }
+
     public function show()
     {
         return view('auth.login');
