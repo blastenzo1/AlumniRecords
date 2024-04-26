@@ -15,7 +15,7 @@ class AlumniController extends Controller
         return view('staff.records.index', compact('alumnis'));
     }
 
-    public function add()
+    public function add_record()
     {
         return view('Staff.Records.add');
     }

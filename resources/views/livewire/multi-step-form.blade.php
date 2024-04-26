@@ -325,10 +325,9 @@
                                 @if ($currentStep == 3)
                                     <button class="bg-red-500 hover:bg-red-300 transition duration-300 ease-in text-white border w-24 p-2 rounded-md" type="submit">Submit</button>
                                 @endif
-
                             </div>
+                        </div>
                     </div>
-
 
 
                 </form>

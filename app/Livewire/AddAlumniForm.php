@@ -2,6 +2,9 @@
 
 namespace App\Livewire;
 
+use App\Models\Country;
+use App\Models\Course;
+use App\Models\Nationality;
 use Livewire\Component;
 use App\Models\Alumni;
 use App\Models\Address;
@@ -39,9 +42,13 @@ class AddAlumniForm extends Component
     public function mount(){
         $this->currentStep = 1;
     }
+
     public function render()
     {
-        return view('livewire.add-alumni-form');
+        $countries = Country::all();
+        $courses = Course::all();
+        $nationalities = Nationality::all();
+        return view('livewire.add-alumni-form', compact('countries', 'courses', 'nationalities'));
     }
     public function increaseStep(){
         dd('increaseStep() function called. Current step: ' . $this->currentStep);
@@ -54,6 +61,7 @@ class AddAlumniForm extends Component
     }
 
     public function decreaseStep(){
+        dd('decreaseStep() function called. Current step: ' . $this->currentStep);
         $this->resetErrorBag();
         $this->currentStep--;
         if($this->currentStep < 1){
@@ -72,7 +80,7 @@ class AddAlumniForm extends Component
                 'nationality' => 'required',
                 'status' => 'required',
                 'spouse' => 'required',
-                'number' => 'required',
+                'number' => 'required|number',
                 'email' => 'required|email',
             ]);
         }
@@ -81,7 +89,7 @@ class AddAlumniForm extends Component
                 'current_street' => 'nullable',
                 'current_city' => 'nullable',
                 'current_country' => 'nullable',
-                'current_zip_code' => 'nullable',
+                'current_zip_code' => 'nullable|number',
                 'home_street' => 'nullable',
                 'home_city' => 'nullable',
                 'home_country' => 'nullable',
@@ -97,6 +105,7 @@ class AddAlumniForm extends Component
     }
 
     public function add_alumni(){
+        dd('add_alumni() function called. Current step: ');
         $this->resetErrorBag();
         $alumni_values = array(
             "last_name"=>$this->last_name,

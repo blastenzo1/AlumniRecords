@@ -12,7 +12,7 @@ class ChapterController extends Controller
     public function index()
     {
         $chapters = Chapter::all();
-        return view('staff.chapters', compact('chapters'));
+        return view('staff.chapters.index', compact('chapters'));
     }
 
     public function store(ChapterRequest $request)

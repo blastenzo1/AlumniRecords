@@ -15,8 +15,8 @@
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
     @livewireStyles
 </head>
-<body class="h-screen bg-gray-100 font-family-karla flex">
-    <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl">
+<body class="relative h-screen bg-gray-100 font-family-karla flex">
+    <aside class="h-max relative bg-sidebar w-64 hidden sm:block shadow-xl">
         <div class="p-6">
             <a href="{{ route('dashboard') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
                 <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="h-auto w-auto">
@@ -42,7 +42,7 @@
         </a>
     </aside>
 
-    <div class="w-full flex flex-col items-stretch">
+    <div class="h-fit w-full flex flex-col items-stretch">
         <div class="w-full flex justify-between items-center bg-white py-4 px-6">
             <div class="flex items-center gap-4">
                 <button @click="isOpen = !isOpen" class="text-zinc-900 text-3xl focus:outline-none sm:hidden">

@@ -40,9 +40,8 @@ class MultiStepForm extends Component
 
 
     public function mount(){
-        $this->currentStep = 1;
+        $this->currentStep = 2;
     }
-
 
     public function render()
     {
@@ -81,7 +80,7 @@ class MultiStepForm extends Component
                 'nationality' => 'required',
                 'status' => 'required',
                 'spouse' => 'required',
-                'number' => 'required',
+                'number' => 'required|number',
                 'email' => 'required|email',
             ]);
         }
@@ -90,11 +89,11 @@ class MultiStepForm extends Component
                 'current_street' => 'nullable',
                 'current_city' => 'nullable',
                 'current_country' => 'nullable',
-                'current_zip_code' => 'nullable',
+                'current_zip_code' => 'nullable|number',
                 'home_street' => 'nullable',
                 'home_city' => 'nullable',
                 'home_country' => 'nullable',
-                'home_zip_code' => 'nullable',
+                'home_zip_code' => 'nullable|number',
             ]);
         }
         elseif($this->currentStep == 3){

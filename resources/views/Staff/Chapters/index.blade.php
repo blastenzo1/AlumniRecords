@@ -14,7 +14,7 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
-<body class="h-screen bg-gray-100 font-family-karla flex">
+<body class="h-min-screen bg-gray-100 font-family-karla flex">
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
         @include('Layouts.staff-sidebar')
     </aside>
@@ -37,8 +37,20 @@
                         <input type="text" id="table-search" class="block py-2 px-2 ps-10 pl-10 text-sm text-gray-900 border border-gray-300 rounded w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for items">
                     </div>
                 </div>
-                {{-- <button class="font-semibold text-white bg-red-500 text-sm p-2 rounded">Add Record</button> --}}
+                <button class="font-semibold text-white bg-red-500 text-sm p-2 rounded">Add Record</button>
             </div>
+
+            @if (session('success'))
+                <div class="bg-green-500 p-6 rounded text-white">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="bg-red-500 p-6 rounded text-white">
+                    {{ session('success') }}
+                </div>
+            @endif
 
             <div class="flex-1 relative shadow-md rounded-md">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 p-4">
@@ -76,25 +88,25 @@
                                         {{ $chapter->status }}
                                     </span>
                                 </td>
-                                <td class="px-6 py-4">
-                                    <button id="dropdownMenuIconHorizontalButton" data-dropdown-toggle="dropdownDotsHorizontal" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
-                                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
-                                            <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
+                                <td class="px-6 py-4 space-x-2">
+                                    <button id="dropdownDefaultButton{{ $chapter->name }}" data-dropdown-toggle="dropdown{{ $chapter->name }}" class="text-zinc-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center" type="button">
+                                        <i class="fa-solid fa-ellipsis"></i>
                                         </svg>
                                     </button>
 
-                                    <div id="dropdownDotsHorizontal" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
-                                            <li>
-                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">View</a>
-                                            </li>
+                                    <div id="dropdown{{ $chapter->name }}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton{{ $chapter->name }}">
                                             <li>
                                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
+                                                <button data-modal-target="popup-modal{{ $chapter->name }}" data-modal-toggle="popup-modal{{ $chapter->name }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Delete</button>
                                             </li>
                                         </ul>
+                                    </div>
+
+                                    <div id="popup-modal{{ $chapter->name }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                        @include('Staff.Chapters.Modals.delete')
                                     </div>
                                 </td>
                             </tr>

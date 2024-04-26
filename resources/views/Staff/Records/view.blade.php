@@ -15,7 +15,7 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
-<body class="h-screen bg-gray-100 font-family-karla flex">
+<body class="h-min-screen bg-gray-100 font-family-karla flex">
     <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl">
         <div class="p-6">
             <a href="{{ route('dashboard') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
@@ -47,7 +47,7 @@
             @include('Layouts.staff-header')
         </div>
 
-        <main class="h-fit flex-1 flex flex-col p-4 space-y-4 rounded-lg shadow">
+        <main class="flex-1 flex flex-col p-4 space-y-4 rounded-lg shadow">
             <div class="bg-white p-4 border border-zinc-300 shadow">
                 <div class="flex items-center justify-between">
                     <header class="text-3xl font-medium">Alumni Information</header>

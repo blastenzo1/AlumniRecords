@@ -15,7 +15,7 @@
     @livewireStyles
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
-<body class="relative h-screen bg-gray-100 font-family-karla flex">
+<body class="h-min-screen bg-gray-100 font-family-karla flex">
     <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl bg-red-700">
         @include('Layouts.staff-sidebar')
     </aside>
