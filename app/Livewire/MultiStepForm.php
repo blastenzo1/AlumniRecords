@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Course;
 use Livewire\Component;
 use App\Models\Alumni;
 use App\Models\Address;
@@ -38,14 +39,15 @@ class MultiStepForm extends Component
 
 
     public function mount(){
-        $this->currentStep = 2;
+        $this->currentStep = 3;
     }
 
 
     public function render()
     {
         $countries = Country::all();
-        return view('livewire.multi-step-form', compact('countries'));
+        $courses = Course::all();
+        return view('livewire.multi-step-form', compact('countries', 'courses'));
     }
 
     public function increaseStep(){
