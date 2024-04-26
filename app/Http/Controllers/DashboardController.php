@@ -10,6 +10,6 @@ class DashboardController extends Controller
     public function index()
     {
         $alumni = DB::table('alumnis')->get();
-        return view('staff.index',compact('alumni'));
+        return view('staff.dashboard.index',compact('alumni'));
     }
 }

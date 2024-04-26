@@ -22,32 +22,25 @@ use App\Http\Controllers\FormController;
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
     Route::group(['middleware' => ['guest']], function() {
-        // Route::get('/register', 'RegisterController@show')->name('register.show');
-        // Route::post('/register', 'RegisterController@register')->name('register.perform');
-
         Route::view('/', 'welcome')->name('welcome');
 
         Route::get('/login', 'LoginController@show')->name('login.show');
         Route::post('/login', 'LoginController@login')->name('login.perform');
-
     });
 
     Route::group(['middleware' => ['auth']], function() {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-        Route::get('/reports', function () {
-            return view('staff.reports');
-        })->name('reports');
-
+        # Records
         Route::get('/records', [AlumniController::class, 'index'])->name('records');
+        Route::get('/add-record', [AlumniController::class, 'add'])->name('add');
+        // Route::view('/add-record', 'staff/records/add')->name('add');
         Route::get('/view-record/{id}', [AlumniController::class, 'view']);
 
+        # Chapters
         Route::get('/chapter', [ChapterController::class, 'index'])->name('chapters');
 
-        Route::get('/fillupform', function () {
-            return view('staff.fillupform');
-        })->name('fillupform');
-
+        # Other Routes
         Route::get('/alumnidetails', function () {
             return view('staff.alumnidetails');
         })->name('alumnidetails');

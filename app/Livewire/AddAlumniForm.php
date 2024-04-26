@@ -7,7 +7,7 @@ use App\Models\Alumni;
 use App\Models\Address;
 use App\Models\EducationAttainment;
 
-class MultiStepForm extends Component
+class AddAlumniForm extends Component
 {
     public $last_name;
     public $first_name;
@@ -39,14 +39,12 @@ class MultiStepForm extends Component
     public function mount(){
         $this->currentStep = 1;
     }
-
-
     public function render()
     {
-        return view('livewire.multi-step-form');
+        return view('livewire.add-alumni-form');
     }
-
     public function increaseStep(){
+        dd('increaseStep() function called. Current step: ' . $this->currentStep);
         $this->resetErrorBag();
         $this->validateData();
         $this->currentStep++;
@@ -64,7 +62,6 @@ class MultiStepForm extends Component
     }
 
     public function validateData(){
-
         if($this->currentStep == 1){
             $this->validate([
                 'last_name' => 'required',
@@ -99,7 +96,7 @@ class MultiStepForm extends Component
         }
     }
 
-    public function add(){
+    public function add_alumni(){
         $this->resetErrorBag();
         $alumni_values = array(
             "last_name"=>$this->last_name,

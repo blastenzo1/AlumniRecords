@@ -12,10 +12,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href='{{ asset('app.css') }}'>
+    @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
-<body class="h-min-screen bg-gray-100 font-family-karla flex">
+<body class="h-screen bg-gray-100 font-family-karla flex">
     <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl">
         <div class="p-6">
             <a href="{{ route('dashboard') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
@@ -227,9 +227,8 @@
         </footer>
     </div>
 
-    <!-- AlpineJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>

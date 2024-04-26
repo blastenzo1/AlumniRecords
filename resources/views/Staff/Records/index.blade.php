@@ -8,16 +8,15 @@
 
     <title>Records</title>
 
-    <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href='{{ asset('app.css') }}'>
+    @vite(['resources/css/app.css','resources/js/app.js'])
+    @livewireStyles
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
-
 </head>
-<body class="bg-gray-100 font-family-karla flex">
-    <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
+<body class="h-screen bg-gray-100 font-family-karla flex">
+    <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl bg-red-700">
         <div class="p-6">
             <a href="{{ route('dashboard') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
                 <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="h-auto w-auto">
@@ -48,7 +47,6 @@
             <div class="flex items-center gap-4">
                 <button @click="isOpen = !isOpen" class="text-zinc-900 text-3xl focus:outline-none sm:hidden">
                     <i x-show="!isOpen" class="fas fa-bars"></i>
-                    {{-- <i x-show="isOpen" class="fas fa-times"></i> --}}
                 </button>
                 <header class="text-xl">All Alumni Records</header>
 
@@ -78,7 +76,7 @@
                         <input type="text" id="table-search" class="block py-2 px-2 ps-10 pl-10 text-sm text-gray-900 border border-gray-300 rounded w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for items">
                     </div>
                 </div>
-                <button class="font-semibold text-white bg-red-500 text-sm p-2 rounded">Add Record</button>
+                <a href="{{ url('/add-record') }}" class="font-semibold text-white bg-red-500 text-sm p-2 rounded">Add Record</a>
             </div>
             <div class="flex-1 relative shadow-md rounded-md">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 p-4">
@@ -120,10 +118,26 @@
                                 <td class="px-6 py-4">
                                     {{ $alumnus->nationality }}
                                 </td>
-                                <td class="px-6 py-4">
-                                    <a href="{{ url('view-record/' . $alumnus->id) }}" class=""><i
-                                        class="fa-regular fa-eye"></i>
-                                    </a>
+                                <td class="px-6 py-4 space-x-2">
+                                    <button id="dropdownDefaultButton{{ $alumnus->id }}" data-dropdown-toggle="dropdown{{ $alumnus->id }}" class="text-zinc-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center" type="button">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                        </svg>
+                                    </button>
+
+                                    <div id="dropdown{{ $alumnus->id }}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton{{ $alumnus->id }}">
+                                            <li>
+                                                <a href="{{ url('view-record/' . $alumnus->id) }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">View Details</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                            </li>
+                                            <li>
+                                                <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Delete</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                                 </td>
                             </tr>
                         @endforeach
@@ -163,9 +177,9 @@
         </footer>
     </div>
 
-    <!-- AlpineJS -->
+    @livewireScripts
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>

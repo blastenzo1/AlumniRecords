@@ -1,6 +1,6 @@
 <div class="space-y-4">
     <ol class="flex justify-center items-center w-full">
-        <li class="flex-1 flex justify-center items-center cursor-pointer">
+        <li class="flex-1 flex justify-center items-center">
             <div class="h-1 w-full grow bg-white"></div>
             <div class="flex flex-none w-64 items-center text-white dark:text-red-500 space-x-4">
                 <span class="flex items-center justify-center w-10 h-10 bg-white rounded-full lg:h-12 lg:w-12 shrink-0">
@@ -11,7 +11,7 @@
                 <span class="text-lg">Personal Information</span>
             </div>
         </li>
-        <li class="flex-1 flex justify-center items-center cursor-pointer">
+        <li class="flex-1 flex justify-center items-center">
             <div class="h-1 w-full grow bg-{{ $currentStep == 2 || $currentStep == 3 ? 'white' : 'gray-400' }}"></div>
             <div class="flex flex-none w-64 items-center text-{{ $currentStep == 2 || $currentStep == 3 ? 'white' : 'gray-400' }} {{ $currentStep == 2 || $currentStep == 3 ? 'dark:text-red-500' : '' }} space-x-4">
                 <span class="flex items-center justify-center w-10 h-10 bg-{{ $currentStep == 2 || $currentStep == 3 ? 'white' : 'gray-400' }} rounded-full lg:h-12 lg:w-12 shrink-0">
@@ -23,7 +23,7 @@
             </div>
         </li>
 
-        <li class="flex-1 flex justify-center items-center cursor-pointer">
+        <li class="flex-1 flex justify-center items-center">
             <div class="h-1 w-full grow bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }}"></div>
             <div class="flex flex-none w-64 items-center text-{{ $currentStep == 3 ? 'white' : 'gray-400' }} {{ $currentStep == 3 ? 'dark:text-red-500' : '' }} space-x-4">
                 <span class="flex items-center justify-center w-10 h-10 bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }} rounded-full lg:h-12 lg:w-12 shrink-0">
@@ -49,7 +49,7 @@
 
             <div class="space-y-4 xl:max-w-7xl mx-auto">
 
-                <form wire:submit.prevent="welcome" class="space-y-6">
+                <form wire:submit.prevent="add" class="space-y-6">
                     @csrf
 
                     <div class="p-10 bg-white rounded border border-zinc-300 shadow-md space-y-6">

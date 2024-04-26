@@ -8,13 +8,13 @@
 
     <title>Chapters</title>
 
-    <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
-    <link rel="stylesheet" href='{{ asset('app.css') }}'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg-gray-100 font-family-karla flex">
+<body class="h-screen bg-gray-100 font-family-karla flex">
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
         <div class="p-6">
             <a href="{{ route('dashboard') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
@@ -31,9 +31,9 @@
                 <i class="fas fa-sticky-note mr-3"></i>
                 Records
             </a>
-            <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'reports') active @endif">
+            <a href="{{ route('chapters') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'reports') active @endif">
                 <i class="fas fa-table mr-3"></i>
-                Reports
+                Chapters
             </a>
         </nav>
         <a href="#" class="absolute w-full userWel bottom-0 flex items-center justify-center py-4">

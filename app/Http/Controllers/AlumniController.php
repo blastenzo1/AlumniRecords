@@ -15,6 +15,11 @@ class AlumniController extends Controller
         return view('staff.records.index', compact('alumnis'));
     }
 
+    public function add()
+    {
+        return view('Staff.Records.add');
+    }
+
     public function view($id) {
         $alumni = Alumni::where('id', '=', $id)->first();
         $address = Address::where('info_id', '=', $id)->first();

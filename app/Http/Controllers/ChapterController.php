@@ -15,11 +15,6 @@ class ChapterController extends Controller
         return view('staff.chapters', compact('chapters'));
     }
 
-    // public function create()
-    // {
-    //     return view('staff.')
-    // }
-
     public function store(ChapterRequest $request)
     {
         try {

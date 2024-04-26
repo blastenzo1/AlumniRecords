@@ -9,16 +9,15 @@
 
     <title>Dashboard</title>
 
-    <!-- Tailwind -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> --}}
+    @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href='{{ asset('app.css') }}'>
 </head>
-<body class="bg-gray-100 font-family-karla flex">
+<body class="h-min-screen bg-gray-100 font-family-karla flex">
 
-    <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
+    <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl">
         <div class="p-6">
             <a href="{{ route('dashboard') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
                 <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="h-auto w-auto">
@@ -91,53 +90,9 @@
                 </div>
             </div>
 
-            <div class="w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
-                <div class="flex justify-between pb-4 mb-4 border-b gap-4 border-gray-200 dark:border-gray-700">
-                    <div class="flex justify-between">
-                        <div class="space-y-4 flex-none w-4/5">
-                            <header class="text-lg font-semibold">
-                                Distribution of Graduates by Degree/Course
-                            </header>
-                            <p>This graph depicts the number of graduates from each college at Silliman University by academic year. The data is sourced from official alumni records or database. The vertical bars represent the total count of graduates per college, allowing for a visual comparison of the relative sizes of the graduating classes across different academic units.</p>
-                        </div>
-                        <div class="flex justify-end flex-1">
-                            <button
-                                id="dropdownDefaultButton"
-                                data-dropdown-toggle="lastDaysdropdown"
-                                data-dropdown-placement="bottom"
-                                class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white"
-                                type="button">
-                                Last 7 days
-                                <svg class="w-2.5 m-2.5 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                                </svg>
-                            </button>
-                            <!-- Dropdown menu -->
-                            <div id="lastDaysdropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                                    <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Yesterday</a>
-                                    </li>
-                                    <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Today</a>
-                                    </li>
-                                    <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 7 days</a>
-                                    </li>
-                                    <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 30 days</a>
-                                    </li>
-                                    <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last 90 days</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div id="column-chart"></div>
+            <div class="flex gap-4 w-full bg-white">
+                @include('Staff.Dashboard.Charts.pie-chart')
+                @include('Staff.Dashboard.Charts.column-chart')
             </div>
 
         </main>
@@ -152,6 +107,7 @@
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="{{ asset('chart.js') }}"></script>
+    <script src="{{ asset('column-chart.js') }}"></script>
+    <script src="{{ asset('pie-chart.js') }}"></script>
 </body>
 </html>
