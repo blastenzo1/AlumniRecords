@@ -20,7 +20,7 @@ return new class extends Migration
         });
 
         // Inserting countries from the JSON file
-        $countries = json_decode(file_get_contents(public_path('countries.json')), true);
+        $countries = json_decode(file_get_contents(public_path('data/countries.json')), true);
         foreach ($countries as $country) {
             DB::table('countries')->insert([
                 'name' => $country['name'],

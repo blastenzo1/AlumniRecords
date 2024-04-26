@@ -121,7 +121,12 @@
                                     </div>
                                     <div class="flex-1 space-y-1">
                                         <label class="{{ $errors->has('nationality') ? 'text-red-700' : 'text-gray-600' }}" for="nationality">Nationality</label>
-                                        <input class="bg-gray-50 focus:bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" id="nationality" wire:model="nationality" name="nationality" type="text" required="nationality" placeholder="ex. Filipino" aria-label="Nationality">
+                                        <select id="nationality" wire:model="nationality" name="nationality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                            <option value="" selected>Select Nationality</option>
+                                            @foreach($nationalities as $nationality)
+                                                <option value="{{ $nationality->name }}">{{ $nationality->name }}</option>
+                                            @endforeach
+                                        </select>
                                         <span class="text-red-700">@error('nationality'){{ $message }} @enderror</span>
                                     </div>
                                     <div class="flex-1 space-y-1">
@@ -310,7 +315,7 @@
                                 @endif
 
                                 @if ($currentStep == 2 || $currentStep == 3)
-                                    <button type="button" class="bg-zinc-500 hover:bg-zinc-300 transition duration-300 ease-in text-white w-24 p-2 rounded-md" wire:click="decreaseStep()">Back</button>
+                                    <button type="button" class="bg-zinc-500 border-zinc-300 hover:bg-zinc-500 transition duration-300 ease-in text-zinc-900 w-24 p-2 rounded-md" wire:click="decreaseStep()">Back</button>
                                 @endif
 
                                 @if ($currentStep == 1 || $currentStep == 2)

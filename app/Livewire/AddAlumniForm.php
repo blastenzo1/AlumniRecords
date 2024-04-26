@@ -136,7 +136,6 @@ class AddAlumniForm extends Component
         $this->reset();
         $this->currentStep = 1;
         $data = ['name' => $this->first_name . ' ' . $this->last_name, 'email' => $this->email];
-        // $message = $this->first_name . ' ' . $this->last_name . ' was successfully added!';
         $message = 'Alumni was successfully added!';
         return redirect()->back()->with('success', $message)->with('data', $data);
     }

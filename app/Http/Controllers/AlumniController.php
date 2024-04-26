@@ -27,6 +27,20 @@ class AlumniController extends Controller
         return view('staff.records.view', compact('alumni', 'address', 'educationAttainment'));
     }
 
+    public function destroy($id)
+    {
+        try {
+            $alumni = Alumni::findOrFail($id);
+            EducationAttainment::where('info_id', $id)->delete();
+            Address::where('info_id', $id)->delete();
+            $alumni->delete();
+
+            return redirect()->back()->with('success', 'Alumni record and associated data successfully deleted!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'An error occurred while deleting the alumni record: ' . $e->getMessage());
+        }
+    }
+
     // public function view(Alumni $alumni)
     // {
     //     $alumni->load('address', 'educationAttainment');

@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="flex gap-4 w-full bg-white">
+            <div class="flex gap-4 w-full ">
                 @include('Staff.Dashboard.Charts.pie-chart')
                 @include('Staff.Dashboard.Charts.column-chart')
             </div>

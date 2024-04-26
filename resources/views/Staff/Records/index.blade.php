@@ -15,7 +15,7 @@
     @livewireStyles
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
-<body class="h-screen bg-gray-100 font-family-karla flex">
+<body class="relative h-screen bg-gray-100 font-family-karla flex">
     <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl bg-red-700">
         @include('Layouts.staff-sidebar')
     </aside>
@@ -40,7 +40,20 @@
                 </div>
                 <a href="{{ url('/add-record') }}" class="font-semibold text-white bg-red-500 text-sm p-2 rounded">Add Record</a>
             </div>
-            <div class="flex-1 relative shadow-md rounded-md">
+
+            @if (session('success'))
+                <div class="bg-green-500 p-6 rounded text-white">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="bg-red-500 p-6 rounded text-white">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            <div class="flex-1 shadow-md rounded-md">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 p-4">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-300">
                         <tr class="">
@@ -95,11 +108,14 @@
                                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                                             </li>
                                             <li>
-                                                <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Delete</button>
+                                                <button data-modal-target="popup-modal{{ $alumnus->id }}" data-modal-toggle="popup-modal{{ $alumnus->id }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Delete</button>
                                             </li>
                                         </ul>
                                     </div>
-                                </td>
+
+                                    <div id="popup-modal{{ $alumnus->id }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                        @include('Staff.Records.Modals.delete')
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach

@@ -34,8 +34,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
         # Records
         Route::get('/records', [AlumniController::class, 'index'])->name('records');
-        Route::get('/add-record', [AlumniController::class, 'add'])->name('add');
+        Route::get('/add-record', [AlumniController::class, 'add'])->name('add-record');
         Route::get('/view-record/{id}', [AlumniController::class, 'view']);
+        Route::delete('/delete-record/{id}', [AlumniController::class, 'destroy']);
 
         # Chapters
         Route::get('/chapter', [ChapterController::class, 'index'])->name('chapters');

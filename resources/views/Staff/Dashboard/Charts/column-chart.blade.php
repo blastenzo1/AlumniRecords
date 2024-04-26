@@ -1,4 +1,4 @@
-<div class="rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+<div class="rounded-lg shadow dark:bg-gray-800 p-4 md:p-6 bg-white">
     <div class="flex justify-between pb-4 mb-4 border-b gap-4 border-gray-200 dark:border-gray-700">
         <div class="flex justify-between">
             <div class="space-y-4 flex-none w-4/5">
