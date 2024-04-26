@@ -47,7 +47,7 @@
                 <div class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
                     <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
                     <div class="">
-                        <span class="block text-red-500 text-3xl">20</span>
+                        <span class="block text-red-500 text-3xl">{{ $chapter_count }}</span>
                         <div class="block text-zinc-200 text-2xl">Chapters</div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                 <div class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
                     <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
                     <div class="">
-                        <span class="block text-red-500 text-3xl">50</span>
+                        <span class="block text-red-500 text-3xl">{{ $course_count }}</span>
                         <div class="block text-zinc-200 text-2xl">Courses</div>
                     </div>
                 </div>

@@ -39,7 +39,7 @@ class MultiStepForm extends Component
 
 
     public function mount(){
-        $this->currentStep = 3;
+        $this->currentStep = 1;
     }
 
 
