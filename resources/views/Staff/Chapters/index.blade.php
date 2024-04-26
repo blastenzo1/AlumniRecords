@@ -37,7 +37,7 @@
                         <input type="text" id="table-search" class="block py-2 px-2 ps-10 pl-10 text-sm text-gray-900 border border-gray-300 rounded w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for items">
                     </div>
                 </div>
-                <button class="font-semibold text-white bg-red-500 text-sm p-2 rounded">Add Record</button>
+                <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="block text-white rounded px-4 py-2 bg-red-600 hover:bg-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Add Chapter</button>
             </div>
 
             @if (session('success'))
@@ -96,16 +96,23 @@
 
                                     <div id="dropdown{{ $chapter->name }}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton{{ $chapter->name }}">
-                                            <li>
-                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                            </li>
+                                                <button data-modal-target="edit-modal{{ $chapter->name }}" data-modal-toggle="edit-modal{{ $chapter->name }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Edit</button>
                                             </li>
                                             <li>
-                                                <button data-modal-target="popup-modal{{ $chapter->name }}" data-modal-toggle="popup-modal{{ $chapter->name }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Delete</button>
+                                                <button data-modal-target="delete-modal{{ $chapter->name }}" data-modal-toggle="delete-modal{{ $chapter->name }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Delete</button>
                                             </li>
                                         </ul>
                                     </div>
 
-                                    <div id="popup-modal{{ $chapter->name }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                    <div id="add-modal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                        @include('Staff.Chapters.Modals.create')
+                                    </div>
+
+                                    <div id="edit-modal{{ $chapter->name }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                        @include('Staff.Chapters.Modals.edit')
+                                    </div>
+                                    <div id="delete-modal{{ $chapter->name }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                                         @include('Staff.Chapters.Modals.delete')
                                     </div>
                                 </td>

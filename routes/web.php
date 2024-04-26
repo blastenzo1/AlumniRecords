@@ -40,8 +40,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
         # Chapters
         Route::get('/chapter', [ChapterController::class, 'index'])->name('chapters');
-        Route::post('/add-chapter', [ChapterController::class, 'store'])->name('add-chapter');
-        Route::patch('/edit-chapter/{id}', [ChapterController::class, 'update'])->name('update-chapter');
+        Route::post('/add-chapter/{id}', [ChapterController::class, 'store'])->name('add-chapter');
+        Route::patch('/update-chapter/{id}', [ChapterController::class, 'update'])->name('update-chapter');
         Route::delete('/delete-chapter/{id}', [ChapterController::class, 'destroy'])->name('delete-chapter');
 
         # Other Routes
