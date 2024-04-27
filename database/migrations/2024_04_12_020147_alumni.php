@@ -29,6 +29,7 @@ return new class extends Migration
         });
 
         Alumni::create([
+            'id' => '1',
             'last_name' => 'Dalisay',
             'middle_name' => 'Agila',
             'first_name' => 'Cardo',

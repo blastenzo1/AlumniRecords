@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddressFormRequest;
+use App\Http\Requests\DataFormRequest;
+use App\Http\Requests\EducationFormRequest;
 use App\Models\Address;
 use App\Models\Alumni;
+use App\Models\Country;
+use App\Models\Course;
 use App\Models\EducationAttainment;
+use App\Models\Nationality;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class AlumniController extends Controller
 {
@@ -15,9 +22,61 @@ class AlumniController extends Controller
         return view('staff.records.index', compact('alumnis'));
     }
 
-    public function add_record()
+    public function add_page()
     {
-        return view('Staff.Records.add');
+        $countries = Country::all();
+        $courses = Course::all();
+        $nationalities = Nationality::all();
+        return view('Staff.Records.add-page', compact('countries', 'courses', 'nationalities'));
+    }
+
+    public function add_alumni(DataFormRequest $data_request, AddressFormRequest $address_request, EducationFormRequest $education_request) {
+        try {
+            $validated_data = $data_request->validated();
+            $validated_address = $address_request->validated();
+            $validated_education = $education_request->validated();
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->validator->errors())->withInput();
+        }
+
+        Alumni::create($validated_data);
+        Address::create($validated_address);
+        EducationAttainment::create($validated_education);
+
+        return redirect()->back()->with('success', 'Alumni submitted successfully!');
+    }
+
+    public function edit_page($id)
+    {
+        $alumni = Alumni::find($id);
+        $address = Address::where('info_id', $id)->first();
+        $education = EducationAttainment::where('info_id', $id)->first();
+
+        $countries = Country::all();
+        $courses = Course::all();
+        $nationalities = Nationality::all();
+        return view('Staff.Records.edit-page', compact('alumni', 'address', 'education', 'countries', 'courses', 'nationalities'));
+    }
+
+    public function update_alumni(DataFormRequest $data_request, AddressFormRequest $address_request, EducationFormRequest $education_request, $id) {
+        try {
+            $validated_data = $data_request->validated();
+            $validated_address = $address_request->validated();
+            $validated_education = $education_request->validated();
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->validator->errors())->withInput();
+        }
+
+        $alumni = Alumni::findOrFail($id);
+        $address = Address::where('info_id', $id)->first();
+        $education = EducationAttainment::where('info_id', $id)->first();
+
+
+        $alumni->update($validated_data);
+        $address->update($validated_address);
+        $education->update($validated_education);
+
+        return redirect()->back()->with('success', 'Alumni updated successfully!');
     }
 
     public function view($id) {
@@ -40,13 +99,6 @@ class AlumniController extends Controller
             return redirect()->back()->with('error', 'An error occurred while deleting the alumni record: ' . $e->getMessage());
         }
     }
-
-    // public function view(Alumni $alumni)
-    // {
-    //     $alumni->load('address', 'educationAttainment');
-
-    //     return view('staff.records.view', compact('alumni'));
-    // }
 }
 
 

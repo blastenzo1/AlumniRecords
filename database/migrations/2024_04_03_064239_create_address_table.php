@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Address;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -25,6 +26,18 @@ return new class extends Migration
             $table->string('home_zip_code');
             $table->timestamps();
         });
+
+        Address::create([
+            'info_id' => '1',
+            'current_street' => 'test',
+            'current_city' => 'test',
+            'current_country' => 'Philippines',
+            'current_zip_code' => '6200',
+            'home_street' => 'test',
+            'home_city' => 'test',
+            'home_country' => 'Philippines',
+            'home_zip_code' => '6200',
+        ]);
     }
 
     /**

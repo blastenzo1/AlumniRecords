@@ -74,9 +74,9 @@
 
         </main>
 
-        <footer class="flex-none w-full bg-white text-right p-4">
+        {{-- <footer class="flex-none w-full bg-white text-right p-4">
             Silliman University Alumni Records.
-        </footer>
+        </footer> --}}
     </div>
 
     <!-- AlpineJS -->

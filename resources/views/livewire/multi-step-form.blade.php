@@ -1,41 +1,34 @@
 <div class="space-y-4">
     <ol class="flex justify-center items-center w-full">
         <li class="flex-1 flex justify-center items-center">
-            <div class="h-1 w-full grow bg-white"></div>
+            <div class="h-1 w-full bg-white"></div>
             <div class="flex flex-none w-64 items-center text-white dark:text-red-500 space-x-4">
-                <span class="flex items-center justify-center w-10 h-10 bg-white rounded-full lg:h-12 lg:w-12 shrink-0">
-                    <svg class="w-3.5 h-3.5 text-red-600 lg:w-4 lg:h-4 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                    </svg>
+                <span class="flex items-center justify-center w-10 h-10 bg-white text-red-600 rounded-full lg:h-12 lg:w-12 shrink-0">
+                    <i class="fa-solid fa-user"></i>
                 </span>
                 <span class="text-lg">Personal Information</span>
             </div>
         </li>
         <li class="flex-1 flex justify-center items-center">
-            <div class="h-1 w-full grow bg-{{ $currentStep == 2 || $currentStep == 3 ? 'white' : 'gray-400' }}"></div>
+            <div class="h-1 w-full bg-{{ $currentStep == 2 || $currentStep == 3 ? 'white' : 'gray-400' }}"></div>
             <div class="flex flex-none w-64 items-center text-{{ $currentStep == 2 || $currentStep == 3 ? 'white' : 'gray-400' }} {{ $currentStep == 2 || $currentStep == 3 ? 'dark:text-red-500' : '' }} space-x-4">
-                <span class="flex items-center justify-center w-10 h-10 bg-{{ $currentStep == 2 || $currentStep == 3 ? 'white' : 'gray-400' }} rounded-full lg:h-12 lg:w-12 shrink-0">
-                    <svg class="w-3.5 h-3.5 text-{{ $currentStep == 2 || $currentStep == 3 ? 'red-600' : 'gray-600' }} lg:w-4 lg:h-4 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                    </svg>
+                <span class="flex items-center justify-center w-10 h-10 text-{{ $currentStep == 2 | $currentStep == 3 ?'red-500' : 'gray-500' }} bg-{{ $currentStep == 2 | $currentStep == 3 ? 'white' : 'gray-400' }} rounded-full lg:h-12 lg:w-12 shrink-0">
+                    <i class="fa-solid fa-address-book"></i>
                 </span>
                 <span class="text-lg">Address Information</span>
             </div>
         </li>
 
-        <li class="flex-1 flex justify-center items-center">
-            <div class="h-1 w-full grow bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }}"></div>
+        <li class="flex-1 flex justify-center items-center gap-4">
+            <div class="h-1 w-full bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }}"></div>
             <div class="flex flex-none w-64 items-center text-{{ $currentStep == 3 ? 'white' : 'gray-400' }} {{ $currentStep == 3 ? 'dark:text-red-500' : '' }} space-x-4">
-                <span class="flex items-center justify-center w-10 h-10 bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }} rounded-full lg:h-12 lg:w-12 shrink-0">
-                    <svg class="w-3.5 h-3.5 text-{{ $currentStep == 3 ? 'red-600' : 'gray-600' }} lg:w-4 lg:h-4 aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                    </svg>
+                <span class="flex items-center justify-center w-10 h-10 text-{{ $currentStep == 3 ?'red-500' : 'gray-500' }} bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }} rounded-full lg:h-12 lg:w-12 shrink-0">
+                    <i class="fa-solid fa-user-graduate"></i>
                 </span>
-                <span class="text-lg">Educational Attainment</span>
+                <span class="text-lg whitespace-nowrap">Educational Attainment</span>
             </div>
         </li>
-        <div class="h-1 w-12 lg:w-32 xl:w-64 bg-{{  $currentStep == 3 ? 'white' : 'gray-400' }}"></div>
-
+        {{-- <div class="flex-1 h-1 bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }}"></div> --}}
     </ol>
 
     <div class="w-full mt-6 lg:pl-2 space-y-8">
@@ -115,7 +108,7 @@
                                                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                                                 </svg>
                                             </div>
-                                            <input id="birthdate" datepicker type="text" class="bg-gray-50 focus:bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Select date" wire:model="birthdate" name="birthdate" required="birthdate" aria-label="Birth">
+                                            <input id="birthdate" datepicker type="text" class="bg-gray-50 focus:bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Select date" wire:model="birthdate" name="birthdate" required="birthdate" aria-label="Birth" style="padding-right: 35px;">
                                         </div>
                                         <span class="text-red-700">@error('birthdate'){{ $message }} @enderror</span>
                                     </div>
@@ -337,3 +330,4 @@
 
     </div>
 </div>
+

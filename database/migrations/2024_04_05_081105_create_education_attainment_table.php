@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\EducationAttainment;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,6 +20,12 @@ return new class extends Migration
             $table->string('year_attended');
             $table->timestamps();
         });
+
+        EducationAttainment::create([
+            'info_id' => '1',
+            'course' => 'Bachelor of Arts in Creative Writing',
+            'year_attended' => '2023-2024',
+        ]);
     }
 
     /**

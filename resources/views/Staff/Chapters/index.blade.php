@@ -37,7 +37,7 @@
                         <input type="text" id="table-search" class="block py-2 px-2 ps-10 pl-10 text-sm text-gray-900 border border-gray-300 rounded w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for items">
                     </div>
                 </div>
-                <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="block text-white rounded px-4 py-2 bg-red-600 hover:bg-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Add Chapter</button>
+                <button data-modal-target="add-modal" data-modal-toggle="add-modal" class="font-semibold text-white bg-red-600 hover:bg-red-500 text-sm p-2 rounded transition ease-in duration-300 type="button">Add Chapter</button>
             </div>
 
             @if (session('success'))
@@ -149,9 +149,9 @@
             </nav>
         </main>
 
-        <footer class="w-full bg-white text-right p-4">
+        {{-- <footer class="w-full bg-white text-right p-4">
             Silliman University Alumni Records.
-        </footer>
+        </footer> --}}
     </div>
 
     <!-- AlpineJS -->

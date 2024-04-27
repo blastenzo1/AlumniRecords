@@ -212,9 +212,9 @@
             </div>
         </main>
 
-        <footer class="w-full bg-white text-right p-4">
+        {{-- <footer class="w-full bg-white text-right p-4">
             Silliman University Alumni Records.
-        </footer>
+        </footer> --}}
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>

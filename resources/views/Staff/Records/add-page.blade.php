@@ -15,8 +15,8 @@
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
     @livewireStyles
 </head>
-<body class="relative h-screen bg-gray-100 font-family-karla flex">
-    <aside class="h-max relative bg-sidebar w-64 hidden sm:block shadow-xl">
+<body class="relative h-min-screen bg-gray-100 font-family-karla flex">
+    <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl">
         <div class="p-6">
             <a href="{{ route('dashboard') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
                 <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="h-auto w-auto">
@@ -64,11 +64,24 @@
         </div>
 
         <main class="h-fit flex-1 flex flex-col p-4 space-y-4">
-            @livewire('add-alumni-form')
+
+            @if (session('success'))
+                <div class="bg-green-500 p-6 rounded text-white">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if (session('error'))
+                <div class="bg-red-500 p-6 rounded text-white">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @include('Staff.Records.Forms.add-form')
         </main>
     </div>
 
-    @livewireScripts
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>

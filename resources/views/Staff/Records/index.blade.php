@@ -15,7 +15,7 @@
     @livewireStyles
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
-<body class="h-min-screen bg-gray-100 font-family-karla flex">
+<body class="h-fit bg-gray-100 font-family-karla flex">
     <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl bg-red-700">
         @include('Layouts.staff-sidebar')
     </aside>
@@ -38,7 +38,7 @@
                         <input type="text" id="table-search" class="block py-2 px-2 ps-10 pl-10 text-sm text-gray-900 border border-gray-300 rounded w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for items">
                     </div>
                 </div>
-                <a href="{{ url('/add-record') }}" class="font-semibold text-white bg-red-500 text-sm p-2 rounded">Add Record</a>
+                <a href="{{ url('/add-record') }}" class="font-semibold text-white bg-red-600 hover:bg-red-500 text-sm p-2 rounded transition ease-in duration-300">Add Record</a>
             </div>
 
             @if (session('success'))
@@ -105,7 +105,7 @@
                                                 <a href="{{ url('view-record/' . $alumnus->id) }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">View Details</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
+                                                <a href="{{ url('edit-record/' . $alumnus->id) }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
                                             </li>
                                             <li>
                                                 <button data-modal-target="popup-modal{{ $alumnus->id }}" data-modal-toggle="popup-modal{{ $alumnus->id }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Delete</button>
@@ -150,9 +150,9 @@
             </nav>
         </main>
 
-        <footer class="w-full bg-white text-right p-4">
+        {{-- <footer class="w-full bg-white text-right p-4">
             Silliman University Alumni Records.
-        </footer>
+        </footer> --}}
     </div>
 
     @livewireScripts

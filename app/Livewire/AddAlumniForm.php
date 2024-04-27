@@ -80,20 +80,20 @@ class AddAlumniForm extends Component
                 'nationality' => 'required',
                 'status' => 'required',
                 'spouse' => 'required',
-                'number' => 'required|number',
+                'number' => 'required|numeric',
                 'email' => 'required|email',
             ]);
         }
         elseif($this->currentStep == 2){
             $this->validate([
-                'current_street' => 'nullable',
-                'current_city' => 'nullable',
-                'current_country' => 'nullable',
-                'current_zip_code' => 'nullable|number',
-                'home_street' => 'nullable',
-                'home_city' => 'nullable',
-                'home_country' => 'nullable',
-                'home_zip_code' => 'nullable',
+                'current_street' => 'required',
+                'current_city' => 'required',
+                'current_country' => 'required',
+                'current_zip_code' => 'required|numeric',
+                'home_street' => 'required',
+                'home_city' => 'required',
+                'home_country' => 'required',
+                'home_zip_code' => 'required|numeric',
             ]);
         }
         elseif($this->currentStep == 3){

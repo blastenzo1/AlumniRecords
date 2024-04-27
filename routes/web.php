@@ -34,13 +34,16 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
         # Records
         Route::get('/records', [AlumniController::class, 'index'])->name('records');
-        Route::get('/add-record', [AlumniController::class, 'add_record'])->name('add_record');
+        Route::get('/add-record', [AlumniController::class, 'add_page'])->name('add_page');
+        Route::post('/add-record', [AlumniController::class, 'add_alumni'])->name('add_record');
         Route::get('/view-record/{id}', [AlumniController::class, 'view']);
+        Route::get('/edit-record/{id}', [AlumniController::class, 'edit_page'])->name('edit_page');
+        Route::put('/update-record/{id}', [AlumniController::class, 'update_alumni'])->name('update_alumni');
         Route::delete('/delete-record/{id}', [AlumniController::class, 'destroy']);
 
         # Chapters
         Route::get('/chapter', [ChapterController::class, 'index'])->name('chapters');
-        Route::post('/add-chapter/{id}', [ChapterController::class, 'store'])->name('add-chapter');
+        Route::post('/add-chapter', [ChapterController::class, 'store'])->name('add-chapter');
         Route::patch('/update-chapter/{id}', [ChapterController::class, 'update'])->name('update-chapter');
         Route::delete('/delete-chapter/{id}', [ChapterController::class, 'destroy'])->name('delete-chapter');
 
