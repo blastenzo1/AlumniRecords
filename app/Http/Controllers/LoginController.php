@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function landing()
+    {
+        return view('welcome');
+    }
+
     public function show()
     {
         return view('auth.login');

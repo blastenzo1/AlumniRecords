@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\EducationAttainment;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,11 +15,17 @@ return new class extends Migration
         Schema::create('education_attainments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('info_id')->nullable();
-            $table->foreign('info_id')->references('id')->on('alumnis')->onDelete('cascade');
+            // $table->foreign('info_id')->references('id')->on('alumnis')->onDelete('cascade');
             $table->string('course');
             $table->string('year_attended');
             $table->timestamps();
         });
+
+        EducationAttainment::create([
+            'info_id' => '1',
+            'course' => 'Bachelor of Arts in Creative Writing',
+            'year_attended' => '2023-2024',
+        ]);
     }
 
     /**

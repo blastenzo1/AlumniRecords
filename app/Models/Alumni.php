@@ -22,4 +22,14 @@ class Alumni extends Model
     protected $casts = [
         'birthdate' => 'date',
     ];
+
+    public function address()
+    {
+        return $this->hasOne(Address::class, 'info_id');
+    }
+
+    public function educationAttainment()
+    {
+        return $this->hasOne(EducationAttainment::class, 'info_id');
+    }
 }

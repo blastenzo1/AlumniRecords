@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
 
@@ -21,30 +23,31 @@ use App\Http\Controllers\FormController;
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
     Route::group(['middleware' => ['guest']], function() {
-        // Route::get('/register', 'RegisterController@show')->name('register.show');
-        // Route::post('/register', 'RegisterController@register')->name('register.perform');
+        Route::get('/', [LoginController::class, 'landing'])->name('welcome');
 
-        Route::get('/', [FormController::class, 'index']);
-        Route::post('/', [FormController::class, 'store'])->name('form.store');
-
-        Route::get('/login', 'LoginController@show')->name('login.show');
-        Route::post('/login', 'LoginController@login')->name('login.perform');
-
+        Route::get('/login', [LoginController::class, 'show'])->name('login.show');
+        Route::post('/login', [LoginController::class, 'login'])->name('login.perform');
     });
 
     Route::group(['middleware' => ['auth']], function() {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-        Route::get('/reports', function () {
-            return view('staff.reports');
-        })->name('reports');
-
+        # Records
         Route::get('/records', [AlumniController::class, 'index'])->name('records');
+        Route::get('/add-record', [AlumniController::class, 'add_page'])->name('add_page');
+        Route::post('/add-record', [AlumniController::class, 'add_alumni'])->name('add_record');
+        Route::get('/view-record/{id}', [AlumniController::class, 'view']);
+        Route::get('/edit-record/{id}', [AlumniController::class, 'edit_page'])->name('edit_page');
+        Route::put('/update-record/{id}', [AlumniController::class, 'update_alumni'])->name('update_alumni');
+        Route::delete('/delete-record/{id}', [AlumniController::class, 'destroy']);
 
-        Route::get('/fillupform', function () {
-            return view('staff.fillupform');
-        })->name('fillupform');
+        # Chapters
+        Route::get('/chapter', [ChapterController::class, 'index'])->name('chapters');
+        Route::post('/add-chapter', [ChapterController::class, 'store'])->name('add-chapter');
+        Route::patch('/update-chapter/{id}', [ChapterController::class, 'update'])->name('update-chapter');
+        Route::delete('/delete-chapter/{id}', [ChapterController::class, 'destroy'])->name('delete-chapter');
 
+        # Other Routes
         Route::get('/alumnidetails', function () {
             return view('staff.alumnidetails');
         })->name('alumnidetails');
@@ -57,6 +60,5 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
     });
 });
-
 
 

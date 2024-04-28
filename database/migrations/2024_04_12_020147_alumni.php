@@ -25,13 +25,22 @@ return new class extends Migration
             $table->string('spouse');
             $table->string('number');
             $table->string('email');
-            // $table->string('occupation');
-            // $table->string('living_status');
-            // $table->string('education');
-            // $table->string('awards')->nullable();
             $table->timestamps();
         });
 
+        Alumni::create([
+            'id' => '1',
+            'last_name' => 'Dalisay',
+            'middle_name' => 'Agila',
+            'first_name' => 'Cardo',
+            'birthdate' => '01/12/1969',
+            'sex' => 'male',
+            'nationality' => 'Filipino',
+            'status' => 'Married',
+            'spouse' => 'Filipino',
+            'number' => '09123456789',
+            'email' => 'cardoadalisay@su.edu.ph',
+        ]);
 
     }
 

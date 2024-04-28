@@ -1,23 +1,41 @@
-@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
-      
-.font-family-karla { font-family: karla; }
-.bg-sidebar { background: #900000; }
-.cta-btn { color: #900000; }
-.userWel { 
+@import url("https://fonts.googleapis.com/css?family=Karla:400,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-family-karla {
+    font-family: karla;
+}
+.bg-sidebar {
+    background: #900000;
+}
+.cta-btn {
+    color: #900000;
+}
+.userWel {
     color: #750000;
-    background: white; }
-.userWel:hover { 
+    background: white;
+}
+.userWel:hover {
     color: #fff;
-    background: #750000; }
-.active-nav-link { background: #900000; }
-.nav-item:hover { background: #750000; }
+    background: #750000;
+}
+.active-nav-link {
+    background: #900000;
+}
+.nav-item:hover {
+    background: #750000;
+}
 .account-link {
-    color: #900000; }
-.account-link:hover { 
+    color: #900000;
+}
+.account-link:hover {
     color: white;
-    background: #750000; 
-    font-style: bold ;  }
-.DeskHeader{
+    background: #750000;
+    font-style: bold;
+}
+.DeskHeader {
     background: #900000;
 }
 .active {
@@ -28,28 +46,27 @@
     color: whitesmoke;
 }
 
-
 .gradient-custom {
     /* fallback for old browsers */
     background: #6a11cb;
-    
+
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgb(129, 0, 0), rgb(200, 130, 130));
-    
+    background: -webkit-linear-gradient(
+        to right,
+        rgb(129, 0, 0),
+        rgb(200, 130, 130)
+    );
+
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right,rgb(129, 0, 0), rgb(200, 130, 130));
-    }
-
-
+    background: linear-gradient(to right, rgb(129, 0, 0), rgb(200, 130, 130));
+}
 
 .container {
     /* width: full; */
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
-    }
-
-
+}
 
 @media (max-width: 768px) {
     header img {
@@ -60,26 +77,24 @@
         top: 5%; /* Adjust top positioning as needed */
         left: 2%; /* Adjust left positioning as needed */
     }
-    }
+}
 
-
-
-
-
-.demo{ font-family: 'Noto Sans', sans-serif; }
-.panel{
+.demo {
+    font-family: "Noto Sans", sans-serif;
+}
+.panel {
     background: gray;
     padding: 0;
     border-radius: 10px;
     border: none;
-    box-shadow: 0 0 0 5px rgba(0,0,0,0.05),0 0 0 10px rgba(0,0,0,0.05);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05), 0 0 0 10px rgba(0, 0, 0, 0.05);
 }
-.panel .panel-heading{
+.panel .panel-heading {
     padding: 20px 15px;
     border-radius: 10px 10px 0 0;
     margin: 0;
 }
-.panel .panel-heading .title{
+.panel .panel-heading .title {
     color: black;
     font-size: 28px;
     font-weight: 500;
@@ -87,7 +102,7 @@
     line-height: 40px;
     margin: 0;
 }
-.panel .panel-heading .btn{
+.panel .panel-heading .btn {
     color: black;
     background: transparent;
     font-size: 16px;
@@ -96,11 +111,11 @@
     border-radius: 50px;
     transition: all 0.3s ease 0s;
 }
-.panel .panel-heading .btn:hover{
+.panel .panel-heading .btn:hover {
     color: #900000;
-    text-shadow: 3px 3px rgba(255,255,255,0.2);
+    text-shadow: 3px 3px rgba(255, 255, 255, 0.2);
 }
-.panel .panel-heading .form-control{
+.panel .panel-heading .form-control {
     color: #fff;
     background-color: transparent;
     width: 35%;
@@ -110,18 +125,20 @@
     display: inline-block;
     transition: all 0.3s ease 0s;
 }
-.panel .panel-heading .form-control:focus{
-    background-color: rgba(255,255,255,0.2);
+.panel .panel-heading .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
     box-shadow: none;
     outline: none;
 }
-.panel .panel-heading .form-control::placeholder{
-    color: rgba(255,255,255,0.5);
+.panel .panel-heading .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
     font-size: 15px;
     font-weight: 500;
 }
-.panel .panel-body{ padding: 0; }
-.panel .panel-body .table thead tr th{
+.panel .panel-body {
+    padding: 0;
+}
+.panel .panel-body .table thead tr th {
     color: black;
     background-color: rgba(255, 255, 255, 0.2);
     font-size: 16px;
@@ -130,33 +147,37 @@
     padding: 12px;
     border: none;
 }
-.panel .panel-body .table tbody tr td{
+.panel .panel-body .table tbody tr td {
     color: black;
     font-size: 15px;
     padding: 10px 12px;
     vertical-align: middle;
     border: none;
 }
-.panel .panel-body .table tbody tr:nth-child(even){ background-color: rgba(255,255,255,0.05); }
-.panel .panel-body .table tbody .action-list{
+.panel .panel-body .table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.panel .panel-body .table tbody .action-list {
     padding: 0;
     margin: 0;
     list-style: none;
 }
-.panel .panel-body .table tbody .action-list li{
+.panel .panel-body .table tbody .action-list li {
     display: inline-block;
     margin: 0 5px;
 }
-.panel .panel-body .table tbody .action-list li a{
+.panel .panel-body .table tbody .action-list li a {
     color: #fff;
     font-size: 15px;
     position: relative;
     z-index: 1;
     transition: all 0.3s ease 0s;
 }
-.panel .panel-body .table tbody .action-list li a:hover{ text-shadow: 3px 3px 0 rgba(255,255,255,0.3); }
+.panel .panel-body .table tbody .action-list li a:hover {
+    text-shadow: 3px 3px 0 rgba(255, 255, 255, 0.3);
+}
 .panel .panel-body .table tbody .action-list li a:before,
-.panel .panel-body .table tbody .action-list li a:after{
+.panel .panel-body .table tbody .action-list li a:after {
     content: attr(data-tip);
     color: #fff;
     background-color: #111;
@@ -171,8 +192,8 @@
     top: -32px;
     transition: all 0.3s ease 0s;
 }
-.panel .panel-body .table tbody .action-list li a:after{
-    content: '';
+.panel .panel-body .table tbody .action-list li a:after {
+    content: "";
     height: 15px;
     width: 15px;
     padding: 0;
@@ -182,18 +203,22 @@
     z-index: -1;
 }
 .panel .panel-body .table tbody .action-list li a:hover:before,
-.panel .panel-body .table tbody .action-list li a:hover:after{
+.panel .panel-body .table tbody .action-list li a:hover:after {
     display: block;
 }
-.panel .panel-footer{
+.panel .panel-footer {
     color: #fff;
     background-color: transparent;
     padding: 15px;
     border: none;
 }
-.panel .panel-footer .col{ line-height: 35px; }
-.pagination{ margin: 0; }
-.pagination li a{
+.panel .panel-footer .col {
+    line-height: 35px;
+}
+.pagination {
+    margin: 0;
+}
+.pagination li a {
     color: #fff;
     background-color: transparent;
     border: 2px solid transparent;
@@ -208,26 +233,28 @@
     border-radius: 50px;
     transition: all 0.3s ease 0s;
 }
-.pagination li a:hover{
+.pagination li a:hover {
     color: #fff;
     background-color: transparent;
-    border-color: rgba(255,255,255,0.2);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 .pagination li a:focus,
 .pagination li.active a,
-.pagination li.active a:hover{
+.pagination li.active a:hover {
     color: #fff;
     background-color: transparent;
     border-color: #fff;
 }
 .pagination li:first-child a,
-.pagination li:last-child a{
+.pagination li:last-child a {
     border-radius: 50%;
 }
-@media only screen and (max-width:767px){
-    .panel .panel-heading .title{
+@media only screen and (max-width: 767px) {
+    .panel .panel-heading .title {
         text-align: center;
         margin: 0 0 10px;
     }
-    .panel .panel-heading .btn_group{ text-align: center; }
+    .panel .panel-heading .btn_group {
+        text-align: center;
+    }
 }

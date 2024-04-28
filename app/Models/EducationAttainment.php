@@ -10,10 +10,11 @@ class EducationAttainment extends Model
     protected $fillable = [
         'course',
         'year_attended',
+        'info_id',
     ];
 
     public function alumni()
     {
-        return $this->belongsTo(Alumni::class);
+        return $this->belongsTo(Alumni::class, 'info_id', 'id');
     }
 }
