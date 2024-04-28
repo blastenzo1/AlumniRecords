@@ -19,7 +19,7 @@
         @include('Layouts.staff-sidebar')
     </aside>
 
-    <div class="ml-64 w-full flex flex-col items-stretch justify-between h-screen">
+    <div class="sm:ml-64 w-full flex flex-col items-stretch justify-between h-screen">
         <div class="w-full bg-white py-4 px-6">
             <div class="flex justify-between items-center">
                 <div x-data="{ isOpenMenu: false }" class="flex items-center gap-4">
