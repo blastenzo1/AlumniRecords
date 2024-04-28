@@ -15,8 +15,8 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
-<body class="h-min-screen bg-gray-100 font-family-karla flex">
-    <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl">
+<body class="h-fit bg-gray-100 font-family-karla flex">
+    <aside class="relative h-fit bg-sidebar w-64 hidden sm:block shadow-xl">
         <div class="p-6">
             <a href="{{ route('dashboard') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
                 <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="h-auto w-auto">

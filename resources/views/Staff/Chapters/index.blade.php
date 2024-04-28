@@ -51,7 +51,7 @@
                                     </a>
                                 </nav>
                             </div>
-                            <div class="flex-1 h-screen bg-black opacity-50"></div>
+                            <div class="flex-1 h-screen bg-black"></div>
                         </div>
                     </div>
                     <header class="text-xl whitespace-nowrap">Chapters</header>
@@ -146,9 +146,9 @@
                                             </li>
                                                 <button data-modal-target="edit-modal{{ $chapter->name }}" data-modal-toggle="edit-modal{{ $chapter->name }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Edit</button>
                                             </li>
-                                            <li>
+                                            {{-- <li>
                                                 <button data-modal-target="delete-modal{{ $chapter->name }}" data-modal-toggle="delete-modal{{ $chapter->name }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Delete</button>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </div>
 
@@ -159,9 +159,9 @@
                                     <div id="edit-modal{{ $chapter->name }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                                         @include('Staff.Chapters.Modals.edit')
                                     </div>
-                                    <div id="delete-modal{{ $chapter->name }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                    {{-- <div id="delete-modal{{ $chapter->name }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                                         @include('Staff.Chapters.Modals.delete')
-                                    </div>
+                                    </div> --}}
                                 </td>
                             </tr>
                         @endforeach

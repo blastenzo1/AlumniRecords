@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
     @livewireStyles
 </head>
-<body class="relative h-min-screen bg-gray-100 font-family-karla flex">
+<body class="relative h-fit bg-gray-100 font-family-karla flex">
     <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl">
         <div class="p-6">
             <a href="{{ route('dashboard') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
