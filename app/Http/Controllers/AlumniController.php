@@ -11,7 +11,7 @@ class AlumniController extends Controller
 {
     public function index()
     {
-        $alumnis = Alumni::all();
+        $alumnis = Alumni::paginate(7);
         return view('staff.records.index', compact('alumnis'));
     }
 
@@ -20,6 +20,17 @@ class AlumniController extends Controller
         $address = Address::where('info_id', '=', $id)->first();
         $educationAttainment = EducationAttainment::where('info_id', '=', $id)->first();
         return view('staff.records.view', compact('alumni', 'address', 'educationAttainment'));
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $alumnis = Alumni::where('name', 'like', '%' . $query . '%')
+            ->orWhere('email', 'like', '%' . $query . '%')
+            ->paginate(7);
+
+        return view('staff.records.index', compact('alumnis'));
     }
 
     // public function view(Alumni $alumni)

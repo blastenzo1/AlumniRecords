@@ -18,6 +18,9 @@ use App\Http\Controllers\FormController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
+Route::get('/alumni/{id}', [AlumniController::class, 'view'])->name('alumni.view');
+Route::get('/alumni/search', [AlumniController::class, 'search'])->name('alumni.search');
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
@@ -38,7 +41,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('/reports', function () {
             return view('staff.reports');
         })->name('reports');
-        
+
         // Route::get('/chapter', function () {
         //     return view('staff.chapter');
         // })->name('chapter');
