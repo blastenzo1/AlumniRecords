@@ -47,6 +47,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::patch('/update-chapter/{id}', [ChapterController::class, 'update'])->name('update-chapter');
         Route::delete('/delete-chapter/{id}', [ChapterController::class, 'destroy'])->name('delete-chapter');
 
+        # Users
+        Route::get('/users', [UserController::class, 'index'])->name('users');
+        Route::post('/add-user', [UserController::class, 'store'])->name('add-user');
+        Route::patch('/update-user/{id}', [UserController::class, 'update'])->name('update-user');
+        Route::delete('/delete-chapter/{id}', [UserController::class, 'destroy'])->name('delete-user');
+
         # Other Routes
         Route::get('/alumnidetails', function () {
             return view('staff.alumnidetails');

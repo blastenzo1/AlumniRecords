@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
+            $table->string('type');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -25,11 +26,12 @@ return new class extends Migration
         });
 
         User::create([
-            'first_name' => 'John',
-            'middle_name' => 'David',
-            'last_name' => 'Doe',
-            'email' => 'john.doe@example.com',
+            'first_name' => 'Silliman',
+            'middle_name' => '',
+            'last_name' => 'University',
+            'email' => 'sillimanict@su.edu.ph',
             'password' => bcrypt('123'),
+            'type' => 'Master Admin'
         ]);
     }
 

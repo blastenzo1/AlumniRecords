@@ -35,10 +35,10 @@
                 <i class="fas fa-sticky-note mr-3"></i>
                 Records
             </a>
-            <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'reports') active @endif">
+            {{-- <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'reports') active @endif">
                 <i class="fas fa-table mr-3"></i>
                 Reports
-            </a>
+            </a> --}}
         </nav>
         <a href="#" class="absolute w-full userWel bottom-0 flex items-center justify-center py-4">
             username, Welcome!
@@ -80,10 +80,6 @@
                         <a href="{{ route('records') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                             <i class="fas fa-sticky-note mr-3"></i>
                             Records
-                        </a>
-                        <a href="{{ route('reports') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                            <i class="fas fa-table mr-3"></i>
-                            Reports
                         </a>
                         <a href="#" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                             <i class="fas fa-user mr-3"></i>
@@ -130,38 +126,38 @@
                     <div class="bg-white p-6">
                         <div id="" class="" x-show="openTab === 1">
 
-                            
+
                                 <div class="card-body p-5 text-center rounded" style="background-color: rgb(219, 219, 219);">
                                     <form action="{{ route('login.perform') }}" method="POST">
-                                        
+
                                         <div class="form-outline form-white mb-4">
                                             <input type="text" name="email" id="email" class="form-control form-control-lg" />
                                             <label class="form-label" for="email">Username</label>
                                         </div>
-            
+
                                         <div class="form-outline form-white mb-4">
                                             <input type="password" name="password" id="password" class="form-control form-control-lg" />
                                             <label class="form-label" for="password">Password</label>
                                         </div>
-            
+
                                         <button class="btn btn-outline-dark btn-dark btn-lg px-5" type="submit">Add new user</button>
                                     </form>
                                 </div>
-                            
+
                         </div>
 
                         <div id="" class="" x-show="openTab === 2">
-                            Curabitur at lacinia felis.  Curabitur at lacinia felis. 
+                            Curabitur at lacinia felis.  Curabitur at lacinia felis.
 
                         <div id="" class="" x-show="openTab === 3">
-                            Duis imperdiet ullamcorper nibh, sed euismod dolor facilisis sit amet. 
+                            Duis imperdiet ullamcorper nibh, sed euismod dolor facilisis sit amet.
 
                         <div id="" class="" x-show="openTab === 4">
-                            Mauris viverra viverra dolor quis gravida. 
+                            Mauris viverra viverra dolor quis gravida.
                     </div>
                 </div>
 
-                
+
 
             </main>
 
