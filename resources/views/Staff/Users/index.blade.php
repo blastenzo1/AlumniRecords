@@ -54,7 +54,7 @@
                             <div class="flex-1 h-screen bg-black"></div>
                         </div>
                     </div>
-                    <header class="text-xl whitespace-nowrap">users</header>
+                    <header class="text-xl whitespace-nowrap">Users</header>
                 </div>
                 <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
                     <button @click="isOpen = !isOpen" class="realtive z-10 w-12 h-12 rounded-full overflow-hidden border-4 border-gray-400 hover:border-gray-300 focus:border-gray-300 focus:outline-none">

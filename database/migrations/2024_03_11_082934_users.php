@@ -33,6 +33,14 @@ return new class extends Migration
             'password' => bcrypt('123'),
             'type' => 'Master Admin'
         ]);
+        User::create([
+            'first_name' => 'John',
+            'middle_name' => 'Dave',
+            'last_name' => 'Williams',
+            'email' => 'john.doe@example.com',
+            'password' => bcrypt('123'),
+            'type' => 'Admin'
+        ]);
     }
 
     /**
