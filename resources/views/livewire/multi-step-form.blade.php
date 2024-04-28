@@ -1,38 +1,38 @@
-<div class="space-y-4">
-    <ol class="flex justify-center items-center w-full">
-        <li class="flex-1 flex justify-center items-center">
-            <div class="h-1 w-full bg-white"></div>
-            <div class="flex flex-none w-64 items-center text-white dark:text-red-500 space-x-4">
-                <span class="flex items-center justify-center w-10 h-10 bg-white text-red-600 rounded-full lg:h-12 lg:w-12 shrink-0">
-                    <i class="fa-solid fa-user"></i>
-                </span>
-                <span class="text-lg">Personal Information</span>
-            </div>
-        </li>
-        <li class="flex-1 flex justify-center items-center">
-            <div class="h-1 w-full bg-{{ $currentStep == 2 || $currentStep == 3 ? 'white' : 'gray-400' }}"></div>
-            <div class="flex flex-none w-64 items-center text-{{ $currentStep == 2 || $currentStep == 3 ? 'white' : 'gray-400' }} {{ $currentStep == 2 || $currentStep == 3 ? 'dark:text-red-500' : '' }} space-x-4">
-                <span class="flex items-center justify-center w-10 h-10 text-{{ $currentStep == 2 | $currentStep == 3 ?'red-500' : 'gray-500' }} bg-{{ $currentStep == 2 | $currentStep == 3 ? 'white' : 'gray-400' }} rounded-full lg:h-12 lg:w-12 shrink-0">
-                    <i class="fa-solid fa-address-book"></i>
-                </span>
-                <span class="text-lg">Address Information</span>
-            </div>
-        </li>
-
-        <li class="flex-1 flex justify-center items-center gap-4">
-            <div class="h-1 w-full bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }}"></div>
-            <div class="flex flex-none w-64 items-center text-{{ $currentStep == 3 ? 'white' : 'gray-400' }} {{ $currentStep == 3 ? 'dark:text-red-500' : '' }} space-x-4">
-                <span class="flex items-center justify-center w-10 h-10 text-{{ $currentStep == 3 ?'red-500' : 'gray-500' }} bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }} rounded-full lg:h-12 lg:w-12 shrink-0">
-                    <i class="fa-solid fa-user-graduate"></i>
-                </span>
-                <span class="text-lg whitespace-nowrap">Educational Attainment</span>
-            </div>
-        </li>
-        {{-- <div class="flex-1 h-1 bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }}"></div> --}}
-    </ol>
+<div class="space-y-6">
 
     <div class="w-full mt-6 lg:pl-2 space-y-8">
         <div class="px-6">
+
+            <ol class="hidden sm:flex justify-center items-center xl:max-w-7xl mx-auto gap-4">
+                <li class="flex-1 flex justify-center items-center">
+                    <div class="flex w-full lg:flex-none lg:w-64 items-center text-white dark:text-red-500 space-x-4">
+                        <span class="hidden lg:flex items-center justify-center w-10 h-10 bg-white text-red-600 rounded-full lg:h-12 lg:w-12 shrink-0">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <span class="text-lg whitespace-nowrap font-semibold">Personal Information</span>
+                    </div>
+                </li>
+                <div class="h-1 w-full bg-{{ $currentStep == 2 || $currentStep == 3 ? 'white' : 'gray-400' }}"></div>
+
+                <li class="flex-1 flex justify-center items-center">
+                    <div class="flex w-full lg:flex-none lg:w-64  items-center text-{{ $currentStep == 2 || $currentStep == 3 ? 'white' : 'gray-400' }} {{ $currentStep == 2 || $currentStep == 3 ? 'dark:text-red-500' : '' }} space-x-4">
+                        <span class="hidden lg:flex items-center justify-center w-10 h-10 text-{{ $currentStep == 2 | $currentStep == 3 ?'red-500' : 'gray-500' }} bg-{{ $currentStep == 2 | $currentStep == 3 ? 'white' : 'gray-400' }} rounded-full lg:h-12 lg:w-12 shrink-0">
+                            <i class="fa-solid fa-address-book"></i>
+                        </span>
+                        <span class="text-lg whitespace-nowrap font-semibold sm:font-normal">Address Information</span>
+                    </div>
+                </li>
+
+                <div class="h-1 w-full bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }}"></div>
+                <li class="flex-1 flex justify-center items-center gap-4">
+                    <div class="flex w-full lg:flex-none lg:w-64 items-center text-{{ $currentStep == 3 ? 'white' : 'gray-400' }} {{ $currentStep == 3 ? 'dark:text-red-500' : '' }} space-x-4">
+                        <span class="hidden lg:flex items-center justify-center w-10 h-10 text-{{ $currentStep == 3 ?'red-500' : 'gray-500' }} bg-{{ $currentStep == 3 ? 'white' : 'gray-400' }} rounded-full lg:h-12 lg:w-12 shrink-0">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </span>
+                        <span class="text-lg whitespace-nowrap font-semibold sm:font-normal">Educational Attainment</span>
+                    </div>
+                </li>
+            </ol>
 
             @if (session('success'))
                 <div class="bg-green-500 p-6 rounded text-white xl:max-w-7xl mx-auto">
@@ -101,7 +101,6 @@
                                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                     <div class="flex-1 space-y-1">
                                         <label class="{{ $errors->has('birthdate') ? 'text-red-700' : 'text-gray-600' }}" for="birthdate">Birthdate</label>
-                                        {{-- <input class="bg-gray-50 focus:bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" id="birthdate" wire:model="birthdate" name="birthdate" type="text" required="birthdate" placeholder="ex. 01/01/2000" aria-label="Birth"> --}}
                                         <div class="relative">
                                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -184,7 +183,7 @@
                                 <div class="space-y-4">
                                     <span class="text-lg text-gray-500">Current Address</span>
 
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 ">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div class="space-y-1">
                                             <label class="block {{ $errors->has('current_street') ? 'text-red-700' : 'text-gray-600' }}" for="current_street">House/Apt No., Street, Barangay</label>
                                             <input class="bg-gray-50 focus:bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 id="current_street" wire:model="current_street" name="current_street" type="text" required="" placeholder="ex. 69, Lacson Street, Barangay Poblacion" aria-label="cStreet">
@@ -197,7 +196,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                         <div class="space-y-1">
                                             <label class="block {{ $errors->has('current_zip_code') ? 'text-red-700' : 'text-gray-600' }}" for="current_zip_code">Zip Code</label>
                                             <input class="bg-gray-50 focus:bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" id="current_zip_code" wire:model="current_zip_code" name="current_zip_code" type="text" required="" placeholder="ex. 6200" aria-label="cZip Code">
@@ -224,9 +223,9 @@
                                 </div>
 
                                 <div class="space-y-4">
-                                    <span class="text-lg text-gray-500">Current Address</span>
+                                    <span class="text-lg text-gray-500">Home Address</span>
 
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 ">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
                                         <div class="space-y-1">
                                             <label class="block {{ $errors->has('home_street') ? 'text-red-700' : 'text-gray-600' }}" for="home_street">House/Apt No., Street, Barangay</label>
                                             <input class="bg-gray-50 focus:bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" id="home_street" wire:model="home_street" name="home_street" type="text" required="" placeholder="ex. 69, Lacson Street, Barangay Poblacion" aria-label="hStreet">
@@ -240,7 +239,7 @@
                                     </div>
 
 
-                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                         <div class="space-y-1">
                                             <label class="block {{ $errors->has('home_zip_code') ? 'text-red-700' : 'text-gray-600' }}" for="home_zip_code">Zip Code</label>
                                             <input class="bg-gray-50 focus:bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" id="home_zip_code" wire:model="home_zip_code" name="home_zip_code" type="text" required="" placeholder="ex. 6200" aria-label="hZip Code">
@@ -321,8 +320,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 </form>
             </div>
 

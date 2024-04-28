@@ -1,4 +1,4 @@
-<div class="max-w-sm w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+<div class="w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
     <div class="flex justify-between items-start w-full">
         <div class="flex-col items-center">
             <div class="flex items-center mb-1">

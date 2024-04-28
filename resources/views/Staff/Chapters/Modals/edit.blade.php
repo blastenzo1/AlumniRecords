@@ -1,4 +1,4 @@
-<form method="POST" action="{{ url('update-chapter/' . $chapter->id) }}" class="p-4 w-full max-w-md max-h-full">
+<form method="POST" action="{{ url('update-chapter/' . $chapter->id) }}" class="w-full max-w-md max-h-full">
     @csrf
     @method('PATCH')
     <div class="relative p-4 w-full max-w-md max-h-full">

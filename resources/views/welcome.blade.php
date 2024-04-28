@@ -18,11 +18,13 @@
     <section class="h-min-screen bg-gradient-to-b from-red-900 from-70% to-bg-white to-30% flex flex-col justify-between items-stretch">
         <div class="w-full h-screen flex">
             <main class="w-full py-6 space-y-8">
-                <div class="flex justify-between items-center px-6">
+                <div class="flex flex-col ssm:flex-row sm:flex-row justify-between items-center px-6">
                     <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4 w-96">
-                    <a class="bg-white hover:bg-zinc-300 flex justify-center items-center text-red-700 border-none px-4 py-2 rounded space-x-2" href="{{ route('login.show') }}">
-                        <span>Login</span>
-                        <i class="fa fa-sign-in"></i>
+                    <a class="bg-white hover:bg-zinc-300 text-red-700 border-none rounded" href="{{ route('login.show') }}">
+                        <div class="flex justify-center items-center px-4 py-2 space-x-2">
+                            <span>Login</span>
+                            <i class="fa fa-sign-in"></i>
+                        </div>
                     </a>
                 </div>
 

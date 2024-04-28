@@ -8,15 +8,11 @@ export default {
     ],
 
     theme: {
-        extend: {},
+        extend: {
+            screens: {
+                ssm: "275px",
+            },
+        },
     },
     plugins: [require("flowbite/plugin")],
 };
-
-// module.exports = {
-//   content: ['./src/**/*.{html,js}'],
-//   theme: {
-//       extend: {}
-//   },
-//   plugins: []
-// }

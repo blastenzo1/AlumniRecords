@@ -1,4 +1,4 @@
-<form method="POST" action="{{ url('delete-chapter/' . $chapter->id) }}" class="p-4 w-full max-w-md max-h-full">
+<form method="POST" action="{{ url('delete-chapter/' . $chapter->id) }}" class="w-full max-w-md max-h-full">
     @csrf
     @method('DELETE')
     <div class="bg-white rounded-lg shadow dark:bg-gray-700">

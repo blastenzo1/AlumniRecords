@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
+    <title>Login</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href='{{ asset('app.css') }}'>
@@ -17,27 +16,27 @@
     <section class="bg-gradient-to-b from-red-900 from-70% to-bg-white to-30%">
         <div class="min-h-screen flex flex-col justify-center items-center">
             <main class="flex-1 flex flex-col w-full py-6 space-y-8">
-                <a href="/" class="flex-none flex justify-between items-center px-6 cursor-pointer">
+                <a href="/" class="flex-none flex justify-center sm:justify-start items-center px-6 cursor-pointer">
                     <img src="{{ asset('Pics/alumniRec.png') }}" alt="Logo" class="mb-4 w-96">
                 </a>
 
-                <div class="flex-1 grid grid-cols-1 place-content-center justify-center items-center space-y-6">
-                    <div class="text-center text-white space-y-6">
-                        <header class="font-bold text-4xl">LOGIN</header>
-                        <p>Welcome back! Please log in to access your account.</p>
+                <div class="flex-1 grid grid-cols-1 place-content-center justify-center items-center space-y-6p px-4">
+                    <div class="text-center text-white space-y-4">
+                        <header class="font-bold text-4xl">Login</header>
+                        <p class="text-xl">Welcome back! Please log in to access your account.</p>
                     </div>
                     <form action="{{ route('login.perform') }}" method="POST" class="space-y-6">
                         @csrf
                         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                            <div class="w-96">
+                            <div class="w-full sm:w-96">
                                 <input type="text" name="email" id="email" class="rounded-full py-3 px-8 w-full border border-zinc-700" placeholder="Enter Username"/>
                             </div>
-                            <div class="w-96">
+                            <div class="w-full sm:w-96">
                                 <input type="password" name="password" id="password" class="rounded-full py-3 px-8 w-full border border-zinc-700" placeholder="Enter Password"/>
                             </div>
                         </div>
                         <div class="flex justify-center">
-                            <button class="w-96 rounded-full py-3 px-8 bg-red-900 text-white" type="submit">Login</button>
+                            <button class="w-full sm:w-96 rounded-full py-3 px-8 bg-red-900 text-white" type="submit">Login</button>
                         </div>
                     </form>
                 </div>

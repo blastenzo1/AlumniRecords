@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route('add-chapter')}}" class="p-4 w-full max-w-md max-h-full">
+<form method="POST" action="{{ route('add-chapter')}}" class="w-full max-w-md max-h-full">
     @csrf
     @method('POST')
     <div class="relative p-4 w-full max-w-md max-h-full">
