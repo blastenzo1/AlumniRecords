@@ -37,11 +37,8 @@
                         <input type="password" name="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type password" required="password" value="{{ $user->password }}">
                     </div>
                     <div class="col-span-2">
-                        <label for="type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type</label>
-                        <select id="type" name="type" class="bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" disabled>
-                            <option value="Admin" {{ $user->type == 'Admin' ? 'selected' : '' }}>Admin</option>
-                            <option value="Admin" {{ $user->type == 'Master Admin' ? 'selected' : '' }}>Admin</option>
-                        </select>
+                        <label for="user_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type</label>
+                        <input type="text" name="user_type" id="user_type" class="bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type user type" required="user_type" value="{{ $user->user_type }}" disabled>
                     </div>
                 </div>
                 <div class="w-full flex justify-end p-4">

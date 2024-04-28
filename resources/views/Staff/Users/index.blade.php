@@ -51,7 +51,6 @@
                     </button>
                     <button x-show="isOpen" @click="isOpen = false" class="h-full w-full fixed inset-0 cursor-default"></button>
                     <div x-show="isOpen" class="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16">
-                        <a href="{{ route('accountpage') }}" class="block px-4 py-2 account-link hover:text-white">Account</a>
                         <a href="{{ route('logout.perform') }}" class="block px-4 py-2 account-link hover:text-white">Sign Out</a>
                     </div>
                 </div>
@@ -114,7 +113,7 @@
                                     {{ $user->email }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $user->type }}
+                                    {{ $user->user_type }}
                                 </td>
                                 <td class="px-6 py-4 space-x-2">
                                     <button id="dropdownDefaultButton{{ $user->id }}" data-dropdown-toggle="dropdown{{ $user->id }}" class="text-zinc-700 focus:ring-4 focus:outline-none focus:ring- red-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center" type="button">
@@ -127,9 +126,9 @@
                                             </li>
                                                 <button data-modal-target="edit-modal{{ $user->id }}" data-modal-toggle="edit-modal{{ $user->id }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Edit</button>
                                             </li>
-                                            <li>
+                                            {{-- <li>
                                                 <button data-modal-target="delete-modal{{ $user->id }}" data-modal-toggle="delete-modal{{ $user->id }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Delete</button>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </div>
 
@@ -141,9 +140,9 @@
                                         @include('Staff.Users.Modals.edit')
                                     </div>
 
-                                    <div id="delete-modal{{ $user->id }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                    {{-- <div id="delete-modal{{ $user->id }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                                         @include('Staff.Users.Modals.delete')
-                                    </div>
+                                    </div> --}}
                                 </td>
                             </tr>
                         @empty

@@ -52,7 +52,6 @@
                     </button>
                     <button x-show="isOpen" @click="isOpen = false" class="h-full w-full fixed inset-0 cursor-default"></button>
                     <div x-show="isOpen" class="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16">
-                        <a href="{{ route('accountpage') }}" class="block px-4 py-2 account-link hover:text-white">Account</a>
                         <a href="{{ route('logout.perform') }}" class="block px-4 py-2 account-link hover:text-white">Sign Out</a>
                     </div>
                 </div>
@@ -61,13 +60,13 @@
 
         <main class="flex-1 p-4 space-y-4 rounded-lg shadow">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                <a href="{{ route('chapters') }}" class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
-                    <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
-                    <div class="">
-                        <span class="block text-red-500 text-3xl">{{ $chapter_count }}</span>
-                        <div class="block text-zinc-200 text-2xl">Chapters</div>
-                    </div>
-                </a>
+            <a href="{{ route('chapters') }}" class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md hover:transform hover:scale-110 hover:-translate-y-1 hover:-translate-x-1 transition-transform">
+                <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
+                <div class="">
+                    <span class="block text-red-500 text-3xl">{{ $chapter_count }}</span>
+                    <div class="block text-zinc-200 text-2xl">Chapters</div>
+                </div>
+            </a>
                 <a href="{{ route('activity-log') }}" class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
                     <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
                     <div class="">
@@ -75,7 +74,7 @@
                         <div class="block text-zinc-200 text-2xl">Activity Log</div>
                     </div>
                 </a>
-                <a href="{{ route('chapters') }}" class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
+                <a href="{{ route('course-list') }}" class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
                     <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
                     <div class="">
                         <span class="block text-red-500 text-3xl">{{ $course_count }}</span>
