@@ -27,17 +27,19 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Address::create([
-            'info_id' => '1',
-            'current_street' => 'test',
-            'current_city' => 'test',
-            'current_country' => 'Philippines',
-            'current_zip_code' => '6200',
-            'home_street' => 'test',
-            'home_city' => 'test',
-            'home_country' => 'Philippines',
-            'home_zip_code' => '6200',
-        ]);
+        activity()->withoutLogs(function() {
+            Address::create([
+                'info_id' => '1',
+                'current_street' => 'test',
+                'current_city' => 'test',
+                'current_country' => 'Philippines',
+                'current_zip_code' => '6200',
+                'home_street' => 'test',
+                'home_city' => 'test',
+                'home_country' => 'Philippines',
+                'home_zip_code' => '6200',
+            ]);
+        });
     }
 
     /**

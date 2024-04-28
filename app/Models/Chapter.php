@@ -14,7 +14,7 @@ class Chapter extends Model
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-        ->logOnly(['name', 'representative', 'email']);
+        ->logOnly(['name', 'representative', 'email', 'status']);
     }
     protected $fillable = [
         'name',

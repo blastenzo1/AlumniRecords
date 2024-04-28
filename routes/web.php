@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\CourseListController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -47,11 +49,18 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::patch('/update-chapter/{id}', [ChapterController::class, 'update'])->name('update-chapter');
         Route::delete('/delete-chapter/{id}', [ChapterController::class, 'destroy'])->name('delete-chapter');
 
-        # Useres
+        # Users
         Route::get('/user', [UserController::class, 'index'])->name('users');
         Route::post('/add-user', [UserController::class, 'store'])->name('add-user');
         Route::patch('/update-user/{id}', [UserController::class, 'update'])->name('update-user');
         Route::delete('/delete-user/{id}', [UserController::class, 'destroy'])->name('delete-user');
+
+        # Activity Log
+        Route::get('/activity-log', [ActivityController::class, 'index'])->name('activity-log');
+
+        # Course List
+        Route::get('course-list', [CourseListController::class, 'index'])->name('course-list');
+        Route::get('course-list/show-course/{courseName}', [CourseListController::class, 'show_course'])->name('show_course');
 
         # Other Routes
         Route::get('/alumnidetails', function () {

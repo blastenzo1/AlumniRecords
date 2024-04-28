@@ -10,5 +10,10 @@ class Course extends Model
     use HasFactory;
     protected $table = 'courses';
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'college_id'];
+
+    public function college()
+    {
+        return $this->belongsTo(College::class, 'college_id', 'id');
+    }
 }

@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "College of Agriculture"
+    },
+    {
+        "id": 2,
+        "name": "College of Arts and Sciences"
+    },
+    {
+        "id": 3,
+        "name": "College of Business Administration"
+    },
+    {
+        "id": 4,
+        "name": "College of Computer Studies"
+    },
+    {
+        "id": 5,
+        "name": "College of Education"
+    },
+    {
+        "id": 6,
+        "name": "College of Engineering and Design"
+    },
+    {
+        "id": 7,
+        "name": "College of Mass Communication"
+    },
+    {
+        "id": 8,
+        "name": "College of Nursing"
+    },
+    {
+        "id": 9,
+        "name": "College of Performing and Visual Arts"
+    },
+    {
+        "id": 10,
+        "name": "Institute of Clinical Laboratory Sciences"
+    },
+    {
+        "id": 11,
+        "name": "Institute of Rehabilitative Sciences"
+    },
+    {
+        "id": 12,
+        "name": "Institute of Environmental and Marine Sciences"
+    },
+    {
+        "id": 13,
+        "name": "Divinity School"
+    },
+    {
+        "id": 14,
+        "name": "School of Public Affairs and Governance"
+    },
+    {
+        "id": 15,
+        "name": "College of Law"
+    },
+    {
+        "id": 16,
+        "name": "School of Medicine"
+    }
+]

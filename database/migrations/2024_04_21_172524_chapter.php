@@ -21,36 +21,39 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Chapter::create([
-            'name' => 'Acacia Chapter United States',
-            'representative' => 'Jane Cooper',
-            'email' => 'jane@microsoft.com',
-            'status' => 'Active',
-        ]);
-        Chapter::create([
-            'name' => 'Birch Chapter Canada',
-            'representative' => 'John Doe',
-            'email' => 'john@example.com',
-            'status' => 'Inactive',
-        ]);
-        Chapter::create([
-            'name' => 'Oak Chapter Australia',
-            'representative' => 'Alice Smith',
-            'email' => 'alice@example.com',
-            'status' => 'Active',
-        ]);
-        Chapter::create([
-            'name' => 'Pine Chapter Germany',
-            'representative' => 'Michael Brown',
-            'email' => 'michael@example.com',
-            'status' => 'Inactive',
-        ]);
-        Chapter::create([
-            'name' => 'Maple Chapter France',
-            'representative' => 'Emily Taylor',
-            'email' => 'emily@example.com',
-            'status' => 'Pending',
-        ]);
+        activity()->withoutLogs(function() {
+            Chapter::create([
+                'name' => 'Acacia Chapter United States',
+                'representative' => 'Jane Cooper',
+                'email' => 'jane@microsoft.com',
+                'status' => 'Active',
+            ]);
+            Chapter::create([
+                'name' => 'Birch Chapter Canada',
+                'representative' => 'John Doe',
+                'email' => 'john@example.com',
+                'status' => 'Inactive',
+            ]);
+            Chapter::create([
+                'name' => 'Oak Chapter Australia',
+                'representative' => 'Alice Smith',
+                'email' => 'alice@example.com',
+                'status' => 'Active',
+            ]);
+            Chapter::create([
+                'name' => 'Pine Chapter Germany',
+                'representative' => 'Michael Brown',
+                'email' => 'michael@example.com',
+                'status' => 'Inactive',
+            ]);
+            Chapter::create([
+                'name' => 'Maple Chapter France',
+                'representative' => 'Emily Taylor',
+                'email' => 'emily@example.com',
+                'status' => 'Pending',
+            ]);
+        });
+
     }
 
     /**

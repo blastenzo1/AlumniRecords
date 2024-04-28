@@ -12,35 +12,40 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('first_name')->nullable();
-            $table->string('middle_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->string('email')->unique();
-            $table->string('type');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('users')) {
+            Schema::create('users', function (Blueprint $table) {
+                $table->id();
+                $table->string('first_name')->nullable();
+                $table->string('middle_name')->nullable();
+                $table->string('last_name')->nullable();
+                $table->string('email')->unique();
+                $table->string('type');
+                $table->timestamp('email_verified_at')->nullable();
+                $table->string('password');
+                $table->rememberToken();
+                $table->timestamps();
+            });
+        }
 
-        User::create([
-            'first_name' => 'Silliman',
-            'middle_name' => '',
-            'last_name' => 'University',
-            'email' => 'sillimanict@su.edu.ph',
-            'password' => bcrypt('123'),
-            'type' => 'Master Admin'
-        ]);
-        User::create([
-            'first_name' => 'John',
-            'middle_name' => 'Dave',
-            'last_name' => 'Williams',
-            'email' => 'john.doe@example.com',
-            'password' => bcrypt('123'),
-            'type' => 'Admin'
-        ]);
+        activity()->withoutLogs(function() {
+            User::create([
+                'first_name' => 'Silliman',
+                'middle_name' => '',
+                'last_name' => 'University',
+                'email' => 'sillimanict@su.edu.ph',
+                'password' => bcrypt('123'),
+                'type' => 'Master Admin'
+            ]);
+
+            User::create([
+                'first_name' => 'John',
+                'middle_name' => 'Dave',
+                'last_name' => 'Williams',
+                'email' => 'john.doe@example.com',
+                'password' => bcrypt('123'),
+                'type' => 'Admin'
+            ]);
+        });
     }
 
     /**

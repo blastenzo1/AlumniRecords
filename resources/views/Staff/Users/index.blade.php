@@ -14,12 +14,12 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
-<body class="h-min-screen bg-gray-100 font-family-karla flex">
-    <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
+<body class="relative bg-gray-100 font-family-karla flex">
+    <aside class="fixed left-0 top-0 h-screen bg-sidebar w-64 hidden sm:block shadow-xl">
         @include('Layouts.staff-sidebar')
     </aside>
 
-    <div class="w-full flex flex-col items-stretch justify-between h-screen">
+    <div class="ml-64 w-full flex flex-col items-stretch justify-between h-screen">
         <div class="w-full bg-white py-4 px-6">
             <div class="flex justify-between items-center">
                 <div x-data="{ isOpenMenu: false }" class="flex items-center gap-4">
@@ -37,18 +37,7 @@
                                 </div>
 
                                 <nav class="text-white text-base font-semibold pt-3">
-                                    <a href="{{ route('dashboard') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'dashboard') active @endif">
-                                        <i class="fas fa-tachometer-alt mr-3"></i>
-                                        Dashboard
-                                    </a>
-                                    <a href="{{ route('records') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'records') active @endif">
-                                        <i class="fas fa-sticky-note mr-3"></i>
-                                        Records
-                                    </a>
-                                    <a href="{{ route('users') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'users') active @endif">
-                                        <i class="fas fa-table mr-3"></i>
-                                        Users
-                                    </a>
+                                    @include('Layouts.staff-nav-menu')
                                 </nav>
                             </div>
                             <div class="flex-1 h-screen bg-black"></div>
@@ -116,7 +105,7 @@
                         </tr>
                     </thead>
                     <tbody class="">
-                        @foreach ($users as $user)
+                        @forelse ($users as $user)
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 space-y-4 p-12">
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $user->first_name }} {{ $user->middle_name }} {{ $user->last_name }}
@@ -157,7 +146,11 @@
                                     </div>
                                 </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr>
+                                <td colspan="4" class="text-center py-4 text-gray-500 dark:text-white">No Results</td>
+                            </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>

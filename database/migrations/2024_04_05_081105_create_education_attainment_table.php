@@ -21,11 +21,13 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        EducationAttainment::create([
-            'info_id' => '1',
-            'course' => 'Bachelor of Arts in Creative Writing',
-            'year_attended' => '2023-2024',
-        ]);
+        activity()->withoutLogs(function() {
+            EducationAttainment::create([
+                'info_id' => '1',
+                'course' => 'Bachelor of Science in Agricultural Business',
+                'year_attended' => '2023-2024',
+            ]);
+        });
     }
 
     /**

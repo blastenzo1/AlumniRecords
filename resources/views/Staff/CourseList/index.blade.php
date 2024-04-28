@@ -6,14 +6,13 @@
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
-    <title>Edit Record</title>
+    <title>Courses List</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
-    @livewireStyles
 </head>
 <body class="relative bg-gray-100 font-family-karla flex">
     <aside class="fixed left-0 top-0 h-screen bg-sidebar w-64 hidden sm:block shadow-xl">
@@ -41,10 +40,10 @@
                                     @include('Layouts.staff-nav-menu')
                                 </nav>
                             </div>
-                            <div class="flex-1 h-screen bg-black opacity-50"></div>
+                            <div class="flex-1 h-screen bg-black"></div>
                         </div>
                     </div>
-                    <header class="text-xl whitespace-nowrap">Edit Record</header>
+                    <header class="text-xl whitespace-nowrap">Course List</header>
                 </div>
                 <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
                     <button @click="isOpen = !isOpen" class="realtive z-10 w-12 h-12 rounded-full overflow-hidden border-4 border-gray-400 hover:border-gray-300 focus:border-gray-300 focus:outline-none">
@@ -59,7 +58,22 @@
             </div>
         </div>
 
-        <main class="h-fit flex-1 flex flex-col p-4 space-y-4">
+        <main class="flex-1 flex flex-col p-4 space-y-4 rounded-lg">
+            <div class="flex-none bg-white dark:bg-gray-900 rounded-md p-2">
+                <div class="flex items-center justify-between gap-4">
+                    <div class="">
+                        <label for="table-search" class="sr-only">Search</label>
+                        <div class="relative mt-1">
+                            <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none pl-3">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                </svg>
+                            </div>
+                            <input type="text" id="table-search" class="block py-2 px-2 ps-10 pl-10 text-sm text-gray-900 border border-gray-300 rounded w-full sm:w-80 bg-gray-50 focus:ring- red-500 focus:border- red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring- red-500 dark:focus:border- red-500" placeholder="Search for items">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             @if (session('success'))
                 <div class="bg-green-500 p-6 rounded text-white">
@@ -73,18 +87,47 @@
                 </div>
             @endif
 
-            @include('Staff.Records.Forms.edit-form')
+            <div class="flex-1 relative shadow-md rounded-md overflow-x-auto">
+                <div class="">
+                    @foreach($groupedCourses as $collegeId => $courses)
+                        <div class="bg-white flex items-center border border-zinc-500 p-4 py-6 gap-3 ">
+                            {{-- <i class="fa-solid fa-arrow-up-right-from-square"></i> --}}
+                            <div class="text-xl">{{ $courses->first()->college->name }}</div>
+                        </div>
+                        <ul class="bg-zinc-50">
+                            @foreach($courses as $course)
+                            <form action="{{ route('show_course', ['courseName' => $course->name]) }}" method="GET" id="courseForm{{ $course->id }}">
+                                @csrf
+                                <div class="flex items-center border border-zinc-500 p-2 px-4 cursor-pointer hover:bg-red-500 hover:text-white" onclick="submitCourseForm({{ $course->id }})">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    <li class="text-xl p-4">{{ $course->name }}</li>
+                                </div>
+                            </form>
+                            @endforeach
+                        </ul>
+                    @endforeach
+                </div>
+            </div>
         </main>
+
+        {{-- <footer class="w-full bg-white text-right p-4">
+            Silliman University Alumni Records.
+        </footer> --}}
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <!-- AlpineJS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
     <script>
     $('#table1').DataTable({})
+    </script>
+    <script>
+        function submitCourseForm(courseId) {
+            document.getElementById('courseForm' + courseId).submit();
+        }
     </script>
 </body>
 </html>

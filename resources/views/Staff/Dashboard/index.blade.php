@@ -15,12 +15,12 @@
     @vite(['resources/css/app.css','resources/js/app.js', 'resources/js/column-chart.js', 'resources/js/pie-chart.js'])
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
-<body class="h-fit bg-gray-100 font-family-karla flex">
-    <aside class="relative bg-sidebar w-64 hidden sm:block shadow-xl bg-red-700">
+<body class="relative bg-gray-100 font-family-karla flex">
+    <aside class="fixed left-0 top-0 h-screen bg-sidebar w-64 hidden sm:block shadow-xl">
         @include('Layouts.staff-sidebar')
     </aside>
 
-    <div class="w-full flex flex-col items-stretch justify-between h-screen">
+    <div class="ml-64 w-full flex flex-col items-stretch justify-between h-screen">
         <div class="w-full bg-white py-4 px-6">
             <div class="flex justify-between items-center">
                 <div x-data="{ isOpenMenu: false }" class="flex items-center gap-4">
@@ -38,18 +38,7 @@
                                 </div>
 
                                 <nav class="text-white text-base font-semibold pt-3">
-                                    <a href="{{ route('dashboard') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'dashboard') active @endif">
-                                        <i class="fas fa-tachometer-alt mr-3"></i>
-                                        Dashboard
-                                    </a>
-                                    <a href="{{ route('records') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'records') active @endif">
-                                        <i class="fas fa-sticky-note mr-3"></i>
-                                        Records
-                                    </a>
-                                    <a href="{{ route('chapters') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item @if(Route::currentRouteName() == 'chapters') active @endif">
-                                        <i class="fas fa-table mr-3"></i>
-                                        Chapters
-                                    </a>
+                                    @include('Layouts.staff-nav-menu')
                                 </nav>
                             </div>
                             <div class="flex-1 h-screen bg-black opacity-50"></div>
@@ -72,27 +61,27 @@
 
         <main class="flex-1 p-4 space-y-4 rounded-lg shadow">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                <div class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
+                <a href="{{ route('chapters') }}" class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
                     <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
                     <div class="">
                         <span class="block text-red-500 text-3xl">{{ $chapter_count }}</span>
                         <div class="block text-zinc-200 text-2xl">Chapters</div>
                     </div>
-                </div>
-                <div class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
+                </a>
+                <a href="{{ route('activity-log') }}" class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
                     <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
                     <div class="">
-                        <span class="block text-red-500 text-3xl">1900+</span>
+                        <span class="block text-red-500 text-3xl">{{ $activity_log_count }}</span>
                         <div class="block text-zinc-200 text-2xl">Activity Log</div>
                     </div>
-                </div>
-                <div class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
+                </a>
+                <a href="{{ route('chapters') }}" class="p-4 flex items-center gap-4 shadow-lg bg-white rounded-md">
                     <img src="{{ asset('Pics/dash-icon.png') }}" alt="Icon" class="w-20 h-auto">
                     <div class="">
                         <span class="block text-red-500 text-3xl">{{ $course_count }}</span>
                         <div class="block text-zinc-200 text-2xl">Courses</div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">

@@ -13,7 +13,7 @@ class Alumni extends Model
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-        ->logOnly(['first_name', 'last_name', 'last_name', 'email', 'number']);
+        ->logOnly(['first_name', 'last_name', 'last_name', 'birthdate', 'sex', 'nationality', 'status', 'spouse', 'number', 'email']);
     }
     protected $fillable = [
         'last_name',

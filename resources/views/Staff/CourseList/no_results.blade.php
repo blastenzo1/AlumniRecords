@@ -6,13 +6,12 @@
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
-    <title>Records</title>
+    <title>Course List</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     @vite(['resources/css/app.css','resources/js/app.js'])
-    @livewireStyles
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
 <body class="relative bg-gray-100 font-family-karla flex">
@@ -41,10 +40,10 @@
                                     @include('Layouts.staff-nav-menu')
                                 </nav>
                             </div>
-                            <div class="flex-1 h-screen bg-black opacity-50"></div>
+                            <div class="flex-1 h-screen bg-black"></div>
                         </div>
                     </div>
-                    <header class="text-xl whitespace-nowrap">All Alumni Records</header>
+                    <header class="text-xl whitespace-nowrap">Course List</header>
                 </div>
                 <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
                     <button @click="isOpen = !isOpen" class="realtive z-10 w-12 h-12 rounded-full overflow-hidden border-4 border-gray-400 hover:border-gray-300 focus:border-gray-300 focus:outline-none">
@@ -59,8 +58,8 @@
             </div>
         </div>
 
-        <main class="flex-1 flex flex-col p-4 space-y-4 rounded-lg shadow">
-            <div class="flex-none h-16 bg-white dark:bg-gray-900 rounded-md p-2">
+        <main class="flex-1 flex flex-col p-4 space-y-4 rounded-lg">
+            <div class="flex-none bg-white dark:bg-gray-900 rounded-md p-2">
                 <div class="flex items-center justify-between gap-4">
                     <div class="">
                         <label for="table-search" class="sr-only">Search</label>
@@ -73,7 +72,6 @@
                             <input type="text" id="table-search" class="block py-2 px-2 ps-10 pl-10 text-sm text-gray-900 border border-gray-300 rounded w-full sm:w-80 bg-gray-50 focus:ring- red-500 focus:border- red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring- red-500 dark:focus:border- red-500" placeholder="Search for items">
                         </div>
                     </div>
-                    <a href="{{ url('/add-record') }}" class="font-semibold text-white bg-red-600 hover:bg-red-500 text-sm p-2 rounded transition ease-in duration-300">Add Record</a>
                 </div>
             </div>
 
@@ -89,78 +87,10 @@
                 </div>
             @endif
 
-            <div class="flex-1 shadow-md rounded-md overflow-x-auto">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 p-4">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-300">
-                        <tr class="">
-                            <th scope="col" class="px-6 py-3">
-                                Full Name
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Email
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Mobile/Contact Number
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Sex
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Nationality
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody class="">
-                        @forelse ($alumnis as $alumnus)
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 space-y-4 p-12">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $alumnus->first_name }} {{ $alumnus->middle_name }} {{ $alumnus->last_name }}
-                                </th>
-                                <td class="px-6 py-4">
-                                    {{ $alumnus->email }}
-                                </td>
-                                <td class="px-6 py-4">
-                                    {{ $alumnus->number }}
-                                </td>
-                                <td class="px-6 py-4">
-                                    {{ $alumnus->sex }}
-                                </td>
-                                <td class="px-6 py-4">
-                                    {{ $alumnus->nationality }}
-                                </td>
-                                <td class="px-6 py-4 space-x-2">
-                                    <button id="dropdownDefaultButton{{ $alumnus->id }}" data-dropdown-toggle="dropdown{{ $alumnus->id }}" class="text-zinc-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center" type="button">
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                        </svg>
-                                    </button>
-
-                                    <div id="dropdown{{ $alumnus->id }}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton{{ $alumnus->id }}">
-                                            <li>
-                                                <a href="{{ url('view-record/' . $alumnus->id) }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">View Details</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ url('edit-record/' . $alumnus->id) }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
-                                            </li>
-                                            {{-- <li>
-                                                <button data-modal-target="popup-modal{{ $alumnus->id }}" data-modal-toggle="popup-modal{{ $alumnus->id }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Delete</button>
-                                            </li> --}}
-                                        </ul>
-                                    </div>
-
-                                    {{-- <div id="popup-modal{{ $alumnus->id }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                                        @include('Staff.Records.Modals.delete')
-                                    </div> --}}
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="4" class="text-center py-4 text-gray-500 dark:text-white">No Results</td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+            <div class="bg-white flex-1 relative shadow-md rounded-md overflow-x-auto">
+                <div class="p-6 flex justify-center items-center">
+                    <p>No results found for {{ $course_name }}</p>
+                </div>
             </div>
 
             <nav class="bg-white flex-none flex h-16 justify-between rounded-md items-center p-2" aria-label="Table navigation">
@@ -191,14 +121,14 @@
             </nav>
         </main>
 
-        <footer class="w-full bg-white text-right p-4">
+        {{-- <footer class="w-full bg-white text-right p-4">
             Silliman University Alumni Records.
-        </footer>
+        </footer> --}}
     </div>
 
-    @livewireScripts
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <!-- AlpineJS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
