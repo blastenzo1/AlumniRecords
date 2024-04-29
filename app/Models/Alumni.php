@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Alumni extends Model
+
 {
     protected $fillable = [
         'last_name',
@@ -32,4 +34,5 @@ class Alumni extends Model
     {
         return $this->hasOne(EducationAttainment::class, 'info_id');
     }
+
 }
