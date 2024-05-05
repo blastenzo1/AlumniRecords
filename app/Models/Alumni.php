@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Laravel\Scout\Searchable;
 
 class Alumni extends Model
 {
@@ -41,4 +42,5 @@ class Alumni extends Model
     {
         return $this->hasOne(EducationAttainment::class, 'info_id');
     }
+
 }

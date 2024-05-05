@@ -42,6 +42,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('/edit-record/{id}', [AlumniController::class, 'edit_page'])->name('edit_page');
         Route::put('/update-record/{id}', [AlumniController::class, 'update_alumni'])->name('update_alumni');
         Route::delete('/delete-record/{id}', [AlumniController::class, 'destroy']);
+        Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
+        Route::get('/alumni/{id}', [AlumniController::class, 'view'])->name('alumni.view');
+        Route::get('/alumni/search', [AlumniController::class, 'search'])->name('alumni.search');
 
         # Chapters
         Route::get('/chapter', [ChapterController::class, 'index'])->name('chapters');
