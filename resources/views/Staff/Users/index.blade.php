@@ -124,7 +124,7 @@
                                     <div id="dropdown{{ $user->id }}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
                                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton{{ $user->id }}">
                                             </li>
-                                                <button data-modal-target="edit-modal{{ $user->id }}" data-modal-toggle="edit-modal{{ $user->id }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Edit</button>
+                                                <button data-modal-target="edit-modal-{{ $user->id }}" data-modal-toggle="edit-modal-{{ $user->id }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Edit</button>
                                             </li>
                                             {{-- <li>
                                                 <button data-modal-target="delete-modal{{ $user->id }}" data-modal-toggle="delete-modal{{ $user->id }}" class="w-full text-left block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" type="button">Delete</button>
@@ -136,7 +136,7 @@
                                         @include('Staff.Users.Modals.create')
                                     </div>
 
-                                    <div id="edit-modal{{ $user->id }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                    <div id="edit-modal-{{ $user->id }}" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                                         @include('Staff.Users.Modals.edit')
                                     </div>
 

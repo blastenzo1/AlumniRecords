@@ -18,7 +18,7 @@ class AlumniController extends Controller
 {
     public function index()
     {
-        $alumnis = Alumni::paginate(7);
+        $alumnis = Alumni::paginate(10);
         return view('staff.records.index', compact('alumnis'));
     }
 

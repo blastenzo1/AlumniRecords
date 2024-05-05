@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-span-2">
                         <label for="user_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type</label>
-                        <input type="text" name="user_type" id="user_type" class="bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type user type" required="user_type" value="Admin" disabled>
+                        <input type="text" name="user_type" id="user_type" class="bg-gray-300 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type user type" required="user_type" value="Admin">
 
                     </div>
                 </div>

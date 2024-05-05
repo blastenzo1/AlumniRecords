@@ -10,11 +10,6 @@ use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
-    public function show()
-    {
-        $users = DB::table('users')->get();
-        return view('welcome',compact('users'));
-    }
 
     public function index() {
         $users = User::all();
@@ -23,6 +18,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
+        dd('htest');
         try {
             $validated_data = $request->validated();
         } catch (ValidationException $e) {
@@ -36,6 +32,7 @@ class UserController extends Controller
 
     public function update(UserRequest $request, $id)
     {
+        dd('htest');
         try {
             $validated_data = $request->validated();
         } catch (ValidationException $e) {

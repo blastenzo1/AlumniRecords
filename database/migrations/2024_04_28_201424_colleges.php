@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('colleges', function(Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('acronym_name');
             $table->timestamps();
         });
 
@@ -22,6 +23,7 @@ return new class extends Migration
         foreach ($colleges as $college) {
             College::create([
                 'name' => $college['name'],
+                'acronym_name' => $college['acronym_name'],
             ]);
         }
     }

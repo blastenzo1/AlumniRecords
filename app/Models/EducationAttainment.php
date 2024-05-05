@@ -10,7 +10,6 @@ use Spatie\Activitylog\Traits\LogsActivity;
 class EducationAttainment extends Model
 {
     use LogsActivity;
-
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()

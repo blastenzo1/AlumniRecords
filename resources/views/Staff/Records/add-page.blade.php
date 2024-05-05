@@ -57,7 +57,6 @@
                 </div>
             </div>
         </div>
-
         <main class="h-fit flex-1 flex flex-col p-4 space-y-4">
 
             @if (session('success'))
@@ -73,7 +72,9 @@
             @endif
 
             @include('Staff.Records.Forms.add-form')
+
         </main>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>

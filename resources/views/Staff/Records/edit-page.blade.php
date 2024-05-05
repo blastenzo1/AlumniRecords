@@ -55,24 +55,24 @@
                     </div>
                 </div>
             </div>
+            <main class="h-fit flex-1 flex flex-col p-4 space-y-4">
+
+                @if (session('success'))
+                    <div class="bg-green-500 p-6 rounded text-white">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if (session('error'))
+                    <div class="bg-red-500 p-6 rounded text-white">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @include('Staff.Records.Forms.edit-form')
+            </main>
         </div>
 
-        <main class="h-fit flex-1 flex flex-col p-4 space-y-4">
-
-            @if (session('success'))
-                <div class="bg-green-500 p-6 rounded text-white">
-                    {{ session('success') }}
-                </div>
-            @endif
-
-            @if (session('error'))
-                <div class="bg-red-500 p-6 rounded text-white">
-                    {{ session('success') }}
-                </div>
-            @endif
-
-            @include('Staff.Records.Forms.edit-form')
-        </main>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>

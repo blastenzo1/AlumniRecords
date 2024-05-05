@@ -16,4 +16,8 @@ class Course extends Model
     {
         return $this->belongsTo(College::class, 'college_id', 'id');
     }
+    public function educationAttainments()
+    {
+        return $this->hasMany(EducationAttainment::class, 'course', 'name');
+    }
 }

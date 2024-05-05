@@ -1,66 +1,82 @@
 [
     {
         "id": 1,
-        "name": "College of Agriculture"
+        "name": "College of Agriculture",
+        "acronym_name": "CA"
     },
     {
         "id": 2,
-        "name": "College of Arts and Sciences"
+        "name": "College of Arts and Sciences",
+        "acronym_name": "CAS"
     },
     {
         "id": 3,
-        "name": "College of Business Administration"
+        "name": "College of Business Administration",
+        "acronym_name": "CBA"
     },
     {
         "id": 4,
-        "name": "College of Computer Studies"
+        "name": "College of Computer Studies",
+        "acronym_name": "CCS"
     },
     {
         "id": 5,
-        "name": "College of Education"
+        "name": "College of Education",
+        "acronym_name": "CE"
     },
     {
         "id": 6,
-        "name": "College of Engineering and Design"
+        "name": "College of Engineering and Design",
+        "acronym_name": "CoE"
     },
     {
         "id": 7,
-        "name": "College of Mass Communication"
+        "name": "College of Mass Communication",
+        "acronym_name": "CMC"
     },
     {
         "id": 8,
-        "name": "College of Nursing"
+        "name": "College of Nursing",
+        "acronym_name": "CN"
     },
     {
         "id": 9,
-        "name": "College of Performing and Visual Arts"
+        "name": "College of Performing and Visual Arts",
+        "acronym_name": "CPVA"
     },
     {
         "id": 10,
-        "name": "Institute of Clinical Laboratory Sciences"
+        "name": "Institute of Clinical Laboratory Sciences",
+        "acronym_name": "ICLS"
     },
     {
         "id": 11,
-        "name": "Institute of Rehabilitative Sciences"
+        "name": "Institute of Rehabilitative Sciences",
+        "acronym_name": "IRS"
     },
     {
         "id": 12,
-        "name": "Institute of Environmental and Marine Sciences"
+        "name": "Institute of Environmental and Marine Sciences",
+        "acronym_name": "IEMS"
     },
     {
         "id": 13,
-        "name": "Divinity School"
+        "name": "Divinity School",
+        "acronym_name": "DV"
     },
     {
         "id": 14,
-        "name": "School of Public Affairs and Governance"
+        "name": "School of Public Affairs and Governance",
+        "acronym_name": "SPAG"
     },
     {
         "id": 15,
-        "name": "College of Law"
+        "name": "College of Law",
+        "acronym_name": "CL"
     },
     {
         "id": 16,
-        "name": "School of Medicine"
+        "name": "School of Medicine",
+        "acronym_name": "SoM"
     }
 ]

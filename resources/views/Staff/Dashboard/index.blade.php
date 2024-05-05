@@ -100,6 +100,9 @@
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        const alumniData = {!! json_encode($alumniData) !!};
+    </script>
     <script src="{{ asset('column-chart.js') }}"></script>
     <script src="{{ asset('pie-chart.js') }}"></script>
 </body>

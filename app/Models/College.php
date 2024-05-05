@@ -10,5 +10,5 @@ class College extends Model
     use HasFactory;
 
     protected $table = 'colleges';
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'acronym_name'];
 }
