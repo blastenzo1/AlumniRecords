@@ -190,7 +190,7 @@
             {{-- Educational Attainment --}}
             <div class="space-y-4">
                 <div class="space-y-1">
-                    <span class="block text-lg text-zinc-900 font-semibold">Address Information</span>
+                    <span class="block text-lg text-zinc-900 font-semibold">Educational Attainment</span>
                     <p class="text-gray-500 font-medium">If you did not finish a whole course at Silliman University please indicate inclusive years attended</p>
                 </div>
             </div>

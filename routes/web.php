@@ -42,7 +42,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::delete('/delete-record/{id}', [AlumniController::class, 'destroy']);
         Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
         Route::get('/alumni/{id}', [AlumniController::class, 'view'])->name('alumni.view');
-        Route::get('/alumni/search', [AlumniController::class, 'search'])->name('alumni.search');
+        Route::get('/search', 'AlumniController@search')->name('search');
+
 
         # Chapters
         Route::get('/chapter', [ChapterController::class, 'index'])->name('chapters');

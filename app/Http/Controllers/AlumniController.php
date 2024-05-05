@@ -16,22 +16,31 @@ use Illuminate\Validation\ValidationException;
 
 class AlumniController extends Controller
 {
-    public function index()
+     public function index()
     {
+
         $alumnis = Alumni::paginate(7);
+
         return view('staff.records.index', compact('alumnis'));
     }
 
     public function search(Request $request)
-    {
-        $query = $request->input('query');
+{
+    $query = $request->input('query');
 
-        $alumnis = Alumni::where('name', 'like', '%' . $query . '%')
-            ->orWhere('email', 'like', '%' . $query . '%')
-            ->paginate(7);
 
-        return view('staff.records.index', compact('alumnis'));
-    }
+    $alumnis = Alumni::where('first_name', 'like', '%' . $query . '%')
+                     ->orWhere('middle_name', 'like', '%' . $query . '%')
+                     ->orWhere('last_name', 'like', '%' . $query . '%')
+                     ->orWhere('email', 'like', '%' . $query . '%')
+                     ->orWhere('number', 'like', '%' . $query . '%')
+                     ->orWhere('sex', 'like', '%' . $query . '%')
+                     ->orWhere('nationality', 'like', '%' . $query . '%')
+                     ->paginate(7);
+
+    return view('staff.records.index', compact('alumnis'));
+}
+
 
     public function add_page()
     {
