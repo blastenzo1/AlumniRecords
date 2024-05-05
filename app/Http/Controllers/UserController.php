@@ -12,13 +12,23 @@ class UserController extends Controller
 {
 
     public function index() {
-        $users = User::all();
+        $users = User::paginate(10);
+        return view('staff.users.index', compact('users'));
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $users = User::where('first_name', 'like', '%' . $query . '%')
+            ->orWhere('email', 'like', '%' . $query . '%')
+            ->paginate(10);
+
         return view('staff.users.index', compact('users'));
     }
 
     public function store(UserRequest $request)
     {
-        dd('htest');
         try {
             $validated_data = $request->validated();
         } catch (ValidationException $e) {
@@ -32,7 +42,6 @@ class UserController extends Controller
 
     public function update(UserRequest $request, $id)
     {
-        dd('htest');
         try {
             $validated_data = $request->validated();
         } catch (ValidationException $e) {

@@ -11,7 +11,18 @@ class ChapterController extends Controller
 {
     public function index()
     {
-        $chapters = Chapter::all();
+        $chapters = Chapter::paginate(1);
+        return view('staff.chapters.index', compact('chapters'));
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $chapters = Chapter::where('name', 'like', '%' . $query . '%')
+            ->orWhere('representation', 'like', '%' . $query . '%')
+            ->paginate(10);
+
         return view('staff.chapters.index', compact('chapters'));
     }
 

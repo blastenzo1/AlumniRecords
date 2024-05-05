@@ -26,9 +26,9 @@ class AlumniController extends Controller
     {
         $query = $request->input('query');
 
-        $alumnis = Alumni::where('name', 'like', '%' . $query . '%')
+        $alumnis = Alumni::where('first_name', 'like', '%' . $query . '%')
             ->orWhere('email', 'like', '%' . $query . '%')
-            ->paginate(7);
+            ->paginate(10);
 
         return view('staff.records.index', compact('alumnis'));
     }
