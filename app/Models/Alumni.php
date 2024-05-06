@@ -33,6 +33,20 @@ class Alumni extends Model
         'birthdate' => 'date',
     ];
 
+    public static function search($query)
+{
+    return empty($query) ? static::query()
+        : static::where('first_name', 'like', '%'.$query.'%')
+            ->orWhere('last_name', 'like', '%'.$query.'%')
+            ->orWhere('email', 'like', '%'.$query.'%')
+            ->orWhere('number', 'like', '%'.$query.'%')
+            ->orWhere('sex', 'like', '%'.$query.'%')
+            ->orWhere('nationality', 'like', '%'.$query.'%')
+            ->orWhere('birthdate', 'like', '%'.$query.'%')
+            ->orWhere('status', 'like', '%'.$query.'%')
+            ->orWhere('spouse', 'like', '%'.$query.'%');
+}
+
     public function address()
     {
         return $this->hasOne(Address::class, 'info_id');
@@ -42,5 +56,4 @@ class Alumni extends Model
     {
         return $this->hasOne(EducationAttainment::class, 'info_id');
     }
-
 }
