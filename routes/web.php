@@ -42,22 +42,21 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('/edit-record/{id}', [AlumniController::class, 'edit_page'])->name('edit_page');
         Route::put('/update-record/{id}', [AlumniController::class, 'update_alumni'])->name('update_alumni');
         Route::delete('/delete-record/{id}', [AlumniController::class, 'destroy']);
-        Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
-        Route::get('/alumni/{id}', [AlumniController::class, 'view'])->name('alumni.view');
-        Route::get('/search', 'AlumniController@search')->name('search');
-
+        Route::get('/search', [AlumniController::class, 'search'])->name('search');
 
         # Chapters
         Route::get('/chapter', [ChapterController::class, 'index'])->name('chapters');
         Route::post('/add-chapter', [ChapterController::class, 'store'])->name('add-chapter');
         Route::patch('/update-chapter/{id}', [ChapterController::class, 'update'])->name('update-chapter');
         Route::delete('/delete-chapter/{id}', [ChapterController::class, 'destroy'])->name('delete-chapter');
+        Route::get('/search', [ChapterController::class, 'search'])->name('search');
 
         # Users
         Route::get('/user', [UserController::class, 'index'])->name('users');
         Route::post('/add-user', [UserController::class, 'store'])->name('add-user');
         Route::patch('/update-user/{id}', [UserController::class, 'update'])->name('update-user');
         Route::delete('/delete-user/{id}', [UserController::class, 'destroy'])->name('delete-user');
+        Route::get('/search', [UserController::class, 'search'])->name('search');
 
         # Activity Log
         Route::get('/activity-log', [ActivityController::class, 'index'])->name('activity-log');

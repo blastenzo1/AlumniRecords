@@ -21,7 +21,10 @@ class UserController extends Controller
         $query = $request->input('query');
 
         $users = User::where('first_name', 'like', '%' . $query . '%')
+            ->orWhere('middle_name', 'like', '%' . $query . '%')
+            ->orWhere('last_name', 'like', '%' . $query . '%')
             ->orWhere('email', 'like', '%' . $query . '%')
+            ->orWhere('user_type', 'like', '%' . $query . '%')
             ->paginate(10);
 
         return view('staff.users.index', compact('users'));

@@ -11,7 +11,7 @@ class ChapterController extends Controller
 {
     public function index()
     {
-        $chapters = Chapter::paginate(1);
+        $chapters = Chapter::paginate(10);
         return view('staff.chapters.index', compact('chapters'));
     }
 
@@ -20,7 +20,9 @@ class ChapterController extends Controller
         $query = $request->input('query');
 
         $chapters = Chapter::where('name', 'like', '%' . $query . '%')
-            ->orWhere('representation', 'like', '%' . $query . '%')
+            ->orWhere('representative', 'like', '%' . $query . '%')
+            ->orWhere('email', 'like', '%' . $query . '%')
+            ->orWhere('status', 'like', '%' . $query . '%')
             ->paginate(10);
 
         return view('staff.chapters.index', compact('chapters'));
