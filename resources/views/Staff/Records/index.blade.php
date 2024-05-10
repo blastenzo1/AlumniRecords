@@ -61,7 +61,7 @@
         <main class="flex-1 flex flex-col p-4 space-y-4 rounded-lg shadow">
             <div class="flex-none h-16 bg-white dark:bg-gray-900 rounded-md p-2">
                 <div class="flex items-center justify-between gap-4">
-                    <form class="form-inline my-2 my-lg-0" method="get" action="{{ route('search') }}">
+                    <form class="form-inline my-2 my-lg-0" method="get" action="{{ route('search-record') }}">
                         <label for="table-search" class="sr-only">Search</label>
                         <div class="relative mt-1">
                             <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none pl-3">
