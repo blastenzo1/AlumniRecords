@@ -62,7 +62,7 @@
             <div class="bg-white p-4 border border-zinc-300 shadow">
                 <div class="flex items-center justify-between">
                     <header class="text-3xl font-medium">Alumni Information</header>
-                    <button class="p-2 bg-white border border-zinc-900 hover:bg-zinc-700">
+                    <button class="p-2 bg-white border border-zinc-900 hover:bg-zinc-700" onclick="window.print()">
                         <div class="flex gap-4 items-center justify-center rounded">
                             <i class="fa-solid fa-print"></i>
                             <span class="text-zinc-900">Print</span>

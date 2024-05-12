@@ -18,7 +18,7 @@ class AlumniController extends Controller
 {
     public function index()
     {
-        $alumnis = Alumni::paginate(10);
+        $alumnis = Alumni::paginate(7);
         return view('staff.records.index', compact('alumnis'));
     }
 
@@ -33,7 +33,7 @@ class AlumniController extends Controller
                     ->orWhere('number', 'like', '%' . $query . '%')
                     ->orWhere('sex', 'like', '%' . $query . '%')
                     ->orWhere('nationality', 'like', '%' . $query . '%')
-                    ->paginate(10);
+                    ->paginate(7);
 
         return view('staff.records.index', compact('alumnis'));
     }
