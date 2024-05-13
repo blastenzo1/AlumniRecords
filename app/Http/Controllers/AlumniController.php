@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\AlumnisExport;
 use App\Http\Requests\AddressFormRequest;
 use App\Http\Requests\DataFormRequest;
 use App\Http\Requests\EducationFormRequest;
@@ -13,6 +14,7 @@ use App\Models\EducationAttainment;
 use App\Models\Nationality;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AlumniController extends Controller
 {
@@ -36,6 +38,11 @@ class AlumniController extends Controller
                     ->paginate(7);
 
         return view('staff.records.index', compact('alumnis'));
+    }
+
+    public function export()
+    {
+        return Excel::download(new AlumnisExport, 'alumnis.xlsx');
     }
 
     public function add_page()

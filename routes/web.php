@@ -46,6 +46,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::put('/update-record/{id}', [AlumniController::class, 'update_alumni'])->name('update_alumni');
         Route::delete('/delete-record/{id}', [AlumniController::class, 'destroy']);
         Route::get('/search-record', [AlumniController::class, 'search'])->name('search-record');
+        Route::get('/alumni-export', [AlumniController::class, 'export'])->name('alumni-export');
 
         # Chapters
         Route::get('/chapter', [ChapterController::class, 'index'])->name('chapters');
@@ -71,6 +72,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         # Pdf Generator
         // Route::get('show-pdf-test', [PdfController::class, 'index'])->name('show-pdf-test');
         Route::get('generate-pdf/alumni/{id}', [PdfController::class, 'generateAlumniDetails'])->name('generate-alumni-pdf');
+        Route::get('/generate-pdf', [PdfController::class, 'generateAllAlumniDetails']);
 
         # Other Routes
         Route::get('/alumnidetails', function () {

@@ -32,4 +32,18 @@ class PdfController extends Controller
         $pdf = Pdf::loadView('staff.records.generate-alumni-details', $data);
         return $pdf->download('generated-alumni-details.pdf');
     }
+
+    public function generateAllAlumniDetails()
+    {
+        $alumnis = Alumni::all();
+
+        $data = [
+            'title' => 'All Alumni Details',
+            'date' => now(),
+            'alumnis' => $alumnis,
+        ];
+
+        $pdf = Pdf::loadView('staff.records.generate-all-alumni', $data);
+        return $pdf->download('generated-all-alumnis.pdf');
+    }
 }
