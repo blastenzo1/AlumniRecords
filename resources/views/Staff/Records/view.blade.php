@@ -12,6 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/silliman.png') }}">
     @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
 </head>
@@ -62,14 +63,14 @@
             <div class="bg-white p-4 border border-zinc-300 shadow">
                 <div class="flex items-center justify-between">
                     <header class="text-3xl font-medium">Alumni Information</header>
-                    <button class="p-2 bg-white border border-zinc-900 hover:bg-zinc-700" onclick="window.print()">
+                    <button class="p-2 bg-white border border-zinc-900 hover:bg-zinc-700" onclick="printContainer('alumni-print')">
                         <div class="flex gap-4 items-center justify-center rounded">
                             <i class="fa-solid fa-print"></i>
                             <span class="text-zinc-900">Print</span>
                         </div>
                     </button>
                 </div>
-                <div class="space-y-4">
+                <div class="alumni-print space-y-4">
                     <div class="space-y-2">
                         <span class="text-lg font-semibold">Personal Information</span>
                         <div class="space-y-1 grid grid-cols-1 sm:grid-cols-2">
@@ -236,6 +237,20 @@
     <script>
     $('#table1').DataTable({})
     </script>
+    <script>
+    function printContainer(containerClass) {
+        var container = document.querySelector('.' + containerClass);
+        if (container) {
+            var content = container.innerHTML;
+            var originalContent = document.body.innerHTML;
+            document.body.innerHTML = content;
+            window.print();
+            document.body.innerHTML = originalContent;
+        } else {
+            console.error('Container with class ' + containerClass + ' not found.');
+        }
+    }
+</script>
 </body>
 </html>
 

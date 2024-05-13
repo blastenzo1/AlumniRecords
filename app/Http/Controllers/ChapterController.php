@@ -11,7 +11,7 @@ class ChapterController extends Controller
 {
     public function index()
     {
-        $chapters = Chapter::paginate(10);
+        $chapters = Chapter::orderBy('created_at', 'desc')->paginate(10);
         return view('staff.chapters.index', compact('chapters'));
     }
 

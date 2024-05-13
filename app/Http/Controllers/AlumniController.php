@@ -18,7 +18,7 @@ class AlumniController extends Controller
 {
     public function index()
     {
-        $alumnis = Alumni::orderBy("id","asc")->paginate(7);
+        $alumnis = Alumni::orderBy('created_at', 'desc')->paginate(7);
         return view('staff.records.index', compact('alumnis'));
     }
 

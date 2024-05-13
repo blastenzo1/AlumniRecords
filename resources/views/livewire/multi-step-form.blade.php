@@ -34,8 +34,14 @@
                 </li>
             </ol>
 
-            @if (session('success'))
+            {{-- @if (session('success'))
                 <div class="bg-green-500 p-6 rounded text-white xl:max-w-7xl mx-auto">
+                    {{ session('success') }}
+                </div>
+            @endif --}}
+
+            @if (session('error'))
+                <div class="bg-red-500 p-6 rounded text-white xl:max-w-7xl mx-auto">
                     {{ session('success') }}
                 </div>
             @endif

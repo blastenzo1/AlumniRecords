@@ -9,6 +9,7 @@ use App\Models\Address;
 use App\Models\EducationAttainment;
 use App\Models\Country;
 use App\Models\Nationality;
+use Illuminate\Contracts\View\View;
 
 class MultiStepForm extends Component
 {
@@ -81,7 +82,7 @@ class MultiStepForm extends Component
                 'status' => 'required',
                 'spouse' => 'required',
                 'number' => 'required|numeric',
-                'email' => 'required|email',
+                'email' => 'required|email|unique',
             ]);
         }
         elseif($this->currentStep == 2){
@@ -134,7 +135,7 @@ class MultiStepForm extends Component
 
         $education_values = array(
             "info_id" => $alumni_id,
-            "course"=>$this->course,
+            "course"=> $this->course,
             "year_attended"=>$this->year_attended,
         );
 
@@ -143,9 +144,32 @@ class MultiStepForm extends Component
 
         $this->reset();
         $this->currentStep = 1;
-        $data = ['name' => $this->first_name . ' ' . $this->last_name, 'email' => $this->email];
-        // $message = $this->first_name . ' ' . $this->last_name . ' was successfully added!';
-        $message = 'Alumni was successfully added!';
-        return redirect()->back()->with('success', $message)->with('data', $data);
+
+        $alumni = [
+            'first_name' => $this->first_name,
+            'middle_name' => $this->middle_name,
+            'last_name' => $this->last_name,
+            'birthdate' => $this->birthdate,
+            'sex' => $this->sex,
+            'nationality' => $this->nationality,
+            'status' => $this->status,
+            'spouse' => $this->spouse,
+            'number' => $this->number,
+            'email' => $this->email,
+
+            'current_street' => $this->current_street,
+            'current_city' => $this->current_city,
+            'current_country' => $this->current_country,
+            'current_zip_code' => $this->current_zip_code,
+            'home_street' => $this->home_street,
+            'home_city' => $this->home_city,
+            'home_country' => $this->home_country,
+            'home_zip_code' => $this->home_zip_code,
+
+            'course' => $this->course,
+            'year_attended' => $this->year_attended,
+        ];
+
+        return redirect('results')->with(compact('alumni'));
     }
 }

@@ -11,6 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/silliman.png') }}">
     @vite(['resources/css/app.css','resources/js/app.js'])
     @livewireStyles
     <script src="https://kit.fontawesome.com/84e2199ce0.js" crossorigin="anonymous"></script>
@@ -61,7 +62,7 @@
         <main class="flex-1 flex flex-col p-4 space-y-4 rounded-lg shadow">
             <div class="flex-none h-16 bg-white dark:bg-gray-900 rounded-md p-2">
                 <div class="flex items-center justify-between gap-4">
-                    <form class="form-inline my-2 my-lg-0" method="get" action="{{ route('search-record') }}">
+                    <form class="form-inline my-lg-0" method="get" action="{{ route('search-record') }}">
                         <label for="table-search" class="sr-only">Search</label>
                         <div class="relative mt-1">
                             <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none pl-3">
@@ -191,10 +192,10 @@
         this.asc = !this.asc
         if (!this.asc){
             rows = rows.reverse();
-            $(this).find('.caret').html('&#x25BC;'); // Downward caret for descending order
+            $(this).find('.caret').html('&#x25BC;');
         }
         else {
-            $(this).find('.caret').html('&#x25B2;'); // Upward caret for ascending order
+            $(this).find('.caret').html('&#x25B2;');
         }
         for (var i = 0; i < rows.length; i++){table.append(rows[i])}
     })
@@ -207,7 +208,7 @@
         function getCellValue(row, index){
             var fullName = $(row).children('td').eq(index).text();
             var parts = fullName.split(", ");
-            return parts[0]; // This assumes that last name comes first before comma
+            return parts[0];
         }
     });
     </script>
