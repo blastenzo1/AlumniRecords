@@ -79,12 +79,12 @@
                     @else
                         <div class="bg-white flex justify-between items-center border border-zinc-500 p-4 py-6 gap-3 ">
                             <div class="text-xl">{{ $course_name }}</div>
-                            <button class="p-2 bg-white border border-zinc-900 hover:bg-zinc-700">
+                            <a href="{{ url('generate-pdf/alumni/course/' . $course_name) }}" class="p-2 bg-white border border-zinc-900 hover:bg-gray-300">
                                 <div class="flex gap-4 items-center justify-center rounded">
                                     <i class="fa-solid fa-print"></i>
                                     <span class="text-zinc-900">Print</span>
                                 </div>
-                            </button>
+                            </a>
                         </div>
                         @foreach ($alumnis as $index => $alumni)
                             <div class="p-5 grid grid-cols-2: sm:grid-cols-3 xl:grid-cols-4">

@@ -73,6 +73,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         // Route::get('show-pdf-test', [PdfController::class, 'index'])->name('show-pdf-test');
         Route::get('generate-pdf/alumni/{id}', [PdfController::class, 'generateAlumniDetails'])->name('generate-alumni-pdf');
         Route::get('/generate-pdf', [PdfController::class, 'generateAllAlumniDetails']);
+        Route::get('generate-pdf/alumni/course/{course_name}', [PdfController::class, 'generateAlumnisByCourse'])->name('generate-alumni-by-course-pdf');
 
         # Other Routes
         Route::get('/alumnidetails', function () {
