@@ -63,12 +63,14 @@
             <div class="bg-white p-4 border border-zinc-300 shadow">
                 <div class="flex items-center justify-between">
                     <header class="text-3xl font-medium">Alumni Information</header>
-                    <button class="p-2 bg-white border border-zinc-900 hover:bg-zinc-700" onclick="printContainer('alumni-print')">
-                        <div class="flex gap-4 items-center justify-center rounded">
-                            <i class="fa-solid fa-print"></i>
-                            <span class="text-zinc-900">Print</span>
-                        </div>
-                    </button>
+                    <a href="{{ url('generate-pdf/alumni/' . $alumni->id) }}">
+                        <button class="p-2 bg-white border border-zinc-900 hover:bg-zinc-700">
+                            <div class="flex gap-4 items-center justify-center rounded">
+                                <i class="fa-solid fa-print"></i>
+                                <span class="text-zinc-900">Print</span>
+                            </div>
+                        </button>
+                    </a>
                 </div>
                 <div class="alumni-print space-y-4">
                     <div class="space-y-2">
@@ -234,23 +236,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
-    <script>
-    $('#table1').DataTable({})
-    </script>
-    <script>
-    function printContainer(containerClass) {
-        var container = document.querySelector('.' + containerClass);
-        if (container) {
-            var content = container.innerHTML;
-            var originalContent = document.body.innerHTML;
-            document.body.innerHTML = content;
-            window.print();
-            document.body.innerHTML = originalContent;
-        } else {
-            console.error('Container with class ' + containerClass + ' not found.');
-        }
-    }
-</script>
 </body>
 </html>
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +67,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         # Course List
         Route::get('course-list', [CourseListController::class, 'index'])->name('course-list');
         Route::get('course-list/show-course/{courseName}', [CourseListController::class, 'show_course'])->name('show_course');
+
+        # Pdf Generator
+        // Route::get('show-pdf-test', [PdfController::class, 'index'])->name('show-pdf-test');
+        Route::get('generate-pdf/alumni/{id}', [PdfController::class, 'generateAlumniDetails'])->name('generate-alumni-pdf');
 
         # Other Routes
         Route::get('/alumnidetails', function () {
