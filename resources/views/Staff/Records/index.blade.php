@@ -156,8 +156,14 @@
                                     </div>
                                 </div>
                             </th>
-                            <th scope="col" class="px-6 py-3 cursor-pointer">
-                                <span>Date Created</span>
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('created_at')">
+                                <div class="flex items-center gap-x-4 ">
+                                    <span>Date Created</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
                             </th>
                             <th></th>
                         </tr>

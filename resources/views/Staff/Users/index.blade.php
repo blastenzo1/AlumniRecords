@@ -119,6 +119,15 @@
                                     </div>
                                 </div>
                             </th>
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('created_at')">
+                                <div class="flex items-center gap-x-4 ">
+                                    <span>Date Created</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
+                            </th>
                             <th></th>
                         </tr>
                     </thead>
@@ -133,6 +142,9 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $user->user_type }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $user->created_at }}
                                 </td>
                                 <td class="px-6 py-4 space-x-2">
                                     <button id="dropdownDefaultButton{{ $user->id }}" data-dropdown-toggle="dropdown{{ $user->id }}" class="text-zinc-700 focus:ring-4 focus:outline-none focus:ring- red-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center" type="button">

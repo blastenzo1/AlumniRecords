@@ -128,6 +128,15 @@
                                     </div>
                                 </div>
                             </th>
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('created_at')">
+                                <div class="flex items-center gap-x-4 ">
+                                    <span>Date Created</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
+                            </th>
                             <th></th>
                         </tr>
                     </thead>
@@ -147,6 +156,9 @@
                                     <span class="border {{ $chapter->status === 'Active' ? 'border-green-500 bg-green-300 text-green-700' : 'border-gray-500 bg-gray-300 text-gray-700' }} px-4 py-2 rounded-md">
                                         {{ $chapter->status }}
                                     </span>
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $chapter->created_at}}
                                 </td>
                                 <td class="px-6 py-4 space-x-2">
                                     <button id="dropdownDefaultButton{{ $chapter->name }}" data-dropdown-toggle="dropdown{{ $chapter->name }}" class="text-zinc-700 focus:ring-4 focus:outline-none focus:ring- red-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center" type="button">
