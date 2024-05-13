@@ -90,11 +90,11 @@
             @endif
 
             <div class="flex-1 shadow-md rounded-md overflow-x-auto">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 p-4">
+                <table id="test" class="w-full text-sm text-left rtl:text-right text-gray-500 p-4">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-300">
                         <tr class="">
                             <th scope="col" class="px-6 py-3">
-                                Full Name
+                                Full Name <span class="caret"></span>
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 Email
@@ -114,9 +114,9 @@
                     <tbody class="">
                         @forelse ($alumnis as $alumnus)
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 space-y-4 p-12">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $alumnus->first_name }} {{ $alumnus->middle_name }} {{ $alumnus->last_name }}
-                                </th>
+                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $alumnus->last_name }}, {{ $alumnus->first_name }} {{ $alumnus->middle_name }}
+                                </td>
                                 <td class="px-6 py-4">
                                     {{ $alumnus->email }}
                                 </td>
@@ -180,8 +180,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
+    <script src="https://rern.github.io/sortable/js/sortable.js"></script>
     <script>
     $('#table1').DataTable({})
+
+    $(document).ready(function(){
+        $('#test thead').click(function(){
+        var table = $(this).parents('table').eq(0)
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+        this.asc = !this.asc
+        if (!this.asc){
+            rows = rows.reverse();
+            $(this).find('.caret').html('&#x25BC;'); // Downward caret for descending order
+        }
+        else {
+            $(this).find('.caret').html('&#x25B2;'); // Upward caret for ascending order
+        }
+        for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+    })
+        function comparer(index) {
+            return function(a, b) {
+                var valA = getCellValue(a, index), valB = getCellValue(b, index)
+                return valA.localeCompare(valB)
+            }
+        }
+        function getCellValue(row, index){
+            var fullName = $(row).children('td').eq(index).text();
+            var parts = fullName.split(", ");
+            return parts[0]; // This assumes that last name comes first before comma
+        }
+    });
     </script>
 </body>
 </html>
