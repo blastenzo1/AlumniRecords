@@ -82,7 +82,7 @@ class MultiStepForm extends Component
                 'status' => 'required',
                 'spouse' => 'required',
                 'number' => 'required|numeric',
-                'email' => 'required|email|unique',
+                'email' => 'required|email',
             ]);
         }
         elseif($this->currentStep == 2){
@@ -118,6 +118,7 @@ class MultiStepForm extends Component
             "spouse"=>$this->spouse,
             "number"=>$this->number,
             "email"=>$this->email,
+            "created_at"=> now(),
         );
         $alumni_id = Alumni::insertGetId($alumni_values);
 
@@ -131,12 +132,14 @@ class MultiStepForm extends Component
             "home_city"=>$this->home_city,
             "home_country"=>$this->home_country,
             "home_zip_code"=>$this->home_zip_code,
+            "created_at"=> now(),
         );
 
         $education_values = array(
             "info_id" => $alumni_id,
             "course"=> $this->course,
             "year_attended"=>$this->year_attended,
+            "created_at"=> now(),
         );
 
         Address::insert($address_values);

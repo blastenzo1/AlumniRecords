@@ -89,20 +89,44 @@
             @endif
 
             <div class="flex-1 relative shadow-md rounded-md overflow-x-auto">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 p-4">
+                <table id="test" class="w-full text-sm text-left rtl:text-right text-gray-500 p-4">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-300">
                         <tr class="">
-                            <th scope="col" class="px-6 py-3">
-                                Name
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('name')">
+                                <div class="flex items-center gap-x-4">
+                                    <span>Name</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Representative
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('representative')">
+                                <div class="flex items-center gap-x-4">
+                                    <span>Representative</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Email
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('email')">
+                                <div class="flex items-center gap-x-4">
+                                    <span>Email</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Status
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('status')">
+                                <div class="flex items-center gap-x-4">
+                                    <span>Status</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
                             </th>
                             <th></th>
                         </tr>
@@ -179,9 +203,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
-    <script>
-    $('#table1').DataTable({})
-    </script>
+    <script src="{{ asset('assets/js/sortable-table.js') }}"></script>
 </body>
 </html>
 

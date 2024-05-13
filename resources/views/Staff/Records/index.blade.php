@@ -94,20 +94,53 @@
                 <table id="test" class="w-full text-sm text-left rtl:text-right text-gray-500 p-4">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-300">
                         <tr class="">
-                            <th scope="col" class="px-6 py-3">
-                                Full Name <span class="caret"></span>
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('full_name')">
+                                <div class="flex items-center gap-x-4 ">
+                                    <span>Full Name</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Email
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('email')">
+                                <div class="flex items-center gap-x-4 ">
+                                    <span>Email</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Mobile/Contact Number
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('number')">
+                                <div class="flex items-center gap-x-4 ">
+                                    <span>Mobile/Contact Number</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Sex
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('sex')">
+                                <div class="flex items-center gap-x-4 ">
+                                    <span>Sex</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                Nationality
+                            <th scope="col" class="px-6 py-3 cursor-pointer" onclick="sortTable('nationality')">
+                                <div class="flex items-center gap-x-4 ">
+                                    <span>Nationality</span>
+                                    <div class="grid gris-cols-1">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </div>
+                                </div>
+                            </th>
+                            <th scope="col" class="px-6 py-3 cursor-pointer">
+                                <span>Date Created</span>
                             </th>
                             <th></th>
                         </tr>
@@ -129,6 +162,9 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $alumnus->nationality }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ $alumnus->created_at }}
                                 </td>
                                 <td class="px-6 py-4 space-x-2">
                                     <button id="dropdownDefaultButton{{ $alumnus->id }}" data-dropdown-toggle="dropdown{{ $alumnus->id }}" class="text-zinc-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center inline-flex items-center" type="button">
@@ -182,35 +218,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
     <script src="https://rern.github.io/sortable/js/sortable.js"></script>
-    <script>
-    $('#table1').DataTable({})
-
-    $(document).ready(function(){
-        $('#test thead').click(function(){
-        var table = $(this).parents('table').eq(0)
-        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
-        this.asc = !this.asc
-        if (!this.asc){
-            rows = rows.reverse();
-            $(this).find('.caret').html('&#x25BC;');
-        }
-        else {
-            $(this).find('.caret').html('&#x25B2;');
-        }
-        for (var i = 0; i < rows.length; i++){table.append(rows[i])}
-    })
-        function comparer(index) {
-            return function(a, b) {
-                var valA = getCellValue(a, index), valB = getCellValue(b, index)
-                return valA.localeCompare(valB)
-            }
-        }
-        function getCellValue(row, index){
-            var fullName = $(row).children('td').eq(index).text();
-            var parts = fullName.split(", ");
-            return parts[0];
-        }
-    });
-    </script>
+    <script src="{{ asset('assets/js/sortable-table.js') }}"></script>
 </body>
 </html>
